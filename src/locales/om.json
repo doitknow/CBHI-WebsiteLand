@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "home": "Qajeelaa",
+    "philosophy": "Filoosofii",
+    "our_impact": "Dhiibbaa keenya",
+    "benefits": "Bu'aa",
+    "process": "Adeemsa",
+    "enroll_now": "Ammummaa galmaa'i"
+  },
+  "hero": {
+    "welcome": "Baga nagaan dhuftan CBHI",
+    "title_ethiopian": "Itiyoophiyaa",
+    "title_health_insurance": "Inshuraansii Fayyaa",
+    "subtitle": "Itoophiyaanota tajaajila fayyaa gatii madaalamaa fi dhaqqabamaa ta'een cimsuu. Sagantaa tokkummaa hawaasaa maatii hundaaf uwwisa yaalaa dijitaalaa eegumsa qabu mirkaneessu.",
+    "get_started": "Eegali",
+    "learn_more": "Dabalata dubbisi",
+    "endorsed_by": "Mirkanaa'ee fi Hojjetamaa Jira",
+    "members_count": "Miseensota 2M+",
+    "and_growing": "fi guddachaa jira"
+  },
+  "health_rights": {
+    "heading_health": "Fayyaa",
+    "heading_is_everyone_right": "Mirga ",
+    "heading_right": "Hundumaati",
+    "description": "Inshuraansiin Fayyaa Hawaasaa (CBHI) Itiyoophiyaa kan hundeeffame tajaajilli fayyaa qulqulluu ta'e humni maallaqaa irratti hundaa'uu hin qabu amantii jedhu irratti. Tokkummaa hawaasaatiin, maatiin hundi galii isaa irratti osoo hin hundaa'in tajaajila yaalaa bu'uuraa argachuu akka danda'u qabeenya ni walitti qabna.",
+    "principles": {
+      "equitable": {
+        "title": "Carraa Walqixa",
+        "description": "Lammiin hundi galii isaa irratti osoo hin hundaa'in yeroo baay'ee isa barbaachisutti tajaajila fayyaa qulqulluu argachuu akka danda'u mirkaneessuu."
+      },
+      "solidarity": {
+        "title": "Tokkummaa",
+        "description": "Hawaasni dhiibbaa maallaqaa dhukkubaan dhufu irraa wal eeguuf waliin dhaabbachuu."
+      }
+    }
+  },
+  "coverage": {
+    "badge": "Bu'aawwan Hunda Galeessa",
+    "heading_coverage": "Uwwisa Caalaatti ",
+    "heading_goes_further": "Kennu",
+    "description": "Buufata fayyaa bu'uuraa irraa eegalee hanga baqaqsanii hodhuu addaatti, CBHI wantoota baay'ee barbaachisoo ta'an hunda ni uwwisa.",
+    "benefits": {
+      "primary": {
+        "title": "Kunuunsa Bu'uuraa",
+        "description": "Kiliinika michuu ta'e kamiyyuu keessatti qorannoo, hordoffii fi yaala bu'uuraa bilisaa."
+      },
+      "hospitalization": {
+        "title": "Ciisanii Yaalamuu",
+        "description": "Baqaqsanii hodhuu, kutaa kunuunsa cimaa fi tajaajila yaala boodaa dabalatee uwwisa guutuudhaan ciisanii yaalamuu."
+      },
+      "maternal": {
+        "title": "Kunuunsa Haadhaa fi Daaimaa",
+        "description": "Kunuunsi ulfaa, da'umsaa, daa'immanii fi da'umsa boodaa maatii hundaaf guutuutti uwwifameera."
+      }
+    }
+  },
+  "enrollment": {
+    "heading_how": "Akkamitti ",
+    "heading_enrollment": "Galmaa'uun ",
+    "heading_works": "Danda'ama",
+    "subtitle": "CBHI tti makamuun salphaadha. Waajjira Aanaa keessanitti tarkaanfiiwwan sadan kana hordofuun guyyuma sana uwwisa argadhaa.",
+    "steps": {
+      "step1": {
+        "title": "Eenyummaa Mirkaneessuu",
+        "description": "Waraqaa eenyummaa Fayda keessaniin Aanaa keessanitti galmaa'aa. Sirni keenya mirkaneessaaf yeruma sana walitti hidhama.",
+        "badge": "Waraqaa eenyummaa Fayda ykn biyyaalessaa fidhaa"
+      },
+      "step2": {
+        "title": "Gumaacha Waggaa",
+        "description": "Baay'ina maatii keessanii irratti hundaa'uun kaffaltii waggaa xiqqaa kaffalaa. Filannoowwan kaffaltii mijatoo ta'an jiru.",
+        "badge": "Maatii hundaaf gatii madaalawaa"
+      },
+      "step3": {
+        "title": "Uwwisa Argachuu",
+        "description": "Kaardii CBHI dijitaalaa ykn qaamaatiin dhaabbata fayyaa michuu ta'e kamiyyuu keessatti yeruma sana tajaajila fayyaa argadhaa.",
+        "badge": "Uwwisni guyyuma sana eegala"
+      }
+    },
+    "start_enrollment": "Galmee Eegali"
+  },
+  "impact": {
+    "heading_national": "Dhiibbaa fi ",
+    "heading_and": "Babal'ina ",
+    "heading_scale": "Biyyaalessaa",
+    "subtitle": "Rippabiliika Dimookiraatawaa Federaalawaa Itiyoophiyaa keessatti ceumsa tajaajila fayyaa hunda galeessa ta'e kan fidu bu'aawwan qabatamaa.",
+    "metrics": {
+      "citizens": {
+        "label": "LAMMILEE UWWIFAMAN",
+        "subtext": "Naannoolee hunda keessatti"
+      },
+      "woredas": {
+        "label": "AANAALEE DHAQQABAMAN",
+        "subtext": "Qindoomina biyyaalessaa"
+      },
+      "facilities": {
+        "label": "DHAABBATA MICHUU",
+        "subtext": "Hospitaalota fi kiliinikoota"
+      }
+    },
+    "fayda": {
+      "title": "Fayda Waliin Qindaa'e",
+      "subtitle": "Mirkaneessa Eenyummaa Dijitaalaa Biyyaalessaa"
+    },
+    "insa": {
+      "title": "INSA dhaan Mirkanaa'e",
+      "subtitle": "Ulaagaalee Nageenyaa Sadarkaa Mootummaa"
+    }
+  },
+  "footer": {
+    "heading_get_in": "Get in ",
+    "heading_touch": "Touch",
+    "brand_subtitle": "COMMUNITY BASED HEALTH INSURANCE",
+    "brand_reimagined": "Reimagined For a ",
+    "brand_digital": "Digital Ethiopia.",
+    "org_title": "Organization",
+    "links": {
+      "about": "About Us",
+      "moh": "Ministry Of Health",
+      "reports": "Reports",
+      "enroll": "Enroll Now"
+    },
+    "contact_title": "Contact",
+    "address": "Addis Ababa, Ethiopia",
+    "email": "info@edhn.dh.moh.gov.et",
+    "follow_title": "Follow Us",
+    "fayda_badge": "Fayda ID Integrated",
+    "inasa_badge": "INASA Verified",
+    "copyright": "© 2024 CBHI Ethiopia. All rights reserved.",
+    "powered_by": "Powered by",
+    "medco": "MEDCO",
+    "medco_tech": "Medco Technology Solutions"
+  }
+}

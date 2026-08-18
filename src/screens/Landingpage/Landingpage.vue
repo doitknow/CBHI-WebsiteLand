@@ -9,6 +9,10 @@ import FooterSection from "./sections/FooterSection/FooterSection.vue";
 import UtilityNavigationSection from "./sections/UtilityNavigationSection/UtilityNavigationSection.vue";
 import ScrollReveal from "../../components/ui/ScrollReveal.vue";
 
+import stPeterLogo from "../../assets/partners logo/St.PeterLogo.png";
+import tikurAnbessaLogo from "../../assets/partners logo/tikure-anbsa.png";
+import yekatitLogo from "../../assets/partners logo/yekatit-hospital.png";
+
 const partnerLogos = [
   { alt: "Eth Switch",        src: "/eth-switch-Photoroom.png"    },
   { alt: "Sidama Bank",       src: "/images-Photoroom.png"        },
@@ -16,6 +20,9 @@ const partnerLogos = [
   { alt: "Telebirr",          src: "/Telebirr.png"                },
   { alt: "Kenema Pharmacy",   src: "/kenema_logo.png"             },
   { alt: "Ministry of Health",src: "/1755784071306-Photoroom.png" },
+  { alt: "St. Peter Hospital",src: stPeterLogo                    },
+  { alt: "Tikur Anbessa",     src: tikurAnbessaLogo               },
+  { alt: "Yekatit Hospital",  src: yekatitLogo                    },
 ];
 </script>
 
@@ -57,7 +64,7 @@ const partnerLogos = [
       <!-- ─── Trusted Partners & Financial Integrations ─── -->
       <ScrollReveal :delay="200" direction="up" duration="0.9s">
         <section
-          class="w-full border-y border-slate-100 dark:border-white/10 bg-white dark:bg-[#021E31] py-6 sm:py-8"
+          class="w-full my-12 sm:my-20 border-y border-slate-100 dark:border-white/10 bg-white dark:bg-[#021E31] py-8 sm:py-12 shadow-sm"
           aria-label="Trusted partners and financial integrations"
         >
           <!-- Label -->
@@ -80,7 +87,7 @@ const partnerLogos = [
                   <img
                     :src="logo.src"
                     :alt="logo.alt"
-                    class="h-[48px] w-auto max-w-[110px] object-contain opacity-65 dark:opacity-80 dark:brightness-200 grayscale-[20%] transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
+                    class="h-[52px] sm:h-[60px] w-auto max-w-[150px] object-contain opacity-50 dark:opacity-70 dark:brightness-200 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
@@ -92,7 +99,7 @@ const partnerLogos = [
                   <img
                     :src="logo.src"
                     :alt="logo.alt"
-                    class="h-[48px] w-auto max-w-[110px] object-contain opacity-65 dark:opacity-80 dark:brightness-200 grayscale-[20%] transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
+                    class="h-[52px] sm:h-[60px] w-auto max-w-[150px] object-contain opacity-50 dark:opacity-70 dark:brightness-200 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>

@@ -91,7 +91,7 @@ function getLocaleName(code: string) {
 </script>
 
 <template>
-  <header class="relative z-50 w-full bg-white dark:bg-[#021E31] dark:border-b dark:border-white/10 shadow-[0_1px_0_0_#f0f0f0] dark:shadow-none [font-family:'Inter',Helvetica] transition-colors duration-300">
+  <header class="relative z-50 w-full bg-transparent [font-family:'Inter',Helvetica] transition-colors duration-300">
 
     <!-- ════════════════ DESKTOP BAR ════════════════ -->
     <div class="mx-auto flex h-[72px] w-full max-w-[1400px] items-center px-6 lg:px-10">

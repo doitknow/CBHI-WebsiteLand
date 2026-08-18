@@ -1,11 +1,53 @@
 <script setup lang="ts">
-import { ArrowRight } from "lucide-vue-next";
+import { ref, onMounted, onUnmounted } from "vue";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-vue-next";
 import { useI18n } from "vue-i18n";
 import Button from "../../../../components/ui/Button.vue";
 import Card from "../../../../components/ui/Card.vue";
 import CardContent from "../../../../components/ui/CardContent.vue";
 
+import slide1 from "../../../../assets/slider/slide 1.png";
+import slide2 from "../../../../assets/slider/slide 2.png";
+import slide3 from "../../../../assets/slider/slide 3.png";
+
 const { t } = useI18n();
+
+const slideImages = [ slide2, slide3];
+const currentSlide = ref(0);
+let slideInterval: number | undefined;
+
+const startInterval = () => {
+  slideInterval = window.setInterval(() => {
+    currentSlide.value = (currentSlide.value + 1) % slideImages.length;
+  }, 6000);
+};
+
+const resetInterval = () => {
+  if (slideInterval) {
+    clearInterval(slideInterval);
+  }
+  startInterval();
+};
+
+const prevSlide = () => {
+  currentSlide.value = (currentSlide.value - 1 + slideImages.length) % slideImages.length;
+  resetInterval();
+};
+
+const nextSlide = () => {
+  currentSlide.value = (currentSlide.value + 1) % slideImages.length;
+  resetInterval();
+};
+
+onMounted(() => {
+  startInterval();
+});
+
+onUnmounted(() => {
+  if (slideInterval) {
+    clearInterval(slideInterval);
+  }
+});
 
 const partnerCards = [
   {
@@ -40,19 +82,75 @@ const partnerCards = [
         padding-bottom: 100px;
       "
     >
-      <!-- Smooth crossfade background images -->
-      <img
-        src="/home image.png"
-        alt=""
-        aria-hidden="true"
-        class="pointer-events-none absolute inset-0 h-full w-full object-cover object-top opacity-100 transition-opacity duration-[800ms] ease-in-out dark:opacity-0"
-      />
-      <img
-        src="/home image dark.png"
-        alt=""
-        aria-hidden="true"
-        class="pointer-events-none absolute inset-0 h-full w-full object-cover object-top opacity-0 transition-opacity duration-[800ms] ease-in-out dark:opacity-100"
-      />
+      <!-- Animated SVG Wave Background -->
+      <div class="pointer-events-none absolute inset-0 overflow-hidden bg-transparent">
+        <div class="wave">
+          <svg
+            viewBox="0 0 900 397"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <clipPath id="main-wave-clip">
+                <path
+                  class="main-wave"
+                  d="M0 397 L0 250 C 0 397 227 426 240 397 C253 368 285 354 296 315 C308 270 321 244 358 216 C397 187 445 168 477 139 C510 109 516 70 550 35 C571 14 595 3 630 0 L900 0 L900 397 Z"
+                />
+              </clipPath>
+              <clipPath id="image-curve-clip">
+                <path d="M 300 0 C 500 150, 200 250, 450 397 L 900 397 L 900 0 Z" />
+              </clipPath>
+            </defs>
+            <path
+              class="dark-wave"
+              d="M0 397 L0 80 C 0 397 120 429 155 397 C190 365 225 350 232 305 C240 255 263 225 300 194 C347 155 397 137 430 105 C465 71 475 35 526 12 C548 2 575 0 610 0 L900 0 L900 397 Z"
+              fill="#3C8DFD"
+              opacity="0.08"
+              filter="blur(2px)"
+            />
+            <path
+              class="middle-wave"
+              d="M0 397 L0 150 C 0 397 175 445 205 397 C225 365 260 354 270 313 C282 264 298 236 335 208 C377 176 426 157 457 128 C489 98 501 57 535 28 C552 13 575 4 605 0 L900 0 L900 397 Z"
+              fill="#3C8DFD"
+              opacity="0.14"
+  
+              
+            />
+            <!-- <path
+              class="thin-wave"
+              d="M0 250 C 0 397 227 426 240 397 C253 368 285 354 296 315 C308 270 321 244 358 216 C397 187 445 168 477 139 C510 109 516 70 550 35 C571 14 595 3 630 0"
+              fill="none"
+              stroke="#3c8dfd"
+              stroke-width="18"
+            /> -->
+            <g clip-path="url(#main-wave-clip)">
+              <rect width="100%" height="100%" fill="#3c8dfd" />
+              <g 
+                class="transition-transform duration-[1800ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+                :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
+              >
+                <image
+                  v-for="(slide, index) in slideImages"
+                  :key="index"
+                  :href="slide"
+                  width="100%"
+                  height="100%"
+                  :x="`${index * 100}%`"
+                   preserveAspectRatio="xMidYMid slice"
+                />
+              </g>
+            </g>
+            <path
+              class="main-wave"
+              d="M0 250 C 0 397 227 426 240 397 C253 368 285 354 296 315 C308 270 321 244 358 216 C397 187 445 168 477 139 C510 109 516 70 550 35 C571 14 595 3 630 0 L900 0"
+              fill="none"
+              stroke="#388BF8"
+              stroke-width="3"
+              opacity="0.8"
+            />
+          </svg>
+        </div>
+      </div>
 
       <!-- Subtle ambient gradient overlay -->
       <div
@@ -64,8 +162,11 @@ const partnerCards = [
       <div
         class="relative z-10 flex flex-col items-start px-8 pt-[50px] sm:px-16 lg:w-[46%] lg:px-[101px] lg:pt-[52px]"
       >
-        <p class="animate-hero-reveal inline-flex items-center gap-1.5  bg-emerald-50 px-3 py-1 text-[15px] font-semibold text-emerald-600 shadow-sm ">
-          <span class="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
+        <p class="animate-hero-reveal inline-flex items-center gap-2 text-[15px] font-bold tracking-widest uppercase text-emerald-600">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
           {{ t('hero.welcome') }}
         </p>
 
@@ -121,6 +222,26 @@ const partnerCards = [
           </p>
         </div>
       </div>
+
+      <!-- Slider Navigation Controls -->
+      <div class="absolute bottom-[130px] right-8 z-30 flex gap-3 sm:right-16 lg:bottom-[150px] lg:right-[101px]">
+        <button
+          type="button"
+          @click="prevSlide"
+          aria-label="Previous slide"
+          class="flex h-11 w-11 items-center justify-center rounded-full bg-black/20 text-white shadow-sm backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-black/40 active:scale-95"
+        >
+          <ChevronLeft class="h-6 w-6" />
+        </button>
+        <button
+          type="button"
+          @click="nextSlide"
+          aria-label="Next slide"
+          class="flex h-11 w-11 items-center justify-center rounded-full bg-black/20 text-white shadow-sm backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-black/40 active:scale-95"
+        >
+          <ChevronRight class="h-6 w-6" />
+        </button>
+      </div>
     </div>
 
     <!-- "Endorsed & Operated By" overlapping upward into the hero image -->
@@ -131,7 +252,7 @@ const partnerCards = [
       <!-- Pill label -->
       <div class="flex justify-center">
         <div
-          class="flex h-[32px] w-[310px] items-center justify-center rounded-[20px] border border-white/70 bg-white/40 shadow-sm backdrop-blur-[6px] transition-all hover:bg-white/60"
+          class="flex h-[32px] w-[310px] items-center justify-center rounded-tl-[20px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[0px] border border-white/70 bg-white/40 shadow-sm backdrop-blur-[6px] transition-all hover:bg-white/60"
         >
           <span class="text-sm font-semibold tracking-wide text-slate-700">
             {{ t('hero.endorsed_by') }}
@@ -168,3 +289,72 @@ const partnerCards = [
     </div>
   </section>
 </template>
+
+<style scoped>
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wave svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.dark-wave {
+  animation: darkFlow 8s ease-in-out infinite alternate;
+}
+
+.middle-wave {
+  animation: middleFlow 7s ease-in-out infinite alternate;
+}
+
+.thin-wave {
+  animation: thinFlow 6.5s ease-in-out infinite alternate;
+}
+
+.main-wave {
+  animation: mainFlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes darkFlow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-8px);
+  }
+}
+
+@keyframes middleFlow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-5px);
+  }
+}
+
+@keyframes mainFlow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-3px);
+  }
+}
+
+@keyframes thinFlow {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-4px);
+  }
+}
+</style>

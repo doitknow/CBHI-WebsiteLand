@@ -174,8 +174,8 @@ const partnerCards = [
           id="insurance-hero-title"
           class="mt-1 text-[46px] font-bold leading-[1] tracking-[0] sm:text-[62px] lg:text-[82px]"
         >
-          <span class="block text-[#161616] dark:text-white animate-hero-reveal anim-delay-1">{{ t('hero.title_ethiopian') }}</span>
-          <span class="block bg-gradient-to-r from-[#3c8dfd] to-[#0873b9] bg-clip-text text-transparent animate-hero-reveal anim-delay-3">
+          <span class="inline-block text-[#161616] dark:text-white animate-hero-reveal anim-delay-1 mr-3 lg:mr-5">{{ t('hero.title_ethiopian') }}</span>
+          <span class="inline-block bg-gradient-to-r from-[#3c8dfd] to-[#0873b9] bg-clip-text text-transparent animate-hero-reveal anim-delay-3">
             {{ t('hero.title_health_insurance') }}
           </span>
         </h1>

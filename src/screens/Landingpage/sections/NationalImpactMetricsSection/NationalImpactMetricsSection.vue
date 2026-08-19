@@ -78,7 +78,7 @@ onUnmounted(() => {
         >
           <span class="text-[#161616] dark:text-white">{{ t('impact.heading_national') }}</span>
           <span class="text-[#161616] dark:text-white">{{ t('impact.heading_and') }}</span>
-          <span class="text-[#0873b9] dark:text-[#3c8dfd]">{{ t('impact.heading_scale') }}</span>
+          <span class="text-[#0873b9] dark:text-[#0873b9]">{{ t('impact.heading_scale') }}</span>
         </h2>
       </div>
     </ScrollReveal>
@@ -180,7 +180,7 @@ onUnmounted(() => {
       <!-- Connector line with pulse -->
       <div class="hidden h-3 w-[45px] shrink-0 items-center justify-center sm:flex">
         <svg width="45" height="12" viewBox="0 0 45 12" fill="none">
-          <line x1="0" y1="6" x2="45" y2="6" stroke="#3c8dfd" stroke-width="2" stroke-dasharray="4 3" class="animate-pulse" />
+          <line x1="0" y1="6" x2="45" y2="6" stroke="#0873b9" stroke-width="2" stroke-dasharray="4 3" class="animate-pulse" />
         </svg>
       </div>
 
@@ -191,7 +191,7 @@ onUnmounted(() => {
         >
           <div class="text-right">
             <p
-              class="bg-[linear-gradient(79deg,rgba(236,32,35,1)_0%,rgba(61,97,173,1)_100%)] dark:bg-[linear-gradient(79deg,#ff4d4d_0%,#3c8dfd_100%)] bg-clip-text [font-family:'Inter',Helvetica] text-[20px] font-bold tracking-tight text-transparent"
+              class="bg-[linear-gradient(79deg,rgba(236,32,35,1)_0%,rgba(61,97,173,1)_100%)] dark:bg-[linear-gradient(79deg,#ff4d4d_0%,#0873b9_100%)] bg-clip-text [font-family:'Inter',Helvetica] text-[20px] font-bold tracking-tight text-transparent"
               style="-webkit-text-fill-color: transparent"
             >
               {{ t('impact.insa.title') }}

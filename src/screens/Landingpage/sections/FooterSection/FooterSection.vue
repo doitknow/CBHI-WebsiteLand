@@ -34,14 +34,14 @@ const { t } = useI18n();
         <ScrollReveal direction="up" :stagger-index="0" :stagger-delay="100" :delay="100" duration="0.8s">
           <div class="flex flex-col gap-3">
             <h3 class="text-[46px] font-black leading-none tracking-tight text-white">
-              CBHI<span class="text-[#3c8dfd]">.et</span>
+              CBHI<span class="text-[#0873b9]">.et</span>
             </h3>
             <p class="mt-1 text-[13px] font-bold tracking-widest text-[#a1a1aa] uppercase">
               {{ t('footer.brand_subtitle') }}
             </p>
             <p class="mt-1 text-[15px] font-medium text-[#d4d4d8]">
               {{ t('footer.brand_reimagined') }}
-              <span class="text-[#3c8dfd]">{{ t('footer.brand_digital') }}</span>
+              <span class="text-[#0873b9]">{{ t('footer.brand_digital') }}</span>
             </p>
           </div>
         </ScrollReveal>
@@ -55,7 +55,7 @@ const { t } = useI18n();
               </h3>
               <!-- Custom Line Separator -->
               <div class="relative h-[1px] w-full max-w-[190px] bg-white/20">
-                <div class="absolute left-0 top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[#3c8dfd]"></div>
+                <div class="absolute left-0 top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[#0873b9]"></div>
               </div>
             </div>
             
@@ -97,7 +97,7 @@ const { t } = useI18n();
               </h3>
               <!-- Custom Line Separator -->
               <div class="relative h-[1px] w-full max-w-[190px] bg-white/20">
-                <div class="absolute left-0 top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[#3c8dfd]"></div>
+                <div class="absolute left-0 top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[#0873b9]"></div>
               </div>
             </div>
             
@@ -131,7 +131,7 @@ const { t } = useI18n();
               </h3>
               <!-- Custom Line Separator -->
               <div class="relative h-[1px] w-full max-w-[190px] bg-white/20">
-                <div class="absolute left-0 top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[#3c8dfd]"></div>
+                <div class="absolute left-0 top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[#0873b9]"></div>
               </div>
             </div>
             

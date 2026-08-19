@@ -9,10 +9,10 @@ const enrollmentSteps = [
   {
     number: "01",
     iconSvg: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 6a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" fill="#3c8dfd"/>
-      <path d="M16 18c5.523 0 10 2.239 10 5v1H6v-1c0-2.761 4.477-5 10-5z" fill="#3c8dfd"/>
-      <rect x="22" y="16" width="7" height="1.5" rx="0.75" fill="#3c8dfd"/>
-      <rect x="22" y="19" width="5" height="1.5" rx="0.75" fill="#3c8dfd"/>
+      <path d="M16 6a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" fill="#0873b9"/>
+      <path d="M16 18c5.523 0 10 2.239 10 5v1H6v-1c0-2.761 4.477-5 10-5z" fill="#0873b9"/>
+      <rect x="22" y="16" width="7" height="1.5" rx="0.75" fill="#0873b9"/>
+      <rect x="22" y="19" width="5" height="1.5" rx="0.75" fill="#0873b9"/>
     </svg>`,
     translationKeyTitle: "enrollment.steps.step1.title",
     translationKeyDesc: "enrollment.steps.step1.description",
@@ -21,13 +21,13 @@ const enrollmentSteps = [
   {
     number: "02",
     iconSvg: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="6" y="8" width="20" height="18" rx="2.5" stroke="#3c8dfd" stroke-width="1.8" fill="none"/>
-      <line x1="6" y1="14" x2="26" y2="14" stroke="#3c8dfd" stroke-width="1.8"/>
-      <line x1="11" y1="5" x2="11" y2="10" stroke="#3c8dfd" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="21" y1="5" x2="21" y2="10" stroke="#3c8dfd" stroke-width="1.8" stroke-linecap="round"/>
-      <rect x="10" y="18" width="3.5" height="3.5" rx="0.75" fill="#3c8dfd"/>
-      <rect x="16" y="18" width="3.5" height="3.5" rx="0.75" fill="#3c8dfd"/>
-      <rect x="22" y="18" width="3.5" height="3.5" rx="0.75" fill="#3c8dfd" opacity="0.4"/>
+      <rect x="6" y="8" width="20" height="18" rx="2.5" stroke="#0873b9" stroke-width="1.8" fill="none"/>
+      <line x1="6" y1="14" x2="26" y2="14" stroke="#0873b9" stroke-width="1.8"/>
+      <line x1="11" y1="5" x2="11" y2="10" stroke="#0873b9" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="21" y1="5" x2="21" y2="10" stroke="#0873b9" stroke-width="1.8" stroke-linecap="round"/>
+      <rect x="10" y="18" width="3.5" height="3.5" rx="0.75" fill="#0873b9"/>
+      <rect x="16" y="18" width="3.5" height="3.5" rx="0.75" fill="#0873b9"/>
+      <rect x="22" y="18" width="3.5" height="3.5" rx="0.75" fill="#0873b9" opacity="0.4"/>
     </svg>`,
     translationKeyTitle: "enrollment.steps.step2.title",
     translationKeyDesc: "enrollment.steps.step2.description",
@@ -36,8 +36,8 @@ const enrollmentSteps = [
   {
     number: "03",
     iconSvg: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="11" stroke="#3c8dfd" stroke-width="1.8" fill="none"/>
-      <path d="M11 16.5L14.5 20L21 13" stroke="#3c8dfd" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="16" cy="16" r="11" stroke="#0873b9" stroke-width="1.8" fill="none"/>
+      <path d="M11 16.5L14.5 20L21 13" stroke="#0873b9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
     </svg>`,
     translationKeyTitle: "enrollment.steps.step3.title",
     translationKeyDesc: "enrollment.steps.step3.description",
@@ -75,7 +75,7 @@ const enrollmentSteps = [
             <template v-for="row in 5" :key="'dr-'+row">
               <circle v-for="col in 6" :key="'d-'+row+'-'+col"
                 :cx="8 + (col - 1) * 16" :cy="8 + (row - 1) * 14"
-                r="2" fill="#3c8dfd" opacity="0.18"
+                r="2" fill="#0873b9" opacity="0.18"
               />
             </template>
           </svg>
@@ -112,7 +112,7 @@ const enrollmentSteps = [
                 <!-- Bottom badge pill -->
                 <div class="enrollment-card-badge">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="enrollment-badge-check">
-                    <circle cx="9" cy="9" r="9" fill="#3c8dfd"/>
+                    <circle cx="9" cy="9" r="9" fill="#0873b9"/>
                     <path d="M5.5 9.5L7.8 11.8L12.5 6.5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                   <span class="enrollment-badge-text">{{ t(step.translationKeyBadge) }}</span>
@@ -187,7 +187,7 @@ const enrollmentSteps = [
 }
 
 .enrollment-title-blue {
-  color: #3c8dfd;
+  color: #0873b9;
 }
 
 .enrollment-subtitle {
@@ -342,7 +342,7 @@ const enrollmentSteps = [
 }
 
 .enrollment-card-container:hover .enrollment-card-title {
-  color: #3c8dfd;
+  color: #0873b9;
 }
 
 /* ─── Card Description ─── */
@@ -414,7 +414,7 @@ const enrollmentSteps = [
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3c8dfd 0%, #2b7af7 100%);
+  background: linear-gradient(135deg, #0873b9 0%, #2b7af7 100%);
   box-shadow: 0 4px 14px rgba(60, 141, 253, 0.3);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
               box-shadow 0.35s ease;
@@ -468,7 +468,7 @@ const enrollmentSteps = [
   font-size: 15.5px;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #3c8dfd 0%, #2b7af7 100%);
+  background: linear-gradient(135deg, #0873b9 0%, #2b7af7 100%);
   box-shadow: 0 6px 24px rgba(60, 141, 253, 0.3);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
               box-shadow 0.35s ease,

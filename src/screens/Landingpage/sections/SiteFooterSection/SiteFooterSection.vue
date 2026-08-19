@@ -24,9 +24,9 @@ const organizationLinks = [
         <div class="flex flex-col gap-4">
           <div class="text-4xl font-black tracking-tight">
             <span class="text-white">CBHI.</span>
-            <span class="text-[#3c8dfd]">et</span>
+            <span class="text-[#0873b9]">et</span>
           </div>
-          <p class="text-xs font-semibold uppercase tracking-widest text-[#3c8dfd]">
+          <p class="text-xs font-semibold uppercase tracking-widest text-[#0873b9]">
             Community Based Health Insurance
           </p>
           <p class="text-sm leading-relaxed text-slate-400">
@@ -41,7 +41,7 @@ const organizationLinks = [
           >
             Quick Links
           </h3>
-          <div class="mt-2 h-1 w-12 rounded bg-[#3c8dfd]" />
+          <div class="mt-2 h-1 w-12 rounded bg-[#0873b9]" />
           <nav
             aria-label="Organization links"
             class="mt-4 flex flex-col gap-2"
@@ -50,9 +50,9 @@ const organizationLinks = [
               v-for="link in organizationLinks"
               :key="link.label"
               :href="link.href"
-              class="inline-flex items-center gap-2 text-sm text-slate-300 transition hover:text-[#3c8dfd]"
+              class="inline-flex items-center gap-2 text-sm text-slate-300 transition hover:text-[#0873b9]"
             >
-              <ChevronRight class="h-3.5 w-3.5 text-[#3c8dfd]" />
+              <ChevronRight class="h-3.5 w-3.5 text-[#0873b9]" />
               <span>{{ link.label }}</span>
             </a>
           </nav>
@@ -65,18 +65,18 @@ const organizationLinks = [
           >
             Contact &amp; Location
           </h3>
-          <div class="mt-2 h-1 w-12 rounded bg-[#3c8dfd]" />
+          <div class="mt-2 h-1 w-12 rounded bg-[#0873b9]" />
           <address class="mt-4 flex not-italic flex-col gap-3 text-sm text-slate-300">
             <div class="flex items-center gap-3">
-              <MapPin class="h-5 w-5 text-[#3c8dfd] shrink-0" />
+              <MapPin class="h-5 w-5 text-[#0873b9] shrink-0" />
               <span>Addis Ababa, Ethiopia</span>
             </div>
             <div class="flex items-center gap-3">
-              <Mail class="h-5 w-5 text-[#3c8dfd] shrink-0" />
+              <Mail class="h-5 w-5 text-[#0873b9] shrink-0" />
               <span>info@cbhi.gov.et</span>
             </div>
             <div class="flex items-center gap-3">
-              <Globe class="h-5 w-5 text-[#3c8dfd] shrink-0" />
+              <Globe class="h-5 w-5 text-[#0873b9] shrink-0" />
               <span>www.cbhi.et</span>
             </div>
           </address>
@@ -89,14 +89,14 @@ const organizationLinks = [
           >
             Verification &amp; Security
           </h3>
-          <div class="mt-2 h-1 w-12 rounded bg-[#3c8dfd]" />
+          <div class="mt-2 h-1 w-12 rounded bg-[#0873b9]" />
           <div class="mt-4 flex flex-col gap-3">
             <div class="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 p-2.5 text-xs text-slate-300">
               <ShieldCheck class="h-5 w-5 text-green-400 shrink-0" />
               <span>Fayda ID Integrated</span>
             </div>
             <div class="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/60 p-2.5 text-xs text-slate-300">
-              <ShieldCheck class="h-5 w-5 text-[#3c8dfd] shrink-0" />
+              <ShieldCheck class="h-5 w-5 text-[#0873b9] shrink-0" />
               <span>INSA Security Certified</span>
             </div>
           </div>

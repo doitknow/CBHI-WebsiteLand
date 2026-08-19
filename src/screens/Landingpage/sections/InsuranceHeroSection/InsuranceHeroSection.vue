@@ -61,7 +61,7 @@ const partnerCards = [
     // name: "CBHI Ethiopian",
     imageClassName: "h-[85px] w-[145px] object-contain transition-transform duration-300 group-hover:scale-105",
     contentClassName:
-      "items-center rounded-l-[20px] border-b-[3px] border-l border-r-[3px] border-[#3c8dfd] px-8 py-[12px] sm:pl-[48px]",
+      "items-center rounded-l-[20px] border-b-[3px] border-l border-r-[3px] border-[#0873b9] px-8 py-[12px] sm:pl-[48px]",
   },
   {
     image: "/moh_1.png",
@@ -69,7 +69,7 @@ const partnerCards = [
     // name: "Ministry of Health",
     imageClassName: "h-[85px] w-[150px] object-contain transition-transform duration-300 group-hover:scale-105",
     contentClassName:
-      "items-center rounded-r-[20px] border-b-[3px] border-l-[3px] border-r border-[#3c8dfd] px-8 py-[12px] sm:pr-[36px]",
+      "items-center rounded-r-[20px] border-b-[3px] border-l-[3px] border-r border-[#0873b9] px-8 py-[12px] sm:pr-[36px]",
   },
 ];
 </script>
@@ -128,20 +128,20 @@ const partnerCards = [
             <path
               class="dark-wave"
               d="M0 397 L0 80 C 0 397 120 429 155 397 C190 365 225 350 232 305 C240 255 263 225 300 194 C347 155 397 137 430 105 C465 71 475 35 526 12 C548 2 575 0 610 0 L900 0 L900 397 Z"
-              fill="#3C8DFD"
+              fill="#0873b9"
               opacity="0.08"
               filter="blur(2px)"
             />
             <path
               class="middle-wave"
               d="M0 397 L0 150 C 0 397 175 445 205 397 C225 365 260 354 270 313 C282 264 298 236 335 208 C377 176 426 157 457 128 C489 98 501 57 535 28 C552 13 575 4 605 0 L900 0 L900 397 Z"
-              fill="#3C8DFD"
+              fill="#0873b9"
               opacity="0.14"
   
               
             />
             <g clip-path="url(#main-wave-clip)">
-              <rect width="100%" height="100%" fill="#3c8dfd" />
+              <rect width="100%" height="100%" fill="#0873b9" />
               <g 
                 class="transition-transform duration-[1800ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
                 :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
@@ -173,7 +173,7 @@ const partnerCards = [
       <!-- Subtle ambient gradient overlay -->
       <div
         aria-hidden="true"
-        class="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#3c8dfd]/[0.03] via-transparent to-[#0873b9]/[0.03] animate-gradient-shift"
+        class="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#0873b9]/[0.03] via-transparent to-[#0873b9]/[0.03] animate-gradient-shift"
       />
 
       <!-- Text content sits in the left white area of the image -->
@@ -193,7 +193,7 @@ const partnerCards = [
           class="mt-1 text-[46px] font-bold leading-[1] tracking-[0] sm:text-[62px] lg:text-[82px]"
         >
           <span class="inline-block text-[#161616] dark:text-white animate-hero-reveal anim-delay-1 mr-3 lg:mr-5">{{ t('hero.title_ethiopian') }}</span>
-          <span class="inline-block bg-gradient-to-r from-[#3c8dfd] to-[#0873b9] bg-clip-text text-transparent animate-hero-reveal anim-delay-3">
+          <span class="inline-block bg-gradient-to-r from-[#0873b9] to-[#0873b9] bg-clip-text text-transparent animate-hero-reveal anim-delay-3">
             {{ t('hero.title_health_insurance') }}
           </span>
         </h1>
@@ -207,7 +207,7 @@ const partnerCards = [
         <div class="mt-8 flex flex-wrap items-center gap-3 lg:mt-[38px] animate-slide-up-fade anim-delay-6">
           <Button
             type="button"
-            class="cta-shimmer group inline-flex h-11 items-center gap-2 rounded-xl bg-gradient-to-r from-[#3c8dfd] to-[#0873b9] px-6 text-[15px] font-semibold text-white shadow-[0_3px_12px_rgba(60,141,253,0.35)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(60,141,253,0.45)] active:scale-[0.98]"
+            class="cta-shimmer group inline-flex h-11 items-center gap-2 rounded-xl bg-gradient-to-r from-[#0873b9] to-[#0873b9] px-6 text-[15px] font-semibold text-white shadow-[0_3px_12px_rgba(8,115,185,0.35)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(8,115,185,0.45)] active:scale-[0.98]"
           >
             {{ t('hero.get_started') }}
             <ArrowRight class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -216,7 +216,7 @@ const partnerCards = [
           <Button
             type="button"
             variant="outline"
-            class="h-11 rounded-xl border-2 border-[#3c8dfd]/80 bg-white/70 px-6 text-[15px] font-semibold text-[#0873b9] backdrop-blur-sm transition-all duration-300 hover:border-[#3c8dfd] hover:bg-[#3c8dfd]/8 active:scale-[0.98]"
+            class="h-11 rounded-xl border-2 border-[#0873b9]/80 bg-white/70 px-6 text-[15px] font-semibold text-[#0873b9] backdrop-blur-sm transition-all duration-300 hover:border-[#0873b9] hover:bg-[#0873b9]/8 active:scale-[0.98]"
           >
             {{ t('hero.learn_more') }}
           </Button>
@@ -405,7 +405,7 @@ const partnerCards = [
   width: 55%;
   height: 80%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(60,141,253,0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(8,115,185,0.18) 0%, transparent 70%);
   animation: glow-ring-pulse 5s ease-in-out infinite;
   pointer-events: none;
   z-index: 0;

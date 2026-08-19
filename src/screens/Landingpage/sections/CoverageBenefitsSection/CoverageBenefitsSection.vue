@@ -43,7 +43,7 @@ const coverageBenefits = [
           class="mt-4 [font-family:'Inter',Helvetica] text-[38px] font-bold leading-[1.08] tracking-tight sm:text-[50px]"
         >
           <span class="text-[#161616] dark:text-white">{{ t('coverage.heading_coverage') }}</span>
-          <span class="bg-gradient-to-r from-[#0873b9] to-[#3c8dfd] bg-clip-text text-transparent">{{ t('coverage.heading_goes_further') }}</span>
+          <span class="bg-gradient-to-r from-[#0873b9] to-[#0873b9] bg-clip-text text-transparent">{{ t('coverage.heading_goes_further') }}</span>
         </h2>
 
         <p
@@ -68,7 +68,7 @@ const coverageBenefits = [
           class="w-full"
         >
           <Card
-            class="card-hover-glow group relative mx-auto h-[480px] w-full max-w-[390px] overflow-hidden rounded-[20px] border border-white dark:border-white/10 bg-white dark:bg-[#0B192C] shadow-[0_8px_24px_rgba(60,141,253,0.1)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(60,141,253,0.2)]"
+            class="card-hover-glow group relative mx-auto h-[480px] w-full max-w-[390px] overflow-hidden rounded-[20px] border border-white dark:border-white/10 bg-white dark:bg-[#0B192C] shadow-[0_8px_24px_rgba(8,115,185,0.1)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(8,115,185,0.2)]"
           >
             <CardContent class="relative h-full w-full p-0">
               <!-- Background Image with smooth zoom on hover -->

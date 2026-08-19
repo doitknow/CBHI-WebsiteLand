@@ -31,7 +31,7 @@ const partnerLogos = [
   <div class="w-full overflow-x-hidden bg-[#fbfcfc] dark:bg-[#021E31]">
     <!-- Top banner bar -->
     <header
-      class="flex min-h-9 items-center justify-between gap-4 bg-[linear-gradient(90deg,rgba(49,115,207,1)_3%,rgba(60,141,253,1)_55%,rgba(36,84,151,1)_100%)] px-4 sm:px-[54px]"
+      class="flex min-h-9 items-center justify-between gap-4 bg-[linear-gradient(90deg,rgba(49,115,207,1)_3%,rgba(8,115,185,1)_55%,rgba(36,84,151,1)_100%)] px-4 sm:px-[54px]"
     >
       <div class="flex items-center gap-2">
         <Phone class="h-3.5 w-3.5 shrink-0 text-white" />

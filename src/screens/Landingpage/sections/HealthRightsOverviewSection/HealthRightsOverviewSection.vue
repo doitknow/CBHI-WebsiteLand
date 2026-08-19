@@ -23,13 +23,13 @@ const healthPrinciples = [
   {
     translationKeyTitle: "health_rights.principles.equitable.title",
     translationKeyDesc: "health_rights.principles.equitable.description",
-    color: "#3c8dfd",
+    color: "#0873b9",
     icon: Scale,
   },
   {
     translationKeyTitle: "health_rights.principles.solidarity.title",
     translationKeyDesc: "health_rights.principles.solidarity.description",
-    color: "#3c8dfd",
+    color: "#0873b9",
     icon: HeartHandshake,
   },
 ];
@@ -91,7 +91,7 @@ const regionalHubs = [
     <!-- Background subtle ambient lighting -->
     <div
       aria-hidden="true"
-      class="pointer-events-none absolute -left-40 top-1/4 h-[500px] w-[500px] rounded-full bg-[#3c8dfd]/5 blur-[120px] dark:bg-[#3c8dfd]/10"
+      class="pointer-events-none absolute -left-40 top-1/4 h-[500px] w-[500px] rounded-full bg-[#0873b9]/5 blur-[120px] dark:bg-[#0873b9]/10"
     />
     <div
       aria-hidden="true"
@@ -140,9 +140,9 @@ const regionalHubs = [
                 <div class="relative mb-3.5 flex h-[46px] items-center">
                   <span
                     aria-hidden="true"
-                    class="absolute left-3 top-2 h-[34px] w-[34px] rounded-full bg-[#3c8dfd]/20 dark:bg-[#3c8dfd]/30 group-hover:scale-125 transition-transform duration-300"
+                    class="absolute left-3 top-2 h-[34px] w-[34px] rounded-full bg-[#0873b9]/20 dark:bg-[#0873b9]/30 group-hover:scale-125 transition-transform duration-300"
                   />
-                  <div class="relative z-10 flex h-[38px] w-9 items-center justify-center text-[#0873b9] dark:text-[#3c8dfd]">
+                  <div class="relative z-10 flex h-[38px] w-9 items-center justify-center text-[#0873b9] dark:text-[#0873b9]">
                     <component :is="principle.icon" class="h-6 w-6" stroke-width="2.2" />
                   </div>
                 </div>
@@ -175,39 +175,39 @@ const regionalHubs = [
               <defs>
                 <!-- Radial gradient for radar glow -->
                 <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#3c8dfd" stop-opacity="0.3" />
+                  <stop offset="0%" stop-color="#0873b9" stop-opacity="0.3" />
                   <stop offset="60%" stop-color="#0873b9" stop-opacity="0.08" />
                   <stop offset="100%" stop-color="#0873b9" stop-opacity="0" />
                 </radialGradient>
 
                 <!-- Line gradient for primary telemetry paths -->
                 <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#3c8dfd" stop-opacity="0.9" />
+                  <stop offset="0%" stop-color="#0873b9" stop-opacity="0.9" />
                   <stop offset="50%" stop-color="#0873b9" stop-opacity="0.6" />
                   <stop offset="100%" stop-color="#10b981" stop-opacity="0.9" />
                 </linearGradient>
 
                 <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#3c8dfd" stop-opacity="0" />
+                  <stop offset="0%" stop-color="#0873b9" stop-opacity="0" />
                   <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.9" />
                   <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
                 </linearGradient>
               </defs>
 
               <!-- Radar Concentric Range Rings Centered around Addis Ababa (258, 207) -->
-              <circle cx="258" cy="207" r="60" stroke="#3c8dfd" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="3 4" />
-              <circle cx="258" cy="207" r="120" stroke="#3c8dfd" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="4 6" />
-              <circle cx="258" cy="207" r="185" stroke="#3c8dfd" stroke-opacity="0.15" stroke-width="1" />
-              <circle cx="258" cy="207" r="235" stroke="#3c8dfd" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="2 5" />
+              <circle cx="258" cy="207" r="60" stroke="#0873b9" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="3 4" />
+              <circle cx="258" cy="207" r="120" stroke="#0873b9" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="4 6" />
+              <circle cx="258" cy="207" r="185" stroke="#0873b9" stroke-opacity="0.15" stroke-width="1" />
+              <circle cx="258" cy="207" r="235" stroke="#0873b9" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="2 5" />
 
               <!-- Animated Expanding Radar Waves -->
               <circle cx="258" cy="207" r="30" stroke="#38bdf8" stroke-opacity="0.6" class="radar-ring" fill="url(#radarGlow)" />
-              <circle cx="258" cy="207" r="30" stroke="#3c8dfd" stroke-opacity="0.5" class="radar-ring-2" fill="none" />
+              <circle cx="258" cy="207" r="30" stroke="#0873b9" stroke-opacity="0.5" class="radar-ring-2" fill="none" />
               <circle cx="258" cy="207" r="30" stroke="#10b981" stroke-opacity="0.4" class="radar-ring-3" fill="none" />
 
               <!-- Crosshair Grid Axes -->
-              <line x1="40" y1="207" x2="480" y2="207" stroke="#3c8dfd" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
-              <line x1="258" y1="30" x2="258" y2="400" stroke="#3c8dfd" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
+              <line x1="40" y1="207" x2="480" y2="207" stroke="#0873b9" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
+              <line x1="258" y1="30" x2="258" y2="400" stroke="#0873b9" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
 
               <!-- Health Network Curved Telemetry Arcs Connecting Ethiopian Regions -->
               <!-- Center (258,207) to North (231,108) -->
@@ -220,9 +220,9 @@ const regionalHubs = [
               <path d="M 258 207 L 132 234" stroke="url(#pathGradient)" stroke-width="2" class="data-flow-line" opacity="0.8" />
 
               <!-- Regional Interconnection Arcs -->
-              <path d="M 231 108 Q 320 130 374 202" stroke="#3c8dfd" stroke-opacity="0.4" stroke-width="1.5" class="data-flow-line-reverse" fill="none" />
+              <path d="M 231 108 Q 320 130 374 202" stroke="#0873b9" stroke-opacity="0.4" stroke-width="1.5" class="data-flow-line-reverse" fill="none" />
               <path d="M 374 202 Q 330 290 242 315" stroke="#10b981" stroke-opacity="0.35" stroke-width="1.5" class="data-flow-line" fill="none" />
-              <path d="M 242 315 Q 170 300 132 234" stroke="#3c8dfd" stroke-opacity="0.4" stroke-width="1.5" class="data-flow-line-reverse" fill="none" />
+              <path d="M 242 315 Q 170 300 132 234" stroke="#0873b9" stroke-opacity="0.4" stroke-width="1.5" class="data-flow-line-reverse" fill="none" />
               <path d="M 132 234 Q 160 150 231 108" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" class="data-flow-line" fill="none" />
 
               <!-- Live EKG / Heartbeat Telemetry Line across bottom -->
@@ -240,7 +240,7 @@ const regionalHubs = [
             <!-- Layer 3: Ethiopia Map Image with 3D Depth Shadow -->
             <div class="relative z-10 flex items-center justify-center w-full h-full py-4">
               <img
-                class="relative h-[340px] sm:h-[390px] lg:h-[420px] w-auto max-w-full object-contain filter drop-shadow-[0_12px_28px_rgba(8,115,185,0.22)] dark:drop-shadow-[0_16px_36px_rgba(60,141,253,0.35)] transition-transform duration-700 hover:scale-[1.01]"
+                class="relative h-[340px] sm:h-[390px] lg:h-[420px] w-auto max-w-full object-contain filter drop-shadow-[0_12px_28px_rgba(8,115,185,0.22)] dark:drop-shadow-[0_16px_36px_rgba(8,115,185,0.35)] transition-transform duration-700 hover:scale-[1.01]"
                 alt="Map of Ethiopia - CBHI National Coverage Network"
                 src="/map-Photoroom.png"
               />
@@ -259,7 +259,7 @@ const regionalHubs = [
                 class="absolute -inset-2.5 rounded-full opacity-75"
                 :class="[
                   hub.isPrimary 
-                    ? 'bg-[#3c8dfd] animate-ping' 
+                    ? 'bg-[#0873b9] animate-ping' 
                     : 'bg-emerald-400 group-hover:animate-ping'
                 ]"
               />
@@ -269,7 +269,7 @@ const regionalHubs = [
                 class="relative flex items-center justify-center rounded-full border-2 transition-all duration-300 shadow-md"
                 :class="[
                   hub.isPrimary
-                    ? 'h-6 w-6 bg-gradient-to-tr from-[#0873b9] to-[#3c8dfd] border-white text-white scale-110'
+                    ? 'h-6 w-6 bg-gradient-to-tr from-[#0873b9] to-[#0873b9] border-white text-white scale-110'
                     : 'h-4 w-4 bg-emerald-500 border-white dark:border-slate-900 group-hover:scale-125'
                 ]"
               >
@@ -289,13 +289,13 @@ const regionalHubs = [
                 
                 <div class="relative z-10 flex items-center gap-2 border-b border-slate-100 dark:border-white/5 pb-1.5 mb-1.5">
                   <span class="relative flex h-2 w-2 shrink-0">
-                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" :class="hub.isPrimary ? 'bg-[#3c8dfd]' : 'bg-emerald-400'"></span>
+                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" :class="hub.isPrimary ? 'bg-[#0873b9]' : 'bg-emerald-400'"></span>
                     <span class="relative inline-flex h-2 w-2 rounded-full" :class="hub.isPrimary ? 'bg-[#0873b9]' : 'bg-emerald-500'"></span>
                   </span>
                   <p class="text-[11px] font-bold text-slate-800 dark:text-white">{{ hub.name }}</p>
                 </div>
                 <div class="relative z-10 text-left">
-                  <p class="text-[9px] font-bold uppercase tracking-wider text-[#0873b9] dark:text-[#3c8dfd]">{{ hub.region }}</p>
+                  <p class="text-[9px] font-bold uppercase tracking-wider text-[#0873b9] dark:text-[#0873b9]">{{ hub.region }}</p>
                   <span class="mt-0.5 block text-[10.5px] text-slate-600 dark:text-slate-300 font-medium whitespace-nowrap">{{ hub.stat }}</span>
                 </div>
               </div>
@@ -307,7 +307,7 @@ const regionalHubs = [
             <div
               class="animate-float absolute -top-3 -right-2 sm:-right-4 z-20 flex items-center gap-3 rounded-2xl border border-white/90 dark:border-white/15 bg-white/90 dark:bg-[#062c45]/90 p-2.5 sm:px-3.5 sm:py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.08)] backdrop-blur-md transition-all duration-300 hover:scale-105"
             >
-              <div class="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#3c8dfd] to-[#0873b9] text-white shadow-md">
+              <div class="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#0873b9] to-[#0873b9] text-white shadow-md">
                 <ShieldCheck class="h-5 w-5" />
               </div>
               <div>
@@ -339,8 +339,8 @@ const regionalHubs = [
             <div
               class="animate-float absolute bottom-2 sm:bottom-4 right-1 sm:right-3 z-20 hidden xs:flex items-center gap-2 rounded-full border border-blue-200/70 dark:border-blue-500/20 bg-blue-50/90 dark:bg-[#083554]/90 px-3 py-1.5 shadow-sm backdrop-blur-md"
             >
-              <HeartHandshake class="h-4 w-4 text-[#0873b9] dark:text-[#3c8dfd]" />
-              <span class="text-[11px] font-bold text-[#0873b9] dark:text-[#3c8dfd]">100% Community Solidarity</span>
+              <HeartHandshake class="h-4 w-4 text-[#0873b9] dark:text-[#0873b9]" />
+              <span class="text-[11px] font-bold text-[#0873b9] dark:text-[#0873b9]">100% Community Solidarity</span>
             </div>
 
           </div>
@@ -355,7 +355,7 @@ const regionalHubs = [
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="86.5" cy="86.5" r="85" stroke="#3c8dfd" stroke-opacity="0.15" stroke-width="3"/>
+      <circle cx="86.5" cy="86.5" r="85" stroke="#0873b9" stroke-opacity="0.15" stroke-width="3"/>
     </svg>
   </section>
 </template>

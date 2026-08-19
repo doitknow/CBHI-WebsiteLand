@@ -14,6 +14,7 @@ const { t } = useI18n();
 
 const slideImages = [ slide2, slide3];
 const currentSlide = ref(0);
+const heroLoaded = ref(false);
 let slideInterval: number | undefined;
 
 const startInterval = () => {
@@ -41,6 +42,10 @@ const nextSlide = () => {
 
 onMounted(() => {
   startInterval();
+  // Trigger entrance animation after a tiny paint delay
+  requestAnimationFrame(() => {
+    heroLoaded.value = true;
+  });
 });
 
 onUnmounted(() => {
@@ -82,8 +87,27 @@ const partnerCards = [
         padding-bottom: 100px;
       "
     >
-      <!-- Animated SVG Wave Background -->
-      <div class="pointer-events-none absolute inset-0 overflow-hidden bg-transparent">
+      <!-- Animated SVG Wave Background with Cinematic Entrance -->
+      <div
+        class="pointer-events-none absolute inset-0 overflow-hidden bg-transparent hero-image-area"
+        :class="{ 'hero-image-entered': heroLoaded }"
+      >
+        <!-- Glow ring behind the image area -->
+        <div class="hero-glow-ring" />
+
+        <!-- Floating particle dots -->
+        <div class="hero-particles" aria-hidden="true">
+          <span class="particle p1" />
+          <span class="particle p2" />
+          <span class="particle p3" />
+          <span class="particle p4" />
+          <span class="particle p5" />
+          <span class="particle p6" />
+        </div>
+
+        <!-- Light sweep overlay -->
+        <div class="hero-light-sweep" />
+
         <div class="wave">
           <svg
             viewBox="0 0 900 397"
@@ -116,13 +140,6 @@ const partnerCards = [
   
               
             />
-            <!-- <path
-              class="thin-wave"
-              d="M0 250 C 0 397 227 426 240 397 C253 368 285 354 296 315 C308 270 321 244 358 216 C397 187 445 168 477 139 C510 109 516 70 550 35 C571 14 595 3 630 0"
-              fill="none"
-              stroke="#3c8dfd"
-              stroke-width="18"
-            /> -->
             <g clip-path="url(#main-wave-clip)">
               <rect width="100%" height="100%" fill="#3c8dfd" />
               <g 
@@ -136,7 +153,8 @@ const partnerCards = [
                   width="100%"
                   height="100%"
                   :x="`${index * 100}%`"
-                   preserveAspectRatio="xMidYMid slice"
+                  preserveAspectRatio="xMidYMid slice"
+                  :class="['hero-slide-image', { 'slide-active': currentSlide === index }]"
                 />
               </g>
             </g>
@@ -291,6 +309,7 @@ const partnerCards = [
 </template>
 
 <style scoped>
+/* ── Base wave styles ── */
 .wave {
   position: absolute;
   top: 0;
@@ -323,38 +342,186 @@ const partnerCards = [
 }
 
 @keyframes darkFlow {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-8px);
-  }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-8px); }
 }
 
 @keyframes middleFlow {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-5px);
-  }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-5px); }
 }
 
 @keyframes mainFlow {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-3px);
-  }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-3px); }
 }
 
 @keyframes thinFlow {
-  from {
-    transform: translateX(0);
+  from { transform: translateX(0); }
+  to   { transform: translateX(-4px); }
+}
+
+/* ═══════════════════════════════════════════
+   ✦ Cinematic Hero Entrance Effects
+   ═══════════════════════════════════════════ */
+
+/* 1. Curtain reveal — the whole image area slides in and fades up */
+.hero-image-area {
+  opacity: 0;
+  transform: scale(1.06) translateY(18px);
+  filter: blur(6px);
+  transition:
+    opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1.2s ease-out;
+}
+
+.hero-image-entered {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  filter: blur(0);
+}
+
+/* 2. Ken Burns — slow zoom on active slide image */
+.hero-slide-image {
+  transform-origin: center center;
+  transition: transform 0.8s ease;
+}
+
+.slide-active {
+  animation: ken-burns 7s ease-in-out forwards;
+}
+
+@keyframes ken-burns {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+/* 3. Glow ring — soft pulsing accent behind the image */
+.hero-glow-ring {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 55%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(60,141,253,0.18) 0%, transparent 70%);
+  animation: glow-ring-pulse 5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes glow-ring-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
   }
-  to {
-    transform: translateX(-4px);
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+/* 4. Light sweep — diagonal shine across the image on load */
+.hero-light-sweep {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 35%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.08) 65%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+  animation: light-sweep-pass 2.8s 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes light-sweep-pass {
+  0%   { left: -120%; opacity: 0; }
+  10%  { opacity: 1; }
+  100% { left: 180%; opacity: 0; }
+}
+
+/* 5. Floating particles — soft glowing dots that drift upward */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(60, 141, 253, 0.5);
+  box-shadow: 0 0 6px rgba(60, 141, 253, 0.4);
+  animation: particle-float linear infinite;
+}
+
+.p1 {
+  width: 4px; height: 4px;
+  left: 62%; bottom: -8px;
+  animation-duration: 9s;
+  animation-delay: 0.3s;
+}
+.p2 {
+  width: 3px; height: 3px;
+  left: 75%; bottom: -6px;
+  animation-duration: 11s;
+  animation-delay: 1.5s;
+  background: rgba(56, 139, 248, 0.6);
+}
+.p3 {
+  width: 5px; height: 5px;
+  left: 55%; bottom: -10px;
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+.p4 {
+  width: 3px; height: 3px;
+  left: 82%; bottom: -6px;
+  animation-duration: 12s;
+  animation-delay: 0.8s;
+  background: rgba(255, 255, 255, 0.35);
+}
+.p5 {
+  width: 4px; height: 4px;
+  left: 68%; bottom: -8px;
+  animation-duration: 10s;
+  animation-delay: 4s;
+  background: rgba(34, 197, 94, 0.4);
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.3);
+}
+.p6 {
+  width: 2px; height: 2px;
+  left: 90%; bottom: -4px;
+  animation-duration: 14s;
+  animation-delay: 2s;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(0) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(-40px) translateX(5px) scale(1);
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-700px) translateX(-20px) scale(0.3);
+    opacity: 0;
   }
 }
 </style>

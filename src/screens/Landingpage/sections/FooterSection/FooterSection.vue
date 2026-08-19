@@ -178,7 +178,11 @@ const { t } = useI18n();
         <p class="flex items-center gap-1.5 text-[13px] font-medium text-[#71717a]">
           {{ t('footer.powered_by') }} 
           <span class="flex items-center tracking-wide">
-            <span class="text-[#0873b9] font-black text-[14px]">{{ t('footer.medco') }}</span>
+            <img
+              class="h-7 w-auto object-contain"
+              alt="Medco"
+              src="/medco update.png"
+            />
           </span>
           <span class="text-[#a1a1aa]">{{ t('footer.medco_tech') }}</span>
         </p>

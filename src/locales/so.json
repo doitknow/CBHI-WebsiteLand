@@ -121,7 +121,7 @@
     },
     "contact_title": "Contact",
     "address": "Addis Ababa, Ethiopia",
-    "email": "info@edhn.dh.moh.gov.et",
+    "email": "info{'@'}edhn.dh.moh.gov.et",
     "follow_title": "Follow Us",
     "fayda_badge": "Fayda ID Integrated",
     "inasa_badge": "INASA Verified",

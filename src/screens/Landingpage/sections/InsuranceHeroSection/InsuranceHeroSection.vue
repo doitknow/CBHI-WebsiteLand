@@ -180,13 +180,6 @@ const partnerCards = [
       <div
         class="relative z-10 flex flex-col items-start px-8 pt-[50px] sm:px-16 lg:w-[46%] lg:px-[101px] lg:pt-[52px]"
       >
-        <p class="animate-hero-reveal inline-flex items-center gap-2 text-[15px] font-bold tracking-widest uppercase text-emerald-600">
-          <span class="relative flex h-2.5 w-2.5">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-          </span>
-          {{ t('hero.welcome') }}
-        </p>
 
         <h1
           id="insurance-hero-title"

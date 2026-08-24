@@ -86,7 +86,7 @@ const regionalHubs = [
 <template>
   <section
     aria-labelledby="health-rights-heading"
-    class="relative w-full overflow-hidden bg-white dark:bg-[#021E31] py-14 sm:py-16 [font-family:'Inter',Helvetica]"
+    class="relative w-full overflow-hidden bg-white dark:bg-[#021E31] py-10 sm:py-14 md:py-16 [font-family:'Inter',Helvetica]"
   >
     <!-- Background subtle ambient lighting -->
     <div
@@ -99,7 +99,7 @@ const regionalHubs = [
     />
 
     <div
-      class="mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-12 px-6 sm:px-8 lg:grid-cols-[minmax(0,580px)_minmax(0,1fr)] lg:gap-14 lg:px-10 xl:px-6"
+      class="mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-8 sm:gap-10 lg:gap-14 px-4 xs:px-6 sm:px-8 lg:grid-cols-[minmax(0,580px)_minmax(0,1fr)] lg:px-10 xl:px-6"
     >
       <!-- Left text content -->
       <div class="relative z-10 flex flex-col items-start">
@@ -108,7 +108,7 @@ const regionalHubs = [
           <div class="flex flex-col">
             <h2
               id="health-rights-heading"
-              class="text-[44px] font-black leading-[1.08] tracking-tight text-[#161616] dark:text-white sm:text-[54px] lg:text-[58px]"
+              class="text-[28px] xs:text-[32px] sm:text-[40px] md:text-[48px] lg:text-[58px] font-black leading-[1.08] tracking-tight text-[#161616] dark:text-white"
             >
               <span class="block">{{ t('health_rights.heading_health') }}</span>
               <span class="block">{{ t('health_rights.heading_is_everyone_right') }}<span class="text-[#0873b9]">{{ t('health_rights.heading_right') }}</span></span>
@@ -118,12 +118,12 @@ const regionalHubs = [
 
         <ScrollReveal direction="up" :delay="150" duration="0.8s">
           <p
-            class="mt-5 max-w-[618px] text-[15.5px] font-normal leading-relaxed tracking-[0] text-[#71717a] dark:text-slate-300"
+            class="mt-4 sm:mt-5 max-w-[618px] text-[13.5px] sm:text-[14.5px] lg:text-[15.5px] font-normal leading-relaxed tracking-[0] text-[#71717a] dark:text-slate-300"
           >
             {{ t('health_rights.description') }}
           </p>
         </ScrollReveal>
-        <div class="mt-10 sm:mt-12 grid w-full grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-12">
+        <div class="mt-8 sm:mt-10 lg:mt-12 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:gap-12">
           <ScrollReveal
             v-for="(principle, i) in healthPrinciples"
             :key="i"
@@ -162,7 +162,7 @@ const regionalHubs = [
       <ScrollReveal direction="right" duration="1s" :delay="200">
         <div class="relative mx-auto w-full max-w-[560px]">
           <!-- Main visual wrapper with responsive aspect ratio -->
-          <div class="relative min-h-[420px] sm:min-h-[480px] lg:min-h-[510px] w-full rounded-3xl p-4 sm:p-6 overflow-visible">
+          <div class="relative min-h-[280px] xs:min-h-[340px] sm:min-h-[420px] lg:min-h-[510px] w-full rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 overflow-visible">
             
 
             <!-- Layer 2: Futuristic SVG Radar Grid & Health Coverage Matrix -->
@@ -240,7 +240,7 @@ const regionalHubs = [
             <!-- Layer 3: Ethiopia Map Image with 3D Depth Shadow -->
             <div class="relative z-10 flex items-center justify-center w-full h-full py-4">
               <img
-                class="relative h-[340px] sm:h-[390px] lg:h-[420px] w-auto max-w-full object-contain filter drop-shadow-[0_12px_28px_rgba(8,115,185,0.22)] dark:drop-shadow-[0_16px_36px_rgba(8,115,185,0.35)] transition-transform duration-700 hover:scale-[1.01]"
+                class="relative h-[220px] xs:h-[280px] sm:h-[340px] lg:h-[420px] w-auto max-w-full object-contain filter drop-shadow-[0_12px_28px_rgba(8,115,185,0.22)] dark:drop-shadow-[0_16px_36px_rgba(8,115,185,0.35)] transition-transform duration-700 hover:scale-[1.01]"
                 alt="Map of Ethiopia - CBHI National Coverage Network"
                 src="/map-Photoroom.png"
               />
@@ -305,9 +305,9 @@ const regionalHubs = [
             
             <!-- Top Right: Universal Access Metric -->
             <div
-              class="animate-float absolute -top-3 -right-2 sm:-right-4 z-20 flex items-center gap-3 rounded-2xl border border-white/90 dark:border-white/15 bg-white/90 dark:bg-[#062c45]/90 p-2.5 sm:px-3.5 sm:py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.08)] backdrop-blur-md transition-all duration-300 hover:scale-105"
+              class="animate-float absolute -top-2 sm:-top-3 -right-1 sm:-right-4 z-20 flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-white/90 dark:border-white/15 bg-white/90 dark:bg-[#062c45]/90 p-2 sm:p-2.5 md:px-3.5 md:py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.08)] backdrop-blur-md transition-all duration-300 hover:scale-105"
             >
-              <div class="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#0873b9] to-[#0873b9] text-white shadow-md">
+              <div class="flex h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-[#0873b9] to-[#0873b9] text-white shadow-md">
                 <ShieldCheck class="h-5 w-5" />
               </div>
               <div>
@@ -316,28 +316,28 @@ const regionalHubs = [
                     <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                     <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
                   </span>
-                  <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Universal Access</span>
+                  <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Universal Access</span>
                 </div>
-                <p class="text-xs sm:text-sm font-extrabold text-[#161616] dark:text-white">1,000+ Woredas Active</p>
+                <p class="text-[10px] sm:text-xs md:text-sm font-extrabold text-[#161616] dark:text-white">1,000+ Woredas Active</p>
               </div>
             </div>
 
             <!-- Bottom Left: Health Facilities Metric -->
             <div
-              class="animate-float-delayed absolute -bottom-3 -left-2 sm:-left-4 z-20 flex items-center gap-3 rounded-2xl border border-white/90 dark:border-white/15 bg-white/90 dark:bg-[#062c45]/90 p-2.5 sm:px-3.5 sm:py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.08)] backdrop-blur-md transition-all duration-300 hover:scale-105"
+              class="animate-float-delayed absolute -bottom-2 sm:-bottom-3 -left-1 sm:-left-4 z-20 flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-white/90 dark:border-white/15 bg-white/90 dark:bg-[#062c45]/90 p-2 sm:p-2.5 md:px-3.5 md:py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.08)] backdrop-blur-md transition-all duration-300 hover:scale-105"
             >
-              <div class="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-md">
+              <div class="flex h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-md">
                 <Activity class="h-5 w-5" />
               </div>
               <div>
-                <span class="text-[10px] sm:text-[11px] font-semibold text-slate-500 dark:text-slate-400">Verified Network</span>
-                <p class="text-xs sm:text-sm font-extrabold text-[#161616] dark:text-white">2,400+ Health Centers</p>
+                <span class="text-[9px] sm:text-[10px] md:text-[11px] font-semibold text-slate-500 dark:text-slate-400">Verified Network</span>
+                <p class="text-[10px] sm:text-xs md:text-sm font-extrabold text-[#161616] dark:text-white">2,400+ Health Centers</p>
               </div>
             </div>
 
             <!-- Bottom Right: Solidarity Pill Badge -->
             <div
-              class="animate-float absolute bottom-2 sm:bottom-4 right-1 sm:right-3 z-20 hidden xs:flex items-center gap-2 rounded-full border border-blue-200/70 dark:border-blue-500/20 bg-blue-50/90 dark:bg-[#083554]/90 px-3 py-1.5 shadow-sm backdrop-blur-md"
+              class="animate-float absolute bottom-1 sm:bottom-4 right-0 sm:right-3 z-20 hidden sm:flex items-center gap-2 rounded-full border border-blue-200/70 dark:border-blue-500/20 bg-blue-50/90 dark:bg-[#083554]/90 px-2.5 sm:px-3 py-1 sm:py-1.5 shadow-sm backdrop-blur-md"
             >
               <HeartHandshake class="h-4 w-4 text-[#0873b9] dark:text-[#0873b9]" />
               <span class="text-[11px] font-bold text-[#0873b9] dark:text-[#0873b9]">100% Community Solidarity</span>

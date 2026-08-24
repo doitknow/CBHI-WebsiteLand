@@ -13,7 +13,7 @@ const { t } = useI18n();
   >
     <!-- Main footer background -->
     <div
-      class="relative bg-[#021326] px-6 pb-6 pt-20 sm:px-8 lg:px-16"
+      class="relative bg-[#021326] px-4 xs:px-6 pb-6 pt-14 sm:pt-20 sm:px-8 lg:px-16"
       style="background: linear-gradient(180deg, #021429 0%, #000000 100%);"
     >
       <!-- "Get in Touch" floating pill -->
@@ -28,12 +28,12 @@ const { t } = useI18n();
         </div>
       </ScrollReveal> -->
 
-      <div class="mx-auto grid max-w-[1238px] grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="mx-auto grid max-w-[1238px] grid-cols-1 gap-8 sm:gap-12 sm:grid-cols-2 lg:grid-cols-4">
         
         <!-- Column 1: Brand -->
         <ScrollReveal direction="up" :stagger-index="0" :stagger-delay="100" :delay="100" duration="0.8s">
           <div class="flex flex-col gap-3">
-            <h3 class="text-[46px] font-black leading-none tracking-tight text-white">
+            <h3 class="text-[32px] sm:text-[38px] lg:text-[46px] font-black leading-none tracking-tight text-white">
               CBHI<span class="text-[#0873b9]">.et</span>
             </h3>
             <p class="mt-1 text-[13px] font-bold tracking-widest text-[#a1a1aa] uppercase">
@@ -168,14 +168,14 @@ const { t } = useI18n();
       </div>
 
       <!-- Separator -->
-      <div class="mx-auto mt-20 h-px max-w-[1238px] bg-white/10" />
+      <div class="mx-auto mt-12 sm:mt-20 h-px max-w-[1238px] bg-white/10" />
 
       <!-- Bottom row -->
-      <div class="mx-auto mt-6 flex max-w-[1238px] flex-col items-center justify-between gap-4 pb-4 sm:flex-row sm:gap-0">
-        <p class="text-[13px] font-medium tracking-wide text-[#71717a]">
+      <div class="mx-auto mt-5 sm:mt-6 flex max-w-[1238px] flex-col items-center justify-between gap-3 sm:gap-4 pb-4 sm:flex-row sm:gap-0">
+        <p class="text-[12px] sm:text-[13px] font-medium tracking-wide text-[#71717a] text-center sm:text-left">
           {{ t('footer.copyright') }}
         </p>
-        <p class="flex items-center gap-1.5 text-[13px] font-medium text-[#71717a]">
+        <p class="flex items-center gap-1.5 text-[12px] sm:text-[13px] font-medium text-[#71717a] flex-wrap justify-center sm:justify-start">
           {{ t('footer.powered_by') }} 
           <span class="flex items-center tracking-wide">
             <img

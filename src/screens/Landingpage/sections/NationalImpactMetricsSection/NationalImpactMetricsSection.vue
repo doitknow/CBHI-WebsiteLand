@@ -64,17 +64,17 @@ onUnmounted(() => {
 <template>
   <section
     ref="sectionRef"
-    class="relative w-full overflow-hidden bg-white dark:bg-[#021E31] px-4 py-16 sm:px-8 lg:px-[101px]"
+    class="relative w-full overflow-hidden bg-white dark:bg-[#021E31] px-3 xs:px-4 sm:px-8 py-12 sm:py-16 lg:px-[101px]"
     aria-labelledby="national-impact-heading"
   >
     <!-- Heading pill -->
     <ScrollReveal direction="down" duration="0.7s" class="relative z-20">
       <div
-        class="mx-auto flex h-24 w-full max-w-[686px] items-center justify-center rounded-2xl bg-white dark:bg-[#0B192C] px-6 shadow-md ring-1 ring-slate-100 dark:ring-white/10"
+        class="mx-auto flex h-16 sm:h-20 md:h-24 w-full max-w-[686px] items-center justify-center rounded-xl sm:rounded-2xl bg-white dark:bg-[#0B192C] px-4 sm:px-6 shadow-md ring-1 ring-slate-100 dark:ring-white/10"
       >
         <h2
           id="national-impact-heading"
-          class="text-center [font-family:'Inter',Helvetica] text-[34px] font-extrabold leading-none tracking-tight sm:text-[42px]"
+          class="text-center [font-family:'Inter',Helvetica] text-[22px] xs:text-[26px] sm:text-[34px] md:text-[42px] font-extrabold leading-none tracking-tight"
         >
           <span class="text-[#161616] dark:text-white">{{ t('impact.heading_national') }}</span>
           <span class="text-[#161616] dark:text-white">{{ t('impact.heading_and') }}</span>
@@ -86,11 +86,11 @@ onUnmounted(() => {
     <!-- Blue gradient banner -->
     <ScrollReveal direction="up" :delay="100" duration="0.9s" class="relative z-10">
       <div
-        class="mx-auto -mt-12 flex w-full max-w-[1100px] flex-col items-center rounded-[20px] bg-gradient-to-b from-[#0873b9] to-[#064e82] dark:from-[#083a63] dark:to-[#041d33] px-4 pt-20 pb-28 shadow-xl animate-gradient-shift"
+        class="mx-auto -mt-8 sm:-mt-10 md:-mt-12 flex w-full max-w-[1100px] flex-col items-center rounded-[16px] sm:rounded-[20px] bg-gradient-to-b from-[#0873b9] to-[#064e82] dark:from-[#083a63] dark:to-[#041d33] px-3 sm:px-4 pt-14 sm:pt-18 md:pt-20 pb-20 sm:pb-24 md:pb-28 shadow-xl animate-gradient-shift"
         style="background-size: 200% 200%;"
       >
         <p
-          class="max-w-[600px] text-center [font-family:'Inter',Helvetica] text-[14.5px] font-normal leading-relaxed text-[#e1e1e1]"
+          class="max-w-[600px] text-center [font-family:'Inter',Helvetica] text-[12.5px] sm:text-[13.5px] md:text-[14.5px] font-normal leading-relaxed text-[#e1e1e1] px-2"
         >
           {{ t('impact.subtitle') }}
         </p>
@@ -110,7 +110,7 @@ onUnmounted(() => {
 
     <!-- Metric cards overlapping bottom of banner (Stay white in dark mode) -->
     <div
-      class="relative z-30 mx-auto -mt-20 grid w-full max-w-[800px] grid-cols-1 gap-6 sm:grid-cols-3"
+      class="relative z-30 mx-auto -mt-14 sm:-mt-16 md:-mt-20 grid w-full max-w-[800px] grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6 px-4 sm:px-0"
     >
       <ScrollReveal
         v-for="(metric, idx) in impactMetrics"
@@ -122,17 +122,17 @@ onUnmounted(() => {
         duration="0.8s"
       >
         <Card
-          class="card-hover-glow group flex h-[160px] flex-col items-center justify-center rounded-xl border border-slate-200/80 bg-white shadow-lg transition-transform hover:-translate-y-1"
+          class="card-hover-glow group flex h-[140px] sm:h-[160px] flex-col items-center justify-center rounded-xl border border-slate-200/80 bg-white shadow-lg transition-transform hover:-translate-y-1"
         >
           <CardContent class="flex flex-col items-center p-0">
             <div
-              class="mb-3 flex h-10 w-14 items-center justify-center rounded-xl bg-blue-50 text-[#0873b9] transition-all duration-300 group-hover:bg-[#0873b9] group-hover:text-white"
+              class="mb-2 sm:mb-3 flex h-8 w-12 sm:h-10 sm:w-14 items-center justify-center rounded-lg sm:rounded-xl bg-blue-50 text-[#0873b9] transition-all duration-300 group-hover:bg-[#0873b9] group-hover:text-white"
             >
-              <component :is="metric.icon" class="h-6 w-6" />
+              <component :is="metric.icon" class="h-5 w-5 sm:h-6 sm:w-6" />
             </div>
 
             <p
-              class="text-center [font-family:'Inter',Helvetica] text-[36px] font-black leading-none text-[#0b4d8c]"
+              class="text-center [font-family:'Inter',Helvetica] text-[28px] sm:text-[36px] font-black leading-none text-[#0b4d8c]"
             >
               {{ counts[idx] }}{{ metric.suffix }}
             </p>
@@ -149,22 +149,22 @@ onUnmounted(() => {
 
     <!-- Fayda + INSA verification badges with hover elevation -->
     <div
-      class="mx-auto mt-12 flex w-full max-w-[840px] flex-col items-center justify-center gap-4 sm:flex-row sm:gap-0"
+      class="mx-auto mt-8 sm:mt-12 flex w-full max-w-[840px] flex-col items-center justify-center gap-4 sm:flex-row sm:gap-0 px-3 sm:px-0"
     >
       <!-- Fayda Integrated -->
       <ScrollReveal direction="left" :delay="400" duration="0.8s">
         <div
-          class="card-hover-glow group relative flex h-[82px] w-full items-center rounded-2xl border border-slate-200/80 dark:border-[#103d63] bg-white dark:bg-[#041527] pl-[88px] pr-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:w-[390px] sm:rounded-l-[50px] sm:rounded-r-none"
+          class="card-hover-glow group relative flex h-[72px] sm:h-[82px] w-full items-center rounded-2xl border border-slate-200/80 dark:border-[#103d63] bg-white dark:bg-[#041527] pl-[72px] sm:pl-[88px] pr-4 sm:pr-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:w-[390px] sm:rounded-l-[50px] sm:rounded-r-none"
         >
           <img
-            class="absolute left-3 h-[60px] w-[60px] rounded-full object-cover transition-transform duration-300 group-hover:scale-105 sm:left-2"
+            class="absolute left-2 sm:left-3 h-[48px] w-[48px] sm:h-[60px] sm:w-[60px] rounded-full object-cover transition-transform duration-300 group-hover:scale-105 sm:left-2"
             alt="Fayda National ID"
             src="/fayda-Photoroom.png"
             loading="lazy"
           />
           <div>
             <p
-              class="[font-family:'Inter',Helvetica] text-[20px] font-bold tracking-tight text-[#1F576E] dark:text-[#2daae1]"
+              class="[font-family:'Inter',Helvetica] text-[16px] sm:text-[20px] font-bold tracking-tight text-[#1F576E] dark:text-[#2daae1]"
             >
               {{ t('impact.fayda.title') }}
             </p>
@@ -187,11 +187,11 @@ onUnmounted(() => {
       <!-- INSA Certified -->
       <ScrollReveal direction="right" :delay="500" duration="0.8s">
         <div
-          class="card-hover-glow group relative flex h-[82px] w-full items-center justify-end rounded-2xl border border-slate-200/80 dark:border-[#1a2d42] bg-white dark:bg-[#041527] pl-6 pr-[88px] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:w-[390px] sm:rounded-l-none sm:rounded-r-[50px]"
+          class="card-hover-glow group relative flex h-[72px] sm:h-[82px] w-full items-center justify-end rounded-2xl border border-slate-200/80 dark:border-[#1a2d42] bg-white dark:bg-[#041527] pl-4 sm:pl-6 pr-[72px] sm:pr-[88px] shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md sm:w-[390px] sm:rounded-l-none sm:rounded-r-[50px]"
         >
           <div class="text-right">
             <p
-              class="bg-[linear-gradient(79deg,rgba(236,32,35,1)_0%,rgba(61,97,173,1)_100%)] dark:bg-[linear-gradient(79deg,#ff4d4d_0%,#0873b9_100%)] bg-clip-text [font-family:'Inter',Helvetica] text-[20px] font-bold tracking-tight text-transparent"
+              class="bg-[linear-gradient(79deg,rgba(236,32,35,1)_0%,rgba(61,97,173,1)_100%)] dark:bg-[linear-gradient(79deg,#ff4d4d_0%,#0873b9_100%)] bg-clip-text [font-family:'Inter',Helvetica] text-[16px] sm:text-[20px] font-bold tracking-tight text-transparent"
               style="-webkit-text-fill-color: transparent"
             >
               {{ t('impact.insa.title') }}
@@ -203,7 +203,7 @@ onUnmounted(() => {
             </p>
           </div>
           <img
-            class="absolute right-3 h-[60px] w-[60px] rounded-full object-cover transition-transform duration-300 group-hover:scale-105 sm:right-2"
+            class="absolute right-2 sm:right-3 h-[48px] w-[48px] sm:h-[60px] sm:w-[60px] rounded-full object-cover transition-transform duration-300 group-hover:scale-105 sm:right-2"
             alt="INSA Security Certification"
             src="/INSA.png"
             loading="lazy"

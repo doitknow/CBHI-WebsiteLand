@@ -250,7 +250,7 @@ const enrollmentSteps = [
 .enrollment-card-container {
   position: relative;
   width: 100%;
-  max-width: 360px;
+  max-width: 100%;
   flex-shrink: 0;
 }
 
@@ -264,16 +264,16 @@ const enrollmentSteps = [
 /* ─── Step Badge ─── */
 .enrollment-step-badge {
   position: absolute;
-  left: -10px;
-  top: -18px;
+  left: -4px;
+  top: -14px;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 18px;
   font-weight: 800;
   color: white;
   background: linear-gradient(135deg, #0d2b6b 0%, #1a4da8 100%);
@@ -293,9 +293,9 @@ const enrollmentSteps = [
   text-align: center;
   height: 100%;
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 16px;
   border: 1px solid #e8edf2;
-  padding: 52px 24px 24px;
+  padding: 44px 20px 20px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
               box-shadow 0.35s ease;
@@ -312,8 +312,8 @@ const enrollmentSteps = [
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 68px;
-  height: 68px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background-color: #e8f1ff;
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
@@ -333,8 +333,8 @@ const enrollmentSteps = [
 
 /* ─── Card Title ─── */
 .enrollment-card-title {
-  margin-top: 20px;
-  font-size: 19px;
+  margin-top: 16px;
+  font-size: 17px;
   font-weight: 700;
   line-height: 1.3;
   color: #161616;
@@ -347,8 +347,8 @@ const enrollmentSteps = [
 
 /* ─── Card Description ─── */
 .enrollment-card-desc {
-  margin-top: 12px;
-  font-size: 14px;
+  margin-top: 10px;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1.7;
   color: #64748b;
@@ -516,13 +516,40 @@ const enrollmentSteps = [
 /* ─── Responsive: Tablet ─── */
 @media (min-width: 640px) {
   .enrollment-section {
-    padding: 80px 32px 72px;
+    padding: 72px 32px 64px;
+  }
+  .enrollment-step-badge {
+    left: -10px;
+    top: -18px;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    font-size: 22px;
+  }
+  .enrollment-card {
+    border-radius: 20px;
+    padding: 52px 24px 24px;
+  }
+  .enrollment-icon-circle {
+    width: 68px;
+    height: 68px;
+  }
+  .enrollment-card-title {
+    font-size: 19px;
+    margin-top: 20px;
+  }
+  .enrollment-card-desc {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .enrollment-card-container {
+    max-width: 360px;
   }
 }
 
 @media (min-width: 768px) {
   .enrollment-section {
-    padding: 88px 40px 80px;
+    padding: 80px 40px 72px;
   }
 
   .enrollment-cards-grid {

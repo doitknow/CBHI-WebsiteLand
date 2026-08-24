@@ -94,11 +94,11 @@ function getLocaleName(code: string) {
   <header class="relative z-50 w-full bg-transparent [font-family:'Inter',Helvetica] transition-colors duration-300">
 
     <!-- ════════════════ DESKTOP BAR ════════════════ -->
-    <div class="mx-auto flex h-[72px] w-full max-w-[1400px] items-center px-6 lg:px-10">
+    <div class="mx-auto flex h-[56px] xs:h-[60px] sm:h-[64px] lg:h-[72px] w-full max-w-[1400px] items-center px-4 sm:px-6 lg:px-10">
 
       <!-- Left: Logo -->
       <div class="flex shrink-0 items-center">
-        <span class="text-[28px] font-black leading-none tracking-tight text-[#0873b9] dark:text-white">
+        <span class="text-[22px] xs:text-[24px] sm:text-[26px] lg:text-[28px] font-black leading-none tracking-tight text-[#0873b9] dark:text-white">
           CBHI.et
         </span>
       </div>
@@ -192,7 +192,7 @@ function getLocaleName(code: string) {
     <Transition name="drawer-slide">
     <div
       v-show="isMobileOpen"
-      class="border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-[#021E31] px-6 pb-5 pt-3 lg:hidden transition-colors duration-300"
+      class="border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-[#021E31] px-4 sm:px-6 pb-5 pt-3 lg:hidden transition-colors duration-300 max-h-[70vh] overflow-y-auto"
     >
       <!-- Mobile nav links -->
       <nav aria-label="Mobile navigation">
@@ -201,7 +201,7 @@ function getLocaleName(code: string) {
             <button
               type="button"
               :aria-current="activeNavigation === item.sectionId ? 'page' : undefined"
-              class="w-full rounded-xl px-4 py-2.5 text-left text-[15px] transition-all duration-150 focus-visible:outline-none"
+              class="w-full rounded-xl px-4 py-3 text-left text-[15px] transition-all duration-150 focus-visible:outline-none min-h-[44px] flex items-center"
               :class="
                 activeNavigation === item.sectionId
                   ? 'bg-[#0873b9]/10 font-semibold text-[#0873b9] dark:text-[#0873b9]'

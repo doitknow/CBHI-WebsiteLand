@@ -256,25 +256,23 @@ const regionalHubs = [
             >
               <!-- Outer glowing pulse ring -->
               <span
-                class="absolute -inset-2.5 rounded-full opacity-75"
+                class="absolute -inset-1 rounded-full opacity-60"
                 :class="[
-                  hub.isPrimary 
-                    ? 'bg-[#0873b9] animate-ping' 
-                    : 'bg-emerald-400 group-hover:animate-ping'
+                  hub.isPrimary ? 'bg-[#0873b9] animate-ping' : 'bg-emerald-500 group-hover:animate-ping'
                 ]"
               />
 
-              <!-- Core marker point -->
-              <div
-                class="relative flex items-center justify-center rounded-full border-2 transition-all duration-300 shadow-md"
-                :class="[
-                  hub.isPrimary
-                    ? 'h-6 w-6 bg-gradient-to-tr from-[#0873b9] to-[#0873b9] border-white text-white scale-110'
-                    : 'h-4 w-4 bg-emerald-500 border-white dark:border-slate-900 group-hover:scale-125'
-                ]"
+              <!-- Real Map Pin Icon -->
+              <div 
+                class="relative flex items-center justify-center drop-shadow-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110"
+                :class="hub.isPrimary ? 'text-[#065a92]' : 'text-emerald-700'"
               >
-                <span v-if="hub.isPrimary" class="h-2 w-2 rounded-full bg-white animate-pulse" />
-                <span v-else class="h-1.5 w-1.5 rounded-full bg-white" />
+                <MapPin 
+                  :class="[
+                    hub.isPrimary ? 'h-7 w-7 sm:h-8 sm:w-8 fill-[#0873b9]' : 'h-5 w-5 sm:h-6 sm:w-6 fill-emerald-500'
+                  ]" 
+                  stroke-width="1.5" 
+                />
               </div>
 
               <!-- Interactive Hover Info Card / Tooltip -->
@@ -301,39 +299,6 @@ const regionalHubs = [
               </div>
             </div>
 
-            <!-- Layer 5: Floating Glassmorphism Metric Badges to describe the content -->
-            
-            <!-- Top Right: Universal Access Metric -->
-            <div
-              class="animate-float absolute -top-2 sm:-top-3 -right-1 sm:-right-4 z-20 flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-white/90 dark:border-white/15 bg-white/90 dark:bg-[#062c45]/90 p-2 sm:p-2.5 md:px-3.5 md:py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.08)] backdrop-blur-md transition-all duration-300 hover:scale-105"
-            >
-              <div class="flex h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-[#0873b9] to-[#0873b9] text-white shadow-md">
-                <ShieldCheck class="h-5 w-5" />
-              </div>
-              <div>
-                <div class="flex items-center gap-1.5">
-                  <span class="relative flex h-2 w-2">
-                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
-                  </span>
-                  <span class="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Universal Access</span>
-                </div>
-                <p class="text-[10px] sm:text-xs md:text-sm font-extrabold text-[#161616] dark:text-white">1,000+ Woredas Active</p>
-              </div>
-            </div>
-
-            <!-- Bottom Left: Health Facilities Metric -->
-            <div
-              class="animate-float-delayed absolute -bottom-2 sm:-bottom-3 -left-1 sm:-left-4 z-20 flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-white/90 dark:border-white/15 bg-white/90 dark:bg-[#062c45]/90 p-2 sm:p-2.5 md:px-3.5 md:py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.08)] backdrop-blur-md transition-all duration-300 hover:scale-105"
-            >
-              <div class="flex h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-md">
-                <Activity class="h-5 w-5" />
-              </div>
-              <div>
-                <span class="text-[9px] sm:text-[10px] md:text-[11px] font-semibold text-slate-500 dark:text-slate-400">Verified Network</span>
-                <p class="text-[10px] sm:text-xs md:text-sm font-extrabold text-[#161616] dark:text-white">2,400+ Health Centers</p>
-              </div>
-            </div>
 
             <!-- Bottom Right: Solidarity Pill Badge -->
             <div

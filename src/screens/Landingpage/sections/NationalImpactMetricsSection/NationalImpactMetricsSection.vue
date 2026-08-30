@@ -110,7 +110,7 @@ onUnmounted(() => {
 
     <!-- Metric cards overlapping bottom of banner (Stay white in dark mode) -->
     <div
-      class="relative z-30 mx-auto -mt-14 sm:-mt-16 md:-mt-20 grid w-full max-w-[800px] grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6 px-4 sm:px-0"
+      class="relative z-30 mx-auto -mt-10 sm:-mt-16 md:-mt-20 grid w-full max-w-[800px] grid-cols-3 gap-2 sm:gap-3 px-2 sm:px-0"
     >
       <ScrollReveal
         v-for="(metric, idx) in impactMetrics"
@@ -122,23 +122,23 @@ onUnmounted(() => {
         duration="0.8s"
       >
         <Card
-          class="card-hover-glow group flex h-[140px] sm:h-[160px] flex-col items-center justify-center rounded-xl border border-slate-200/80 bg-white shadow-lg transition-transform hover:-translate-y-1"
+          class="card-hover-glow group flex h-[100px] xs:h-[120px] sm:h-[160px] flex-col items-center justify-center rounded-xl border border-slate-200/80 bg-white shadow-lg transition-transform hover:-translate-y-1"
         >
           <CardContent class="flex flex-col items-center p-0">
             <div
-              class="mb-2 sm:mb-3 flex h-8 w-12 sm:h-10 sm:w-14 items-center justify-center rounded-lg sm:rounded-xl bg-blue-50 text-[#0873b9] transition-all duration-300 group-hover:bg-[#0873b9] group-hover:text-white"
+              class="mb-1 sm:mb-3 flex h-6 w-8 xs:h-8 xs:w-12 sm:h-10 sm:w-14 items-center justify-center rounded-lg sm:rounded-xl bg-blue-50 text-[#0873b9] transition-all duration-300 group-hover:bg-[#0873b9] group-hover:text-white"
             >
-              <component :is="metric.icon" class="h-5 w-5 sm:h-6 sm:w-6" />
+              <component :is="metric.icon" class="h-4 w-4 sm:h-6 sm:w-6" />
             </div>
 
             <p
-              class="text-center [font-family:'Inter',Helvetica] text-[28px] sm:text-[36px] font-black leading-none text-[#0b4d8c]"
+              class="text-center [font-family:'Inter',Helvetica] text-[18px] xs:text-[22px] sm:text-[36px] font-black leading-none text-[#0b4d8c]"
             >
               {{ counts[idx] }}{{ metric.suffix }}
             </p>
 
             <p
-              class="mt-1.5 text-center [font-family:'Inter',Helvetica] text-[12px] font-bold tracking-widest text-[#64748b] uppercase"
+              class="mt-1 text-center [font-family:'Inter',Helvetica] text-[9px] xs:text-[10px] sm:text-[12px] font-bold tracking-widest text-[#64748b] uppercase leading-tight px-1"
             >
               {{ t(metric.translationKeyLabel) }}
             </p>
@@ -149,7 +149,7 @@ onUnmounted(() => {
 
     <!-- Fayda + INSA verification badges with hover elevation -->
     <div
-      class="mx-auto mt-8 sm:mt-12 flex w-full max-w-[840px] flex-col items-center justify-center gap-4 sm:flex-row sm:gap-0 px-3 sm:px-0"
+      class="mx-auto mt-4 sm:mt-6 flex w-full max-w-[840px] flex-col items-center justify-center gap-2 sm:flex-row sm:gap-0 px-3 sm:px-0"
     >
       <!-- Fayda Integrated -->
       <ScrollReveal direction="left" :delay="400" duration="0.8s">

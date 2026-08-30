@@ -28,7 +28,7 @@ const partnerLogos = [
 
 
 <template>
-  <div class="w-full overflow-x-hidden bg-[#fbfcfc] dark:bg-[#021E31]">
+  <div class="w-full bg-[#fbfcfc] dark:bg-[#021E31]">
     <!-- Top banner bar -->
     <header
       class="flex min-h-8 sm:min-h-9 items-center justify-between gap-2 sm:gap-4 bg-[linear-gradient(90deg,rgba(49,115,207,1)_3%,rgba(8,115,185,1)_55%,rgba(36,84,151,1)_100%)] px-3 sm:px-6 md:px-[54px]"

@@ -36,7 +36,7 @@ const coverageBenefits = [
   >
     <ScrollReveal direction="up" duration="0.8s">
       <header class="mx-auto flex max-w-[800px] flex-col items-center text-center">
-        <span class="section-badge">{{ t('coverage.badge') }}</span>
+        <!-- <span class="section-badge">{{ t('coverage.badge') }}</span> -->
 
         <h2
           id="coverage-benefits-heading"
@@ -68,7 +68,7 @@ const coverageBenefits = [
           class="w-full"
         >
           <Card
-            class="card-hover-glow group relative mx-auto h-[400px] sm:h-[420px] md:h-[480px] w-full max-w-[390px] sm:max-w-none overflow-hidden rounded-[16px] sm:rounded-[20px] border border-white dark:border-white/10 bg-white dark:bg-[#0B192C] shadow-[0_8px_24px_rgba(8,115,185,0.1)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(8,115,185,0.2)]"
+            class="card-hover-glow group relative mx-auto h-[320px] xs:h-[350px] sm:h-[420px] md:h-[480px] w-full max-w-[390px] sm:max-w-none overflow-hidden rounded-[16px] sm:rounded-[20px] border border-white dark:border-white/10 bg-white dark:bg-[#0B192C] shadow-[0_8px_24px_rgba(8,115,185,0.1)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(8,115,185,0.2)]"
           >
             <CardContent class="relative h-full w-full p-0">
               <!-- Background Image with smooth zoom on hover -->
@@ -82,25 +82,25 @@ const coverageBenefits = [
               </div>
 
               <!-- Gradient overlay for text readability -->
-              <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent pt-8 px-6" />
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 dark:from-[#0B192C]/95 dark:via-[#0B192C]/80 to-transparent pt-8 px-5 sm:px-6" />
 
               <!-- Text & Icon content -->
               <div
-                class="absolute inset-x-0 top-0 flex flex-col items-center px-6 pt-7 text-center"
+                class="absolute inset-x-0 top-0 flex flex-col items-center px-5 sm:px-6 pt-5 sm:pt-7 text-center"
               >
                 <!-- Icon badge with lift -->
-                <div class="flex h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-white/90 text-[#0873b9] shadow-md backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:bg-[#0873b9] group-hover:text-white group-hover:shadow-[0_0_20px_rgba(8,115,185,0.3)]">
+                <div class="flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl sm:rounded-2xl bg-white/90 text-[#0873b9] shadow-md backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:bg-[#0873b9] group-hover:text-white group-hover:shadow-[0_0_20px_rgba(8,115,185,0.3)]">
                   <component :is="benefit.icon" class="h-5 w-5 sm:h-7 sm:w-7" />
                 </div>
 
                 <h3
-                  class="mt-3 sm:mt-4 [font-family:'Inter',Helvetica] text-[18px] sm:text-[20px] md:text-[22px] font-bold leading-tight tracking-tight text-[#161616] dark:text-white transition-colors duration-300 group-hover:text-[#0873b9]"
+                  class="mt-2.5 sm:mt-4 [font-family:'Inter',Helvetica] text-[17px] xs:text-[18px] sm:text-[20px] md:text-[22px] font-bold leading-tight tracking-tight text-[#161616] dark:text-white transition-colors duration-300 group-hover:text-[#0873b9]"
                 >
                   {{ t(benefit.translationKeyTitle) }}
                 </h3>
 
                 <p
-                  class="mt-2.5 max-w-[280px] [font-family:'Inter',Helvetica] text-[14px] font-medium leading-relaxed text-[#64748b] dark:text-slate-300"
+                  class="mt-1.5 sm:mt-2.5 max-w-[280px] [font-family:'Inter',Helvetica] text-[13px] sm:text-[14px] font-medium leading-relaxed text-[#64748b] dark:text-slate-300 line-clamp-4"
                 >
                   {{ t(benefit.translationKeyDesc) }}
                 </p>

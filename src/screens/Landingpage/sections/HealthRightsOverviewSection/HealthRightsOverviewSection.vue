@@ -162,150 +162,149 @@ const regionalHubs = [
       <ScrollReveal direction="right" duration="1s" :delay="200">
         <div class="relative mx-auto w-full max-w-[560px]">
           <!-- Main visual wrapper with responsive aspect ratio -->
-          <div class="relative min-h-[280px] xs:min-h-[340px] sm:min-h-[420px] lg:min-h-[510px] w-full rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 overflow-visible">
+          <div class="relative w-full rounded-2xl sm:rounded-3xl p-3 sm:p-4 md:p-6 overflow-visible flex items-center justify-center">
             
-
-            <!-- Layer 2: Futuristic SVG Radar Grid & Health Coverage Matrix -->
-            <svg
-              viewBox="0 0 550 450"
-              class="absolute inset-0 h-full w-full pointer-events-none select-none z-0"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <!-- Radial gradient for radar glow -->
-                <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#0873b9" stop-opacity="0.3" />
-                  <stop offset="60%" stop-color="#0873b9" stop-opacity="0.08" />
-                  <stop offset="100%" stop-color="#0873b9" stop-opacity="0" />
-                </radialGradient>
-
-                <!-- Line gradient for primary telemetry paths -->
-                <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#0873b9" stop-opacity="0.9" />
-                  <stop offset="50%" stop-color="#0873b9" stop-opacity="0.6" />
-                  <stop offset="100%" stop-color="#10b981" stop-opacity="0.9" />
-                </linearGradient>
-
-                <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#0873b9" stop-opacity="0" />
-                  <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.9" />
-                  <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
-                </linearGradient>
-              </defs>
-
-              <!-- Radar Concentric Range Rings Centered around Addis Ababa (258, 207) -->
-              <circle cx="258" cy="207" r="60" stroke="#0873b9" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="3 4" />
-              <circle cx="258" cy="207" r="120" stroke="#0873b9" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="4 6" />
-              <circle cx="258" cy="207" r="185" stroke="#0873b9" stroke-opacity="0.15" stroke-width="1" />
-              <circle cx="258" cy="207" r="235" stroke="#0873b9" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="2 5" />
-
-              <!-- Animated Expanding Radar Waves -->
-              <circle cx="258" cy="207" r="30" stroke="#38bdf8" stroke-opacity="0.6" class="radar-ring" fill="url(#radarGlow)" />
-              <circle cx="258" cy="207" r="30" stroke="#0873b9" stroke-opacity="0.5" class="radar-ring-2" fill="none" />
-              <circle cx="258" cy="207" r="30" stroke="#10b981" stroke-opacity="0.4" class="radar-ring-3" fill="none" />
-
-              <!-- Crosshair Grid Axes -->
-              <line x1="40" y1="207" x2="480" y2="207" stroke="#0873b9" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
-              <line x1="258" y1="30" x2="258" y2="400" stroke="#0873b9" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
-
-              <!-- Health Network Curved Telemetry Arcs Connecting Ethiopian Regions -->
-              <!-- Center (258,207) to North (231,108) -->
-              <path d="M 258 207 L 231 108" stroke="url(#pathGradient)" stroke-width="2" class="data-flow-line" opacity="0.8" />
-              <!-- Center (258,207) to East (374,202) -->
-              <path d="M 258 207 L 374 202" stroke="url(#pathGradient)" stroke-width="2" class="data-flow-line" opacity="0.8" />
-              <!-- Center (258,207) to South (242,315) -->
-              <path d="M 258 207 L 242 315" stroke="url(#pathGradient)" stroke-width="2" class="data-flow-line" opacity="0.8" />
-              <!-- Center (258,207) to West (132,234) -->
-              <path d="M 258 207 L 132 234" stroke="url(#pathGradient)" stroke-width="2" class="data-flow-line" opacity="0.8" />
-
-              <!-- Regional Interconnection Arcs -->
-              <path d="M 231 108 Q 320 130 374 202" stroke="#0873b9" stroke-opacity="0.4" stroke-width="1.5" class="data-flow-line-reverse" fill="none" />
-              <path d="M 374 202 Q 330 290 242 315" stroke="#10b981" stroke-opacity="0.35" stroke-width="1.5" class="data-flow-line" fill="none" />
-              <path d="M 242 315 Q 170 300 132 234" stroke="#0873b9" stroke-opacity="0.4" stroke-width="1.5" class="data-flow-line-reverse" fill="none" />
-              <path d="M 132 234 Q 160 150 231 108" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" class="data-flow-line" fill="none" />
-
-              <!-- Live EKG / Heartbeat Telemetry Line across bottom -->
-              <path
-                d="M 30 415 L 120 415 L 135 415 L 145 390 L 155 438 L 165 398 L 175 422 L 185 415 L 290 415 L 300 388 L 310 440 L 320 398 L 330 422 L 340 415 L 520 415"
-                stroke="url(#pulseGradient)"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="ekg-line"
-                fill="none"
-              />
-            </svg>
-
-            <!-- Layer 3: Ethiopia Map Image with 3D Depth Shadow -->
-            <div class="relative z-10 flex items-center justify-center w-full h-full py-4">
+            <div class="relative w-full inline-block">
+              <!-- Layer 3: Ethiopia Map Image with 3D Depth Shadow -->
               <img
-                class="relative h-[220px] xs:h-[280px] sm:h-[340px] lg:h-[420px] w-auto max-w-full object-contain filter drop-shadow-[0_12px_28px_rgba(8,115,185,0.22)] dark:drop-shadow-[0_16px_36px_rgba(8,115,185,0.35)] transition-transform duration-700 hover:scale-[1.01]"
+                class="relative z-10 w-full h-auto object-contain filter drop-shadow-[0_12px_28px_rgba(8,115,185,0.22)] dark:drop-shadow-[0_16px_36px_rgba(8,115,185,0.35)] transition-transform duration-700 hover:scale-[1.01]"
                 alt="Map of Ethiopia - CBHI National Coverage Network"
                 src="/map-Photoroom.png"
               />
-            </div>
 
-            <!-- Layer 4: Interactive Regional Healthcare Hub Beacons -->
-            <div
-              v-for="hub in regionalHubs"
-              :key="hub.id"
-              class="absolute z-20 -translate-x-1/2 -translate-y-1/2 cursor-pointer group"
-              :style="{ top: hub.top, left: hub.left }"
-              @mouseenter="activeHub = hub.id"
-            >
-              <!-- Outer glowing pulse ring -->
-              <span
-                class="absolute -inset-1 rounded-full opacity-60"
-                :class="[
-                  hub.isPrimary ? 'bg-[#0873b9] animate-ping' : 'bg-emerald-500 group-hover:animate-ping'
-                ]"
-              />
-
-              <!-- Real Map Pin Icon -->
-              <div 
-                class="relative flex items-center justify-center drop-shadow-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110"
-                :class="hub.isPrimary ? 'text-[#065a92]' : 'text-emerald-700'"
+              <!-- Layer 2: Futuristic SVG Radar Grid & Health Coverage Matrix -->
+              <svg
+                viewBox="0 0 550 450"
+                class="absolute inset-0 h-full w-full pointer-events-none select-none z-0"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid meet"
               >
-                <MapPin 
-                  :class="[
-                    hub.isPrimary ? 'h-7 w-7 sm:h-8 sm:w-8 fill-[#0873b9]' : 'h-5 w-5 sm:h-6 sm:w-6 fill-emerald-500'
-                  ]" 
-                  stroke-width="1.5" 
+                <defs>
+                  <!-- Radial gradient for radar glow -->
+                  <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#0873b9" stop-opacity="0.3" />
+                    <stop offset="60%" stop-color="#0873b9" stop-opacity="0.08" />
+                    <stop offset="100%" stop-color="#0873b9" stop-opacity="0" />
+                  </radialGradient>
+
+                  <!-- Line gradient for primary telemetry paths -->
+                  <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#0873b9" stop-opacity="0.9" />
+                    <stop offset="50%" stop-color="#0873b9" stop-opacity="0.6" />
+                    <stop offset="100%" stop-color="#10b981" stop-opacity="0.9" />
+                  </linearGradient>
+
+                  <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#0873b9" stop-opacity="0" />
+                    <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.9" />
+                    <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Radar Concentric Range Rings Centered around Addis Ababa (258, 207) -->
+                <circle cx="258" cy="207" r="60" stroke="#0873b9" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="3 4" />
+                <circle cx="258" cy="207" r="120" stroke="#0873b9" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="4 6" />
+                <circle cx="258" cy="207" r="185" stroke="#0873b9" stroke-opacity="0.15" stroke-width="1" />
+                <circle cx="258" cy="207" r="235" stroke="#0873b9" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="2 5" />
+
+                <!-- Animated Expanding Radar Waves -->
+                <circle cx="258" cy="207" r="30" stroke="#38bdf8" stroke-opacity="0.6" class="radar-ring" fill="url(#radarGlow)" />
+                <circle cx="258" cy="207" r="30" stroke="#0873b9" stroke-opacity="0.5" class="radar-ring-2" fill="none" />
+                <circle cx="258" cy="207" r="30" stroke="#10b981" stroke-opacity="0.4" class="radar-ring-3" fill="none" />
+
+                <!-- Crosshair Grid Axes -->
+                <line x1="40" y1="207" x2="480" y2="207" stroke="#0873b9" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
+                <line x1="258" y1="30" x2="258" y2="400" stroke="#0873b9" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
+
+                <!-- Health Network Curved Telemetry Arcs Connecting Ethiopian Regions -->
+                <!-- Center (258,207) to North (231,108) -->
+                <path d="M 258 207 L 231 108" stroke="url(#pathGradient)" stroke-width="2" class="data-flow-line" opacity="0.8" />
+                <!-- Center (258,207) to East (374,202) -->
+                <path d="M 258 207 L 374 202" stroke="url(#pathGradient)" stroke-width="2" class="data-flow-line" opacity="0.8" />
+                <!-- Center (258,207) to South (242,315) -->
+                <path d="M 258 207 L 242 315" stroke="url(#pathGradient)" stroke-width="2" class="data-flow-line" opacity="0.8" />
+                <!-- Center (258,207) to West (132,234) -->
+                <path d="M 258 207 L 132 234" stroke="url(#pathGradient)" stroke-width="2" class="data-flow-line" opacity="0.8" />
+
+                <!-- Regional Interconnection Arcs -->
+                <path d="M 231 108 Q 320 130 374 202" stroke="#0873b9" stroke-opacity="0.4" stroke-width="1.5" class="data-flow-line-reverse" fill="none" />
+                <path d="M 374 202 Q 330 290 242 315" stroke="#10b981" stroke-opacity="0.35" stroke-width="1.5" class="data-flow-line" fill="none" />
+                <path d="M 242 315 Q 170 300 132 234" stroke="#0873b9" stroke-opacity="0.4" stroke-width="1.5" class="data-flow-line-reverse" fill="none" />
+                <path d="M 132 234 Q 160 150 231 108" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" class="data-flow-line" fill="none" />
+
+                <!-- Live EKG / Heartbeat Telemetry Line across bottom -->
+                <path
+                  d="M 30 415 L 120 415 L 135 415 L 145 390 L 155 438 L 165 398 L 175 422 L 185 415 L 290 415 L 300 388 L 310 440 L 320 398 L 330 422 L 340 415 L 520 415"
+                  stroke="url(#pulseGradient)"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="ekg-line"
+                  fill="none"
                 />
-              </div>
+              </svg>
 
-              <!-- Interactive Hover Info Card / Tooltip -->
+              <!-- Layer 4: Interactive Regional Healthcare Hub Beacons -->
               <div
-                class="absolute left-1/2 -translate-x-1/2 bottom-full mb-3 w-max max-w-[180px] rounded-xl border border-slate-200/80 dark:border-white/10 bg-white/95 dark:bg-[#042033]/95 p-2.5 shadow-xl backdrop-blur-md transition-all duration-300 pointer-events-none z-30 flex flex-col"
-                :class="[
-                  activeHub === hub.id ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100'
-                ]"
+                v-for="hub in regionalHubs"
+                :key="hub.id"
+                class="absolute z-20 -translate-x-1/2 -translate-y-1/2 cursor-pointer group"
+                :style="{ top: hub.top, left: hub.left }"
+                @mouseenter="activeHub = hub.id"
               >
-                <!-- Triangle Pointer -->
-                <div class="absolute -bottom-[5px] left-1/2 -translate-x-1/2 h-2.5 w-2.5 rotate-45 border-b border-r border-slate-200/80 dark:border-white/10 bg-white/95 dark:bg-[#042033]/95"></div>
-                
-                <div class="relative z-10 flex items-center gap-2 border-b border-slate-100 dark:border-white/5 pb-1.5 mb-1.5">
-                  <span class="relative flex h-2 w-2 shrink-0">
-                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" :class="hub.isPrimary ? 'bg-[#0873b9]' : 'bg-emerald-400'"></span>
-                    <span class="relative inline-flex h-2 w-2 rounded-full" :class="hub.isPrimary ? 'bg-[#0873b9]' : 'bg-emerald-500'"></span>
-                  </span>
-                  <p class="text-[11px] font-bold text-slate-800 dark:text-white">{{ hub.name }}</p>
+                <!-- Outer glowing pulse ring -->
+                <span
+                  class="absolute -inset-1 rounded-full opacity-60"
+                  :class="[
+                    hub.isPrimary ? 'bg-[#0873b9] animate-ping' : 'bg-emerald-500 group-hover:animate-ping'
+                  ]"
+                />
+
+                <!-- Real Map Pin Icon -->
+                <div 
+                  class="relative flex items-center justify-center drop-shadow-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110"
+                  :class="hub.isPrimary ? 'text-[#065a92]' : 'text-emerald-700'"
+                >
+                  <MapPin 
+                    :class="[
+                      hub.isPrimary ? 'h-5 w-5 sm:h-7 sm:w-7 md:h-8 md:w-8 fill-[#0873b9]' : 'h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 fill-emerald-500'
+                    ]" 
+                    stroke-width="1.5" 
+                  />
                 </div>
-                <div class="relative z-10 text-left">
-                  <p class="text-[9px] font-bold uppercase tracking-wider text-[#0873b9] dark:text-[#0873b9]">{{ hub.region }}</p>
-                  <span class="mt-0.5 block text-[10.5px] text-slate-600 dark:text-slate-300 font-medium whitespace-nowrap">{{ hub.stat }}</span>
+
+                <!-- Interactive Hover Info Card / Tooltip -->
+                <div
+                  class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 sm:mb-3 w-max max-w-[140px] sm:max-w-[180px] rounded-xl border border-slate-200/80 dark:border-white/10 bg-white/95 dark:bg-[#042033]/95 p-2 sm:p-2.5 shadow-xl backdrop-blur-md transition-all duration-300 pointer-events-none z-30 flex flex-col"
+                  :class="[
+                    activeHub === hub.id ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-2 scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100'
+                  ]"
+                >
+                  <!-- Triangle Pointer -->
+                  <div class="absolute -bottom-[5px] left-1/2 -translate-x-1/2 h-2.5 w-2.5 rotate-45 border-b border-r border-slate-200/80 dark:border-white/10 bg-white/95 dark:bg-[#042033]/95"></div>
+                  
+                  <div class="relative z-10 flex items-center gap-2 border-b border-slate-100 dark:border-white/5 pb-1.5 mb-1.5">
+                    <span class="relative flex h-2 w-2 shrink-0">
+                      <span class="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" :class="hub.isPrimary ? 'bg-[#0873b9]' : 'bg-emerald-400'"></span>
+                      <span class="relative inline-flex h-2 w-2 rounded-full" :class="hub.isPrimary ? 'bg-[#0873b9]' : 'bg-emerald-500'"></span>
+                    </span>
+                    <p class="text-[10px] sm:text-[11px] font-bold text-slate-800 dark:text-white">{{ hub.name }}</p>
+                  </div>
+                  <div class="relative z-10 text-left">
+                    <p class="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-[#0873b9] dark:text-[#0873b9]">{{ hub.region }}</p>
+                    <span class="mt-0.5 block text-[9.5px] sm:text-[10.5px] text-slate-600 dark:text-slate-300 font-medium whitespace-nowrap">{{ hub.stat }}</span>
+                  </div>
                 </div>
               </div>
             </div>
-
 
             <!-- Bottom Right: Solidarity Pill Badge -->
             <div
-              class="animate-float absolute bottom-1 sm:bottom-4 right-0 sm:right-3 z-20 hidden sm:flex items-center gap-2 rounded-full border border-blue-200/70 dark:border-blue-500/20 bg-blue-50/90 dark:bg-[#083554]/90 px-2.5 sm:px-3 py-1 sm:py-1.5 shadow-sm backdrop-blur-md"
+              class="animate-float absolute bottom-0 sm:bottom-4 right-0 sm:right-3 z-20 hidden xs:flex items-center gap-1.5 sm:gap-2 rounded-full border border-blue-200/70 dark:border-blue-500/20 bg-blue-50/90 dark:bg-[#083554]/90 px-2 sm:px-3 py-1 sm:py-1.5 shadow-sm backdrop-blur-md scale-90 sm:scale-100 origin-bottom-right"
             >
-              <HeartHandshake class="h-4 w-4 text-[#0873b9] dark:text-[#0873b9]" />
-              <span class="text-[11px] font-bold text-[#0873b9] dark:text-[#0873b9]">100% Community Solidarity</span>
+              <HeartHandshake class="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#0873b9] dark:text-[#0873b9]" />
+              <span class="text-[10px] sm:text-[11px] font-bold text-[#0873b9] dark:text-[#0873b9]">100% Community Solidarity</span>
             </div>
 
           </div>

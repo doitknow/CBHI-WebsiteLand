@@ -20,38 +20,49 @@ const isMobileOpen     = ref(false);
 
 /* ── Scroll-aware active state (IntersectionObserver) ── */
 let observer: IntersectionObserver | null = null;
+const isScrolled = ref(false);
 
-onMounted(() => {
-  // Initialize dark mode state
-  isDarkMode.value = document.documentElement.classList.contains("dark");
-
-  const sectionMap = new Map(navigationItems.map((n) => [n.sectionId, n.sectionId]));
-
-  observer = new IntersectionObserver(
-    (entries) => {
-      let best: IntersectionObserverEntry | null = null;
-      for (const e of entries) {
-        if (e.isIntersecting && (!best || e.intersectionRatio > best.intersectionRatio)) {
-          best = e;
+  const handleScroll = () => {
+    isScrolled.value = window.scrollY > 20;
+  };
+  
+  onMounted(() => {
+    // Initialize dark mode state
+    isDarkMode.value = document.documentElement.classList.contains("dark");
+  
+    const sectionMap = new Map(navigationItems.map((n) => [n.sectionId, n.sectionId]));
+  
+    observer = new IntersectionObserver(
+      (entries) => {
+        let best: IntersectionObserverEntry | null = null;
+        for (const e of entries) {
+          if (e.isIntersecting && (!best || e.intersectionRatio > best.intersectionRatio)) {
+            best = e;
+          }
         }
-      }
-      if (best) {
-        const id = sectionMap.get(best.target.id);
-        if (id) activeNavigation.value = id;
-      }
-    },
-    { threshold: [0, 0.15, 0.3, 0.5], rootMargin: "-10% 0px -55% 0px" }
-  );
-
-  navigationItems.forEach(({ sectionId }) => {
-    const el = document.getElementById(sectionId);
-    if (el) observer!.observe(el);
+        if (best) {
+          const id = sectionMap.get(best.target.id);
+          if (id) activeNavigation.value = id;
+        }
+      },
+      { threshold: [0, 0.15, 0.3, 0.5], rootMargin: "-10% 0px -55% 0px" }
+    );
+  
+    navigationItems.forEach(({ sectionId }) => {
+      const el = document.getElementById(sectionId);
+      if (el) observer!.observe(el);
+    });
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initialize state
   });
-});
-
-onBeforeUnmount(() => { observer?.disconnect(); });
-
-watch(isDarkMode, (val) => {
+  
+  onBeforeUnmount(() => { 
+    observer?.disconnect(); 
+    window.removeEventListener("scroll", handleScroll);
+  });
+  
+  watch(isDarkMode, (val) => {
   if (val) {
     document.documentElement.classList.add("dark");
   } else {
@@ -91,7 +102,12 @@ function getLocaleName(code: string) {
 </script>
 
 <template>
-  <header class="relative z-50 w-full bg-transparent [font-family:'Inter',Helvetica] transition-colors duration-300">
+  <header 
+    :class="[
+      'sticky top-0 z-50 w-full [font-family:\'Inter\',Helvetica] transition-all duration-300',
+      isScrolled ? 'bg-white/95 dark:bg-[#021E31]/95 shadow-sm backdrop-blur-md py-0' : 'bg-transparent py-1 sm:py-2'
+    ]"
+  >
 
     <!-- ════════════════ DESKTOP BAR ════════════════ -->
     <div class="mx-auto flex h-[56px] xs:h-[60px] sm:h-[64px] lg:h-[72px] w-full max-w-[1400px] items-center px-4 sm:px-6 lg:px-10">

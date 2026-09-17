@@ -20,6 +20,7 @@ C:\Users\DELL\Pictures\MEDCO files\cbhi-website\backend\src\main\java\com\medco\
 C:\Users\DELL\Pictures\MEDCO files\cbhi-website\backend\src\main\java\com\medco\cbhi\entity\PasswordResetToken.java
 C:\Users\DELL\Pictures\MEDCO files\cbhi-website\backend\src\main\java\com\medco\cbhi\entity\SiteSetting.java
 C:\Users\DELL\Pictures\MEDCO files\cbhi-website\backend\src\main\java\com\medco\cbhi\entity\User.java
+C:\Users\DELL\Pictures\MEDCO files\cbhi-website\backend\src\main\java\com\medco\cbhi\exception\GlobalExceptionHandler.java
 C:\Users\DELL\Pictures\MEDCO files\cbhi-website\backend\src\main\java\com\medco\cbhi\repository\CoverageBenefitRepository.java
 C:\Users\DELL\Pictures\MEDCO files\cbhi-website\backend\src\main\java\com\medco\cbhi\repository\EnrollmentStepRepository.java
 C:\Users\DELL\Pictures\MEDCO files\cbhi-website\backend\src\main\java\com\medco\cbhi\repository\ImpactMetricRepository.java

@@ -101,27 +101,38 @@ const copyUrlToClipboard = async (item: MediaAssetItem) => {
   }
 };
 
+const MAX_UPLOAD_BYTES = 50 * 1024 * 1024; // 50MB
+
+const validateAndSetFile = (file: File) => {
+  if (file.size > MAX_UPLOAD_BYTES) {
+    message.value = {
+      text: `Selected file "${file.name}" (${formatSize(file.size)}) exceeds the 50MB maximum size limit. Please compress or choose a smaller image.`,
+      type: "error",
+    };
+    selectedFile.value = null;
+    uploadPreviewUrl.value = null;
+    return false;
+  }
+  selectedFile.value = file;
+  uploadPreviewUrl.value = URL.createObjectURL(file);
+  if (!uploadAltText.value) {
+    uploadAltText.value = file.name.replace(/\.[^/.]+$/, "");
+  }
+  message.value = null;
+  return true;
+};
+
 const handleFileSelect = (event: Event) => {
   const target = event.target as HTMLInputElement;
   if (target.files && target.files[0]) {
-    const file = target.files[0];
-    selectedFile.value = file;
-    uploadPreviewUrl.value = URL.createObjectURL(file);
-    if (!uploadAltText.value) {
-      uploadAltText.value = file.name.replace(/\.[^/.]+$/, "");
-    }
+    validateAndSetFile(target.files[0]);
   }
 };
 
 const handleDrop = (event: DragEvent) => {
   event.preventDefault();
   if (event.dataTransfer?.files && event.dataTransfer.files[0]) {
-    const file = event.dataTransfer.files[0];
-    selectedFile.value = file;
-    uploadPreviewUrl.value = URL.createObjectURL(file);
-    if (!uploadAltText.value) {
-      uploadAltText.value = file.name.replace(/\.[^/.]+$/, "");
-    }
+    validateAndSetFile(event.dataTransfer.files[0]);
   }
 };
 
@@ -392,7 +403,7 @@ onMounted(() => {
               Drag and drop your image here, or <span class="text-[var(--color-primary)]">browse</span>
             </p>
             <p class="text-[10px] text-slate-400">
-              Supports PNG, JPG, WebP, and SVG up to 15MB
+              Supports PNG, JPG, WebP, GIF, and SVG up to 50MB
             </p>
           </div>
 

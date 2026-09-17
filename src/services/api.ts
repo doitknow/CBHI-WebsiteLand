@@ -70,6 +70,7 @@ export async function request<T = any>(
     if (!response.ok) {
       const errMsg =
         json?.message ||
+        (response.status === 413 ? "File is too large (maximum size is 50MB). Please select a smaller file or compress the image." : null) ||
         (response.status === 403 ? "Access Forbidden. Your admin session may have expired or lacks permission. Please log in again." : null) ||
         (response.status === 401 ? "Unauthorized. Please log in to your admin account." : null) ||
         json?.error ||

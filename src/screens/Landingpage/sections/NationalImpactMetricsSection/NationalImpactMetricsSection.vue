@@ -4,15 +4,42 @@ import { useI18n } from "vue-i18n";
 import Card from "../../../../components/ui/Card.vue";
 import CardContent from "../../../../components/ui/CardContent.vue";
 import ScrollReveal from "../../../../components/ui/ScrollReveal.vue";
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, computed, watch, onMounted, onUnmounted } from "vue";
+import type { ImpactMetricItem } from "../../../../services/cmsService";
 
 const { t } = useI18n();
 
-const impactMetrics = [
-  { value: 45, suffix: "M+", translationKeyLabel: "impact.metrics.citizens.label", icon: Users, translationKeySubtext: "impact.metrics.citizens.subtext" },
-  { value: 980, suffix: "+", translationKeyLabel: "impact.metrics.woredas.label", icon: Globe, translationKeySubtext: "impact.metrics.woredas.subtext" },
-  { value: 3500, suffix: "+", translationKeyLabel: "impact.metrics.facilities.label", icon: Building2, translationKeySubtext: "impact.metrics.facilities.subtext" },
+const props = withDefaults(
+  defineProps<{
+    dynamicMetrics?: ImpactMetricItem[] | null;
+  }>(),
+  {
+    dynamicMetrics: null,
+  }
+);
+
+const defaultMetrics = [
+  { value: 45, suffix: "M+", translationKeyLabel: "impact.metrics.citizens.label", label: "", isCustom: false, icon: Users, translationKeySubtext: "impact.metrics.citizens.subtext" },
+  { value: 980, suffix: "+", translationKeyLabel: "impact.metrics.woredas.label", label: "", isCustom: false, icon: Globe, translationKeySubtext: "impact.metrics.woredas.subtext" },
+  { value: 3500, suffix: "+", translationKeyLabel: "impact.metrics.facilities.label", label: "", isCustom: false, icon: Building2, translationKeySubtext: "impact.metrics.facilities.subtext" },
 ];
+
+const iconsList = [Users, Globe, Building2];
+
+const activeMetrics = computed(() => {
+  if (props.dynamicMetrics && props.dynamicMetrics.length >= 3) {
+    return props.dynamicMetrics.slice(0, 3).map((m, idx) => ({
+      value: m.valueNumber,
+      suffix: m.suffix,
+      translationKeyLabel: defaultMetrics[idx].translationKeyLabel,
+      label: m.labelText,
+      isCustom: true,
+      icon: iconsList[idx % iconsList.length],
+      translationKeySubtext: defaultMetrics[idx].translationKeySubtext,
+    }));
+  }
+  return defaultMetrics;
+});
 
 const counts = ref([0, 0, 0]);
 const sectionRef = ref<HTMLElement | null>(null);
@@ -24,7 +51,6 @@ const animateValue = (index: number, start: number, end: number, duration: numbe
   const step = (timestamp: number) => {
     if (!startTimestamp) startTimestamp = timestamp;
     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-    // easeOutQuart
     const easeProgress = 1 - Math.pow(1 - progress, 4);
     counts.value[index] = Math.floor(easeProgress * (end - start) + start);
     if (progress < 1) {
@@ -34,15 +60,29 @@ const animateValue = (index: number, start: number, end: number, duration: numbe
   window.requestAnimationFrame(step);
 };
 
+const triggerAnimation = () => {
+  activeMetrics.value.forEach((metric, idx) => {
+    setTimeout(() => {
+      animateValue(idx, 0, metric.value, 2000);
+    }, idx * 150);
+  });
+};
+
+watch(
+  () => props.dynamicMetrics,
+  () => {
+    if (started) {
+      triggerAnimation();
+    }
+  },
+  { deep: true }
+);
+
 onMounted(() => {
   observer = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting && !started) {
       started = true;
-      impactMetrics.forEach((metric, idx) => {
-        setTimeout(() => {
-           animateValue(idx, 0, metric.value, 2000);
-        }, idx * 150);
-      });
+      triggerAnimation();
       if (observer && sectionRef.value) {
         observer.unobserve(sectionRef.value);
       }
@@ -64,7 +104,7 @@ onUnmounted(() => {
 <template>
   <section
     ref="sectionRef"
-    class="relative w-full overflow-hidden bg-white dark:bg-[#021E31] px-3 xs:px-4 sm:px-8 py-12 sm:py-16 lg:px-[101px]"
+    class="relative w-full overflow-hidden bg-white dark:bg-[#021E31] px-[50px] py-12 sm:py-16"
     aria-labelledby="national-impact-heading"
   >
     <!-- Heading pill -->
@@ -78,7 +118,7 @@ onUnmounted(() => {
         >
           <span class="text-[#161616] dark:text-white">{{ t('impact.heading_national') }}</span>
           <span class="text-[#161616] dark:text-white">{{ t('impact.heading_and') }}</span>
-          <span class="text-[#0873b9] dark:text-[#0873b9]">{{ t('impact.heading_scale') }}</span>
+          <span class="text-[var(--color-primary)] dark:text-[var(--color-primary)]">{{ t('impact.heading_scale') }}</span>
         </h2>
       </div>
     </ScrollReveal>
@@ -86,7 +126,7 @@ onUnmounted(() => {
     <!-- Blue gradient banner -->
     <ScrollReveal direction="up" :delay="100" duration="0.9s" class="relative z-10">
       <div
-        class="mx-auto -mt-8 sm:-mt-10 md:-mt-12 flex w-full max-w-[1100px] flex-col items-center rounded-[16px] sm:rounded-[20px] bg-gradient-to-b from-[#0873b9] to-[#064e82] dark:from-[#083a63] dark:to-[#041d33] px-3 sm:px-4 pt-14 sm:pt-18 md:pt-20 pb-20 sm:pb-24 md:pb-28 shadow-xl animate-gradient-shift"
+        class="mx-auto -mt-8 sm:-mt-10 md:-mt-12 flex w-full max-w-[1100px] flex-col items-center rounded-[16px] sm:rounded-[20px] bg-gradient-to-b from-[var(--color-primary)] to-[var(--color-secondary)] px-3 sm:px-4 pt-14 sm:pt-18 md:pt-20 pb-20 sm:pb-24 md:pb-28 shadow-xl animate-gradient-shift"
         style="background-size: 200% 200%;"
       >
         <p
@@ -113,7 +153,7 @@ onUnmounted(() => {
       class="relative z-30 mx-auto -mt-10 sm:-mt-16 md:-mt-20 grid w-full max-w-[800px] grid-cols-3 gap-2 sm:gap-3 px-2 sm:px-0"
     >
       <ScrollReveal
-        v-for="(metric, idx) in impactMetrics"
+        v-for="(metric, idx) in activeMetrics"
         :key="idx"
         direction="up"
         :stagger-index="idx"
@@ -126,13 +166,13 @@ onUnmounted(() => {
         >
           <CardContent class="flex flex-col items-center p-0">
             <div
-              class="mb-1 sm:mb-3 flex h-6 w-8 xs:h-8 xs:w-12 sm:h-10 sm:w-14 items-center justify-center rounded-lg sm:rounded-xl bg-blue-50 text-[#0873b9] transition-all duration-300 group-hover:bg-[#0873b9] group-hover:text-white"
+              class="mb-1 sm:mb-3 flex h-6 w-8 xs:h-8 xs:w-12 sm:h-10 sm:w-14 items-center justify-center rounded-lg sm:rounded-xl bg-[var(--color-primary)]/10 text-[var(--color-primary)] transition-all duration-300 group-hover:bg-[var(--color-primary)] group-hover:text-white"
             >
               <component :is="metric.icon" class="h-4 w-4 sm:h-6 sm:w-6" />
             </div>
 
             <p
-              class="text-center [font-family:'Inter',Helvetica] text-[18px] xs:text-[22px] sm:text-[36px] font-black leading-none text-[#0b4d8c]"
+              class="text-center [font-family:'Inter',Helvetica] text-[18px] xs:text-[22px] sm:text-[36px] font-black leading-none text-[var(--color-primary)]"
             >
               {{ counts[idx] }}{{ metric.suffix }}
             </p>
@@ -140,7 +180,7 @@ onUnmounted(() => {
             <p
               class="mt-1 text-center [font-family:'Inter',Helvetica] text-[9px] xs:text-[10px] sm:text-[12px] font-bold tracking-widest text-[#64748b] uppercase leading-tight px-1"
             >
-              {{ t(metric.translationKeyLabel) }}
+              {{ metric.isCustom ? metric.label : t(metric.translationKeyLabel) }}
             </p>
           </CardContent>
         </Card>
@@ -180,7 +220,7 @@ onUnmounted(() => {
       <!-- Connector line with pulse -->
       <div class="hidden h-3 w-[45px] shrink-0 items-center justify-center sm:flex">
         <svg width="45" height="12" viewBox="0 0 45 12" fill="none">
-          <line x1="0" y1="6" x2="45" y2="6" stroke="#0873b9" stroke-width="2" stroke-dasharray="4 3" class="animate-pulse" />
+          <line x1="0" y1="6" x2="45" y2="6" stroke="var(--color-primary, #0873b9)" stroke-width="2" stroke-dasharray="4 3" class="animate-pulse" />
         </svg>
       </div>
 
@@ -191,7 +231,7 @@ onUnmounted(() => {
         >
           <div class="text-right">
             <p
-              class="bg-[linear-gradient(79deg,rgba(236,32,35,1)_0%,rgba(61,97,173,1)_100%)] dark:bg-[linear-gradient(79deg,#ff4d4d_0%,#0873b9_100%)] bg-clip-text [font-family:'Inter',Helvetica] text-[16px] sm:text-[20px] font-bold tracking-tight text-transparent"
+              class="bg-[linear-gradient(79deg,rgba(236,32,35,1)_0%,rgba(61,97,173,1)_100%)] dark:bg-[linear-gradient(79deg,#ff4d4d_0%,var(--color-primary,#0873b9)_100%)] bg-clip-text [font-family:'Inter',Helvetica] text-[16px] sm:text-[20px] font-bold tracking-tight text-transparent"
               style="-webkit-text-fill-color: transparent"
             >
               {{ t('impact.insa.title') }}

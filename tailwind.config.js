@@ -52,6 +52,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        cbhi: {
+          DEFAULT: "var(--color-primary)",
+          primary: "var(--color-primary)",
+          secondary: "var(--color-secondary)",
+          accent: "var(--color-accent)",
+          'grad-start': "var(--header-grad-start)",
+          'grad-end': "var(--header-grad-end)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

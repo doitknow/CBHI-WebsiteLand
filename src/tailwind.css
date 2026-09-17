@@ -14,6 +14,14 @@
   /* ── Design-system tokens ── */
   --color-primary: #0873b9;
   --color-primary-lt: #0873b9;
+  --color-primary-rgb: 8, 115, 185;
+  --color-secondary: #044e82;
+  --color-secondary-rgb: 4, 78, 130;
+  --color-accent: #22c55e;
+  --color-accent-rgb: 34, 197, 94;
+  --header-grad-start: #3173cf;
+  --header-grad-end: #245497;
+
   --color-text-body: #161616;
   --color-text-muted: #808080;
   --color-text-sub: #64748b;
@@ -63,17 +71,17 @@ main>section {
   padding-left: var(--btn-px);
   padding-right: var(--btn-px);
   border-radius: var(--btn-radius);
-  background-image: linear-gradient(to right, var(--color-primary-lt), var(--color-primary));
+  background-image: linear-gradient(to right, var(--color-primary-lt, var(--color-primary)), var(--color-primary));
   color: white;
   font-size: 0.9375rem;
   font-weight: 600;
-  box-shadow: 0 3px 12px rgba(8, 115, 185, 0.32);
+  box-shadow: 0 3px 12px rgba(var(--color-primary-rgb, 8, 115, 185), 0.32);
   transition: transform 250ms ease, box-shadow 250ms ease;
 }
 
 .btn-primary:hover {
   transform: scale(1.02);
-  box-shadow: 0 6px 18px rgba(8, 115, 185, 0.42);
+  box-shadow: 0 6px 18px rgba(var(--color-primary-rgb, 8, 115, 185), 0.42);
 }
 
 .btn-primary:active {
@@ -89,7 +97,7 @@ main>section {
   padding-left: var(--btn-px);
   padding-right: var(--btn-px);
   border-radius: var(--btn-radius);
-  border: 2px solid rgba(8, 115, 185, 0.7);
+  border: 2px solid rgba(var(--color-primary-rgb, 8, 115, 185), 0.7);
   background: rgba(255, 255, 255, 0.7);
   color: var(--color-primary);
   font-size: 0.9375rem;
@@ -99,8 +107,8 @@ main>section {
 }
 
 .btn-outline:hover {
-  border-color: var(--color-primary-lt);
-  background: rgba(8, 115, 185, 0.08);
+  border-color: var(--color-primary-lt, var(--color-primary));
+  background: rgba(var(--color-primary-rgb, 8, 115, 185), 0.08);
 }
 
 .btn-outline:active {
@@ -113,7 +121,7 @@ main>section {
   align-items: center;
   gap: 0.5rem;
   border-radius: 9999px;
-  background: #eff6ff;
+  background: rgba(var(--color-primary-rgb, 8, 115, 185), 0.1);
   padding: 0.25rem 0.875rem;
   font-size: 0.75rem;
   font-weight: 600;

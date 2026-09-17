@@ -23,7 +23,7 @@ const { t } = useI18n();
         >
           <h2 class="text-[28px] font-extrabold tracking-tight">
             <span class="text-[#161616]">{{ t('footer.heading_get_in') }}</span>
-            <span class="text-[#0873b9]">{{ t('footer.heading_touch') }}</span>
+            <span class="text-[var(--color-primary)]">{{ t('footer.heading_touch') }}</span>
           </h2>
         </div>
       </ScrollReveal> -->
@@ -34,14 +34,14 @@ const { t } = useI18n();
         <ScrollReveal direction="up" :stagger-index="0" :stagger-delay="100" :delay="100" duration="0.8s">
           <div class="flex flex-col gap-3">
             <h3 class="text-[32px] sm:text-[38px] lg:text-[46px] font-black leading-none tracking-tight text-white">
-              CBHI<span class="text-[#0873b9]">.et</span>
+              CBHI<span class="text-[var(--color-primary)]">.et</span>
             </h3>
             <p class="mt-1 text-[13px] font-bold tracking-widest text-[#a1a1aa] uppercase">
               {{ t('footer.brand_subtitle') }}
             </p>
             <p class="mt-1 text-[15px] font-medium text-[#d4d4d8]">
               {{ t('footer.brand_reimagined') }}
-              <span class="text-[#0873b9]">{{ t('footer.brand_digital') }}</span>
+              <span class="text-[var(--color-primary)]">{{ t('footer.brand_digital') }}</span>
             </p>
           </div>
         </ScrollReveal>
@@ -55,7 +55,7 @@ const { t } = useI18n();
               </h3>
               <!-- Custom Line Separator -->
               <div class="relative h-[1px] w-full max-w-[190px] bg-white/20">
-                <div class="absolute left-0 top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[#0873b9]"></div>
+                <div class="absolute left-0 top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[var(--color-primary)]"></div>
               </div>
             </div>
             
@@ -97,13 +97,13 @@ const { t } = useI18n();
               </h3>
               <!-- Custom Line Separator -->
               <div class="relative h-[1px] w-full max-w-[190px] bg-white/20">
-                <div class="absolute left-0 top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[#0873b9]"></div>
+                <div class="absolute left-0 top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[var(--color-primary)]"></div>
               </div>
             </div>
             
             <ul class="flex flex-col gap-5">
               <li class="flex items-center gap-3">
-                <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[#0873b9] transition-transform duration-300 hover:scale-110">
+                <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[var(--color-primary)] transition-transform duration-300 hover:scale-110">
                   <MapPin class="h-[14px] w-[14px]" stroke-width="2.5" />
                 </div>
                 <span class="text-[15px] font-normal text-[#a1a1aa]">
@@ -111,7 +111,7 @@ const { t } = useI18n();
                 </span>
               </li>
               <li class="flex items-center gap-3">
-                <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[#0873b9] transition-transform duration-300 hover:scale-110">
+                <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[var(--color-primary)] transition-transform duration-300 hover:scale-110">
                   <Mail class="h-[14px] w-[14px]" stroke-width="2.5" />
                 </div>
                 <span class="text-[15px] font-normal text-[#a1a1aa]">
@@ -131,7 +131,7 @@ const { t } = useI18n();
               </h3>
               <!-- Custom Line Separator -->
               <div class="relative h-[1px] w-full max-w-[190px] bg-white/20">
-                <div class="absolute left-0 top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[#0873b9]"></div>
+                <div class="absolute left-0 top-1/2 h-[3px] w-8 -translate-y-1/2 rounded-full bg-[var(--color-primary)]"></div>
               </div>
             </div>
             

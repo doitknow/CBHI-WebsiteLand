@@ -3,7 +3,7 @@ import { computed } from "vue";
 import { cn } from "../../lib/utils";
 
 export interface CardContentProps {
-  class?: string;
+  class?: any;
 }
 
 const props = defineProps<CardContentProps>();

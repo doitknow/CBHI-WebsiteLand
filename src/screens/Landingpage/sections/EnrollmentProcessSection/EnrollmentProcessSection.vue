@@ -1,49 +1,77 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { ArrowRight } from "lucide-vue-next";
 import { useI18n } from "vue-i18n";
 import ScrollReveal from "../../../../components/ui/ScrollReveal.vue";
+import type { EnrollmentStepItem } from "../../../../services/cmsService";
+
+const props = defineProps<{
+  dynamicSteps?: EnrollmentStepItem[];
+}>();
 
 const { t } = useI18n();
 
-const enrollmentSteps = [
+const defaultStepIcons = [
+  `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 6a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" fill="var(--color-primary, #0873b9)"/>
+    <path d="M16 18c5.523 0 10 2.239 10 5v1H6v-1c0-2.761 4.477-5 10-5z" fill="var(--color-primary, #0873b9)"/>
+    <rect x="22" y="16" width="7" height="1.5" rx="0.75" fill="var(--color-primary, #0873b9)"/>
+    <rect x="22" y="19" width="5" height="1.5" rx="0.75" fill="var(--color-primary, #0873b9)"/>
+  </svg>`,
+  `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="6" y="8" width="20" height="18" rx="2.5" stroke="var(--color-primary, #0873b9)" stroke-width="1.8" fill="none"/>
+    <line x1="6" y1="14" x2="26" y2="14" stroke="var(--color-primary, #0873b9)" stroke-width="1.8"/>
+    <line x1="11" y1="5" x2="11" y2="10" stroke="var(--color-primary, #0873b9)" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="21" y1="5" x2="21" y2="10" stroke="var(--color-primary, #0873b9)" stroke-width="1.8" stroke-linecap="round"/>
+    <rect x="10" y="18" width="3.5" height="3.5" rx="0.75" fill="var(--color-primary, #0873b9)"/>
+    <rect x="16" y="18" width="3.5" height="3.5" rx="0.75" fill="var(--color-primary, #0873b9)"/>
+    <rect x="22" y="18" width="3.5" height="3.5" rx="0.75" fill="var(--color-primary, #0873b9)" opacity="0.4"/>
+  </svg>`,
+  `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16" cy="16" r="11" stroke="var(--color-primary, #0873b9)" stroke-width="1.8" fill="none"/>
+    <path d="M11 16.5L14.5 20L21 13" stroke="var(--color-primary, #0873b9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </svg>`,
+];
+
+const staticSteps = [
   {
     number: "01",
-    iconSvg: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 6a5 5 0 1 1 0 10 5 5 0 0 1 0-10z" fill="#0873b9"/>
-      <path d="M16 18c5.523 0 10 2.239 10 5v1H6v-1c0-2.761 4.477-5 10-5z" fill="#0873b9"/>
-      <rect x="22" y="16" width="7" height="1.5" rx="0.75" fill="#0873b9"/>
-      <rect x="22" y="19" width="5" height="1.5" rx="0.75" fill="#0873b9"/>
-    </svg>`,
     translationKeyTitle: "enrollment.steps.step1.title",
     translationKeyDesc: "enrollment.steps.step1.description",
     translationKeyBadge: "enrollment.steps.step1.badge",
   },
   {
     number: "02",
-    iconSvg: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="6" y="8" width="20" height="18" rx="2.5" stroke="#0873b9" stroke-width="1.8" fill="none"/>
-      <line x1="6" y1="14" x2="26" y2="14" stroke="#0873b9" stroke-width="1.8"/>
-      <line x1="11" y1="5" x2="11" y2="10" stroke="#0873b9" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="21" y1="5" x2="21" y2="10" stroke="#0873b9" stroke-width="1.8" stroke-linecap="round"/>
-      <rect x="10" y="18" width="3.5" height="3.5" rx="0.75" fill="#0873b9"/>
-      <rect x="16" y="18" width="3.5" height="3.5" rx="0.75" fill="#0873b9"/>
-      <rect x="22" y="18" width="3.5" height="3.5" rx="0.75" fill="#0873b9" opacity="0.4"/>
-    </svg>`,
     translationKeyTitle: "enrollment.steps.step2.title",
     translationKeyDesc: "enrollment.steps.step2.description",
     translationKeyBadge: "enrollment.steps.step2.badge",
   },
   {
     number: "03",
-    iconSvg: `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="11" stroke="#0873b9" stroke-width="1.8" fill="none"/>
-      <path d="M11 16.5L14.5 20L21 13" stroke="#0873b9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    </svg>`,
     translationKeyTitle: "enrollment.steps.step3.title",
     translationKeyDesc: "enrollment.steps.step3.description",
     translationKeyBadge: "enrollment.steps.step3.badge",
   },
 ];
+
+const renderedSteps = computed(() => {
+  if (props.dynamicSteps && props.dynamicSteps.length > 0) {
+    return props.dynamicSteps.map((step, i) => ({
+      number: step.stepNumber < 10 ? `0${step.stepNumber}` : `${step.stepNumber}`,
+      iconSvg: defaultStepIcons[i % defaultStepIcons.length],
+      title: step.title,
+      description: step.description,
+      badge: step.badgeText || "Verified Step",
+    }));
+  }
+  return staticSteps.map((step, i) => ({
+    number: step.number,
+    iconSvg: defaultStepIcons[i % defaultStepIcons.length],
+    title: t(step.translationKeyTitle),
+    description: t(step.translationKeyDesc),
+    badge: t(step.translationKeyBadge),
+  }));
+});
 </script>
 
 <template>
@@ -75,14 +103,14 @@ const enrollmentSteps = [
             <template v-for="row in 5" :key="'dr-'+row">
               <circle v-for="col in 6" :key="'d-'+row+'-'+col"
                 :cx="8 + (col - 1) * 16" :cy="8 + (row - 1) * 14"
-                r="2" fill="#0873b9" opacity="0.18"
+                r="2" fill="var(--color-primary, #0873b9)" opacity="0.18"
               />
             </template>
           </svg>
         </div>
 
         <div class="enrollment-cards-grid">
-          <template v-for="(step, i) in enrollmentSteps" :key="step.number">
+          <template v-for="(step, i) in renderedSteps" :key="step.number">
             <!-- Card -->
             <ScrollReveal direction="up" :stagger-index="i" :stagger-delay="150" :delay="100" duration="0.8s">
             <div class="enrollment-card-container">
@@ -101,21 +129,21 @@ const enrollmentSteps = [
 
                 <!-- Title -->
                 <h3 class="enrollment-card-title">
-                  {{ t(step.translationKeyTitle) }}
+                  {{ step.title }}
                 </h3>
 
                 <!-- Description -->
                 <p class="enrollment-card-desc">
-                  {{ t(step.translationKeyDesc) }}
+                  {{ step.description }}
                 </p>
 
                 <!-- Bottom badge pill -->
                 <div class="enrollment-card-badge">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="enrollment-badge-check">
-                    <circle cx="9" cy="9" r="9" fill="#0873b9"/>
+                    <circle cx="9" cy="9" r="9" fill="var(--color-primary, #0873b9)"/>
                     <path d="M5.5 9.5L7.8 11.8L12.5 6.5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                  <span class="enrollment-badge-text">{{ t(step.translationKeyBadge) }}</span>
+                  <span class="enrollment-badge-text">{{ step.badge }}</span>
                 </div>
               </div>
             </div>
@@ -123,7 +151,7 @@ const enrollmentSteps = [
 
             <!-- Arrow connector between cards (horizontal on desktop, vertical on mobile) -->
             <div
-              v-if="i < enrollmentSteps.length - 1"
+              v-if="i < renderedSteps.length - 1"
               class="enrollment-arrow-connector"
             >
               <div class="enrollment-arrow-circle">
@@ -157,7 +185,7 @@ const enrollmentSteps = [
 .enrollment-section {
   width: 100%;
   background-color: #f8fafc;
-  padding: 72px 24px 64px;
+  padding: 72px 50px 64px;
   font-family: 'Inter', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }
@@ -187,7 +215,7 @@ const enrollmentSteps = [
 }
 
 .enrollment-title-blue {
-  color: #0873b9;
+  color: var(--color-primary, #0873b9);
 }
 
 .enrollment-subtitle {
@@ -276,8 +304,8 @@ const enrollmentSteps = [
   font-size: 18px;
   font-weight: 800;
   color: white;
-  background: linear-gradient(135deg, #0d2b6b 0%, #1a4da8 100%);
-  box-shadow: 0 4px 14px rgba(13, 43, 107, 0.3);
+  background: linear-gradient(135deg, var(--color-secondary, #0d2b6b) 0%, var(--color-primary, #1a4da8) 100%);
+  box-shadow: 0 4px 14px rgba(var(--color-primary-rgb, 13, 43, 107), 0.3);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -303,8 +331,8 @@ const enrollmentSteps = [
 
 .enrollment-card-container:hover .enrollment-card {
   transform: translateY(-8px);
-  box-shadow: 0 20px 48px rgba(60, 141, 253, 0.12),
-              0 0 0 1px rgba(60, 141, 253, 0.08);
+  box-shadow: 0 20px 48px rgba(var(--color-primary-rgb, 60, 141, 253), 0.14),
+              0 0 0 1px rgba(var(--color-primary-rgb, 60, 141, 253), 0.08);
 }
 
 /* ─── Icon Circle ─── */
@@ -315,14 +343,15 @@ const enrollmentSteps = [
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background-color: #e8f1ff;
+  background-color: rgba(var(--color-primary-rgb, 8, 115, 185), 0.1);
+  color: var(--color-primary, #0873b9);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
               background-color 0.3s ease;
 }
 
 .enrollment-card-container:hover .enrollment-icon-circle {
   transform: scale(1.1);
-  background-color: #d6e6ff;
+  background-color: rgba(var(--color-primary-rgb, 8, 115, 185), 0.18);
 }
 
 .enrollment-icon-inner {
@@ -342,7 +371,7 @@ const enrollmentSteps = [
 }
 
 .enrollment-card-container:hover .enrollment-card-title {
-  color: #0873b9;
+  color: var(--color-primary, #0873b9);
 }
 
 /* ─── Card Description ─── */
@@ -362,7 +391,7 @@ const enrollmentSteps = [
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #eaf3ff;
+  background-color: rgba(var(--color-primary-rgb, 8, 115, 185), 0.1);
   border-radius: 100px;
   padding: 8px 18px;
   margin-top: 24px;
@@ -370,7 +399,7 @@ const enrollmentSteps = [
 }
 
 .enrollment-card-container:hover .enrollment-card-badge {
-  background-color: #d6e6ff;
+  background-color: rgba(var(--color-primary-rgb, 8, 115, 185), 0.18);
   transform: translateY(-2px);
 }
 
@@ -381,7 +410,7 @@ const enrollmentSteps = [
 .enrollment-badge-text {
   font-size: 12.5px;
   font-weight: 600;
-  color: #0873b9;
+  color: var(--color-primary, #0873b9);
   white-space: nowrap;
 }
 
@@ -414,8 +443,8 @@ const enrollmentSteps = [
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #0873b9 0%, #2b7af7 100%);
-  box-shadow: 0 4px 14px rgba(60, 141, 253, 0.3);
+  background: linear-gradient(135deg, var(--color-primary, #0873b9) 0%, var(--header-grad-start, #2b7af7) 100%);
+  box-shadow: 0 4px 14px rgba(var(--color-primary-rgb, 60, 141, 253), 0.3);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
               box-shadow 0.35s ease;
   animation: enrollment-float 3s ease-in-out infinite;
@@ -423,7 +452,7 @@ const enrollmentSteps = [
 
 .enrollment-arrow-circle:hover {
   transform: scale(1.15);
-  box-shadow: 0 6px 20px rgba(60, 141, 253, 0.45);
+  box-shadow: 0 6px 20px rgba(var(--color-primary-rgb, 60, 141, 253), 0.45);
 }
 
 .enrollment-arrow-icon {
@@ -468,8 +497,8 @@ const enrollmentSteps = [
   font-size: 15.5px;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #0873b9 0%, #2b7af7 100%);
-  box-shadow: 0 6px 24px rgba(60, 141, 253, 0.3);
+  background: linear-gradient(135deg, var(--color-primary, #0873b9) 0%, var(--color-secondary, #044e82) 100%);
+  box-shadow: 0 6px 24px rgba(var(--color-primary-rgb, 60, 141, 253), 0.3);
   transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
               box-shadow 0.35s ease,
               background 0.3s ease;
@@ -477,8 +506,8 @@ const enrollmentSteps = [
 
 .enrollment-cta-btn:hover {
   transform: scale(1.06);
-  box-shadow: 0 10px 32px rgba(60, 141, 253, 0.4);
-  background: linear-gradient(135deg, #2b7af7 0%, #1a6ae0 100%);
+  box-shadow: 0 10px 32px rgba(var(--color-primary-rgb, 60, 141, 253), 0.45);
+  background: linear-gradient(135deg, var(--header-grad-start, #2b7af7) 0%, var(--color-primary, #1a6ae0) 100%);
 }
 
 .enrollment-cta-icon {
@@ -516,7 +545,7 @@ const enrollmentSteps = [
 /* ─── Responsive: Tablet ─── */
 @media (min-width: 640px) {
   .enrollment-section {
-    padding: 72px 32px 64px;
+    padding: 72px 50px 64px;
   }
   .enrollment-step-badge {
     left: -10px;
@@ -549,7 +578,7 @@ const enrollmentSteps = [
 
 @media (min-width: 768px) {
   .enrollment-section {
-    padding: 80px 40px 72px;
+    padding: 80px 50px 72px;
   }
 
   .enrollment-cards-grid {
@@ -563,7 +592,7 @@ const enrollmentSteps = [
 
 @media (min-width: 1024px) {
   .enrollment-section {
-    padding: 96px 48px 88px;
+    padding: 96px 50px 88px;
   }
 
   .enrollment-card {

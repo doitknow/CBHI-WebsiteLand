@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed, type InputTypeHTMLAttributes } from "vue";
+import { computed } from "vue";
 import { cn } from "../../lib/utils";
 
 export interface InputProps {
-  type?: InputTypeHTMLAttributes;
+  type?: string;
   class?: string;
   placeholder?: string;
   ariaLabel?: string;

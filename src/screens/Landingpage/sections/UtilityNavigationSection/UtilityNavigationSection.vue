@@ -81,10 +81,8 @@ function handleNavClick(item: { translationKey: string; sectionId: string }) {
 /* ── Language Switcher ── */
 const availableLocales = [
   { code: 'en', name: 'English' },
-  { code: 'am', name: 'አማርኛ' },
-  { code: 'om', name: 'Afaan Oromoo' },
-  { code: 'ti', name: 'ትግርኛ' },
-  { code: 'so', name: 'Soomaali' }
+  { code: 'am', name: 'Amharic (አማርኛ)' },
+  { code: 'om', name: 'Oromifa (Afaan Oromoo)' }
 ];
 
 const isLanguageMenuOpen = ref(false);
@@ -110,11 +108,11 @@ function getLocaleName(code: string) {
   >
 
     <!-- ════════════════ DESKTOP BAR ════════════════ -->
-    <div class="mx-auto flex h-[56px] xs:h-[60px] sm:h-[64px] lg:h-[72px] w-full max-w-[1400px] items-center px-4 sm:px-6 lg:px-10">
+    <div class="mx-auto flex h-[56px] xs:h-[60px] sm:h-[64px] lg:h-[72px] w-full max-w-[1400px] items-center px-[50px]">
 
       <!-- Left: Logo -->
       <div class="flex shrink-0 items-center">
-        <span class="text-[22px] xs:text-[24px] sm:text-[26px] lg:text-[28px] font-black leading-none tracking-tight text-[#0873b9] dark:text-white">
+        <span class="text-[22px] xs:text-[24px] sm:text-[26px] lg:text-[28px] font-black leading-none tracking-tight text-[var(--color-primary)] dark:text-white">
           CBHI.et
         </span>
       </div>
@@ -129,11 +127,11 @@ function getLocaleName(code: string) {
             <button
               type="button"
               :aria-current="activeNavigation === item.sectionId ? 'page' : undefined"
-              class="nav-link relative inline-flex h-9 items-center justify-center whitespace-nowrap px-4 text-[15px] leading-none tracking-[0] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0873b9]/40"
+              class="nav-link relative inline-flex h-9 items-center justify-center whitespace-nowrap px-4 text-[15px] leading-none tracking-[0] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]/40"
               :class="
                 activeNavigation === item.sectionId
-                  ? 'active-nav font-semibold text-[#0873b9] dark:text-[#0873b9]'
-                  : 'font-medium text-[#808080] dark:text-slate-300 hover:text-[#0873b9] dark:hover:text-[#0873b9]'
+                  ? 'active-nav font-semibold text-[var(--color-primary)] dark:text-[var(--color-primary)]'
+                  : 'font-medium text-[#808080] dark:text-slate-300 hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary)]'
               "
               @click="handleNavClick(item)"
             >
@@ -149,7 +147,7 @@ function getLocaleName(code: string) {
         <button
           type="button"
           aria-label="Toggle dark mode"
-          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[#808080] dark:text-slate-300 transition-all duration-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-[#0873b9] dark:hover:text-[#0873b9] hover:rotate-12"
+          class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[#808080] dark:text-slate-300 transition-all duration-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary)] hover:rotate-12"
           @click="isDarkMode = !isDarkMode"
         >
           <Transition name="icon-rotate" mode="out-in">
@@ -163,7 +161,7 @@ function getLocaleName(code: string) {
           <button
             type="button"
             @click="isLanguageMenuOpen = !isLanguageMenuOpen"
-            class="flex h-9 w-[138px] shrink-0 items-center gap-1.5 rounded-lg border border-[#d1d1d1] dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-[13.5px] font-medium text-[#787878] dark:text-slate-200 transition-colors duration-200 hover:border-[#0873b9]/60 dark:hover:border-[#0873b9]/60 hover:text-[#0873b9] dark:hover:text-[#0873b9] focus:outline-none"
+            class="flex h-9 w-[138px] shrink-0 items-center gap-1.5 rounded-lg border border-[#d1d1d1] dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-[13.5px] font-medium text-[#787878] dark:text-slate-200 transition-colors duration-200 hover:border-[var(--color-primary)]/60 dark:hover:border-[var(--color-primary)]/60 hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary)] focus:outline-none"
           >
             <Globe class="h-[15px] w-[15px] shrink-0" />
             <span class="flex-1 text-left whitespace-nowrap overflow-hidden text-ellipsis">{{ getLocaleName(locale) }}</span>
@@ -176,7 +174,7 @@ function getLocaleName(code: string) {
               :key="l.code"
               @click="changeLanguage(l.code)"
               class="w-full px-3 py-2 text-left text-[13.5px] hover:bg-slate-50 dark:hover:bg-slate-700 text-[#787878] dark:text-slate-200"
-              :class="{ 'font-semibold text-[#0873b9] dark:text-[#0873b9]': locale === l.code }"
+              :class="{ 'font-semibold text-[var(--color-primary)] dark:text-[var(--color-primary)]': locale === l.code }"
             >
               {{ l.name }}
             </button>
@@ -186,7 +184,7 @@ function getLocaleName(code: string) {
         <!-- Enroll Now — same design token as hero Get Started -->
         <button
           type="button"
-          class="cta-shimmer hidden sm:inline-flex h-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-[#0873b9] to-[#0873b9] px-5 text-[14px] font-semibold text-white shadow-[0_3px_10px_rgba(8,115,185,0.35)] transition-all duration-[250ms] hover:scale-[1.03] hover:shadow-[0_5px_16px_rgba(8,115,185,0.45)] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0873b9]/50 focus-visible:ring-offset-1"
+          class="cta-shimmer hidden sm:inline-flex h-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] px-5 text-[14px] font-semibold text-white shadow-[0_3px_10px_rgba(var(--color-primary-rgb),0.35)] transition-all duration-[250ms] hover:scale-[1.03] hover:shadow-[0_5px_16px_rgba(var(--color-primary-rgb),0.45)] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]/50 focus-visible:ring-offset-1"
         >
           {{ t('nav.enroll_now') }}
         </button>
@@ -220,8 +218,8 @@ function getLocaleName(code: string) {
               class="w-full rounded-xl px-4 py-3 text-left text-[15px] transition-all duration-150 focus-visible:outline-none min-h-[44px] flex items-center"
               :class="
                 activeNavigation === item.sectionId
-                  ? 'bg-[#0873b9]/10 font-semibold text-[#0873b9] dark:text-[#0873b9]'
-                  : 'font-medium text-[#666] dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[#0873b9] dark:hover:text-[#0873b9]'
+                  ? 'bg-[var(--color-primary)]/10 font-semibold text-[var(--color-primary)] dark:text-[var(--color-primary)]'
+                  : 'font-medium text-[#666] dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary)]'
               "
               @click="handleNavClick(item)"
             >
@@ -245,7 +243,7 @@ function getLocaleName(code: string) {
           </button>
           <button
             type="button"
-            class="inline-flex h-9 flex-1 items-center justify-center rounded-[12px] bg-gradient-to-r from-[#0873b9] to-[#0873b9] px-5 text-[14px] font-semibold text-white shadow-[0_3px_10px_rgba(8,115,185,0.3)]"
+            class="inline-flex h-9 flex-1 items-center justify-center rounded-[12px] bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] px-5 text-[14px] font-semibold text-white shadow-[0_3px_10px_rgba(var(--color-primary-rgb),0.3)]"
           >
             {{ t('nav.enroll_now') }}
           </button>
@@ -257,7 +255,7 @@ function getLocaleName(code: string) {
             :key="l.code"
             @click="changeLanguage(l.code)"
             class="w-full px-3 py-2 text-left text-[13.5px] hover:bg-slate-50 dark:hover:bg-slate-700 text-[#787878] dark:text-slate-200"
-            :class="{ 'font-semibold text-[#0873b9] dark:text-[#0873b9]': locale === l.code }"
+            :class="{ 'font-semibold text-[var(--color-primary)] dark:text-[var(--color-primary)]': locale === l.code }"
           >
             {{ l.name }}
           </button>
@@ -282,8 +280,8 @@ function getLocaleName(code: string) {
   box-shadow:
     -10px 0 0 -2px transparent,
      10px 0 0 -2px transparent;
-  border-left:  2.5px solid #0873b9;
-  border-right: 2.5px solid #0873b9;
+  border-left:  2.5px solid var(--color-primary, #0873b9);
+  border-right: 2.5px solid var(--color-primary, #0873b9);
   border-top:    none;
   border-bottom: none;
   border-radius: 50% / 8px;

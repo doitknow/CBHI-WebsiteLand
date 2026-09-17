@@ -23,13 +23,13 @@ const healthPrinciples = [
   {
     translationKeyTitle: "health_rights.principles.equitable.title",
     translationKeyDesc: "health_rights.principles.equitable.description",
-    color: "#0873b9",
+    color: "var(--color-primary)",
     icon: Scale,
   },
   {
     translationKeyTitle: "health_rights.principles.solidarity.title",
     translationKeyDesc: "health_rights.principles.solidarity.description",
-    color: "#0873b9",
+    color: "var(--color-primary)",
     icon: HeartHandshake,
   },
 ];
@@ -58,25 +58,25 @@ const regionalHubs = [
     name: "Eastern Zone",
     region: "Dire Dawa & Somali Region",
     stat: "420+ Health Facilities",
-    top: "45%",
-    left: "68%",
+    top: "44%",
+    left: "70%",
     isPrimary: false,
   },
   {
     id: "south",
     name: "Southern Zone",
-    region: "Sidama & South Regional Hub",
-    stat: "580+ Active Centers",
-    top: "70%",
-    left: "44%",
+    region: "Oromia & Sidama Network",
+    stat: "850+ Primary Clinics",
+    top: "68%",
+    left: "46%",
     isPrimary: false,
   },
   {
     id: "west",
     name: "Western Zone",
-    region: "Oromia & Gambella Network",
-    stat: "490+ Community Clinics",
-    top: "52%",
+    region: "Benishangul & Gambela",
+    stat: "310+ Healthcare Units",
+    top: "50%",
     left: "24%",
     isPrimary: false,
   },
@@ -86,12 +86,12 @@ const regionalHubs = [
 <template>
   <section
     aria-labelledby="health-rights-heading"
-    class="relative w-full overflow-hidden bg-white dark:bg-[#021E31] py-10 sm:py-14 md:py-16 [font-family:'Inter',Helvetica]"
+    class="relative w-full overflow-hidden bg-white py-14 sm:py-16 md:py-20 lg:py-28 dark:bg-[#02182b] [font-family:'Inter',Helvetica] transition-colors duration-300"
   >
     <!-- Background subtle ambient lighting -->
     <div
       aria-hidden="true"
-      class="pointer-events-none absolute -left-40 top-1/4 h-[500px] w-[500px] rounded-full bg-[#0873b9]/5 blur-[120px] dark:bg-[#0873b9]/10"
+      class="pointer-events-none absolute -left-40 top-1/4 h-[500px] w-[500px] rounded-full bg-[var(--color-primary)]/5 blur-[120px] dark:bg-[var(--color-primary)]/10"
     />
     <div
       aria-hidden="true"
@@ -99,7 +99,7 @@ const regionalHubs = [
     />
 
     <div
-      class="mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-8 sm:gap-10 lg:gap-14 px-4 xs:px-6 sm:px-8 lg:grid-cols-[minmax(0,580px)_minmax(0,1fr)] lg:px-10 xl:px-6"
+      class="mx-auto grid max-w-[1240px] grid-cols-1 items-center gap-8 sm:gap-10 lg:gap-14 px-[50px] lg:grid-cols-[minmax(0,580px)_minmax(0,1fr)]"
     >
       <!-- Left text content -->
       <div class="relative z-10 flex flex-col items-start">
@@ -111,7 +111,7 @@ const regionalHubs = [
               class="text-[28px] xs:text-[32px] sm:text-[40px] md:text-[48px] lg:text-[58px] font-black leading-[1.08] tracking-tight text-[#161616] dark:text-white"
             >
               <span class="block">{{ t('health_rights.heading_health') }}</span>
-              <span class="block">{{ t('health_rights.heading_is_everyone_right') }}<span class="text-[#0873b9]">{{ t('health_rights.heading_right') }}</span></span>
+              <span class="block">{{ t('health_rights.heading_is_everyone_right') }}<span class="text-[var(--color-primary)]">{{ t('health_rights.heading_right') }}</span></span>
             </h2>
           </div>
         </ScrollReveal>
@@ -140,9 +140,9 @@ const regionalHubs = [
                 <div class="relative mb-3.5 flex h-[46px] items-center">
                   <span
                     aria-hidden="true"
-                    class="absolute left-3 top-2 h-[34px] w-[34px] rounded-full bg-[#0873b9]/20 dark:bg-[#0873b9]/30 group-hover:scale-125 transition-transform duration-300"
+                    class="absolute left-3 top-2 h-[34px] w-[34px] rounded-full bg-[var(--color-primary)]/20 dark:bg-[var(--color-primary)]/30 group-hover:scale-125 transition-transform duration-300"
                   />
-                  <div class="relative z-10 flex h-[38px] w-9 items-center justify-center text-[#0873b9] dark:text-[#0873b9]">
+                  <div class="relative z-10 flex h-[38px] w-9 items-center justify-center text-[var(--color-primary)] dark:text-[var(--color-primary)]">
                     <component :is="principle.icon" class="h-6 w-6" stroke-width="2.2" />
                   </div>
                 </div>
@@ -167,7 +167,7 @@ const regionalHubs = [
             <div class="relative w-full inline-block">
               <!-- Layer 3: Ethiopia Map Image with 3D Depth Shadow -->
               <img
-                class="relative z-10 w-full h-auto object-contain filter drop-shadow-[0_12px_28px_rgba(8,115,185,0.22)] dark:drop-shadow-[0_16px_36px_rgba(8,115,185,0.35)] transition-transform duration-700 hover:scale-[1.01]"
+                class="relative z-10 w-full h-auto object-contain filter drop-shadow-[0_12px_28px_rgba(var(--color-primary-rgb),0.22)] dark:drop-shadow-[0_16px_36px_rgba(var(--color-primary-rgb),0.35)] transition-transform duration-700 hover:scale-[1.01]"
                 alt="Map of Ethiopia - CBHI National Coverage Network"
                 src="/map-Photoroom.png"
               />
@@ -183,39 +183,39 @@ const regionalHubs = [
                 <defs>
                   <!-- Radial gradient for radar glow -->
                   <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#0873b9" stop-opacity="0.3" />
-                    <stop offset="60%" stop-color="#0873b9" stop-opacity="0.08" />
-                    <stop offset="100%" stop-color="#0873b9" stop-opacity="0" />
+                    <stop offset="0%" stop-color="var(--color-primary, #0873b9)" stop-opacity="0.3" />
+                    <stop offset="60%" stop-color="var(--color-primary, #0873b9)" stop-opacity="0.08" />
+                    <stop offset="100%" stop-color="var(--color-primary, #0873b9)" stop-opacity="0" />
                   </radialGradient>
 
                   <!-- Line gradient for primary telemetry paths -->
                   <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#0873b9" stop-opacity="0.9" />
-                    <stop offset="50%" stop-color="#0873b9" stop-opacity="0.6" />
+                    <stop offset="0%" stop-color="var(--color-primary, #0873b9)" stop-opacity="0.9" />
+                    <stop offset="50%" stop-color="var(--color-primary, #0873b9)" stop-opacity="0.6" />
                     <stop offset="100%" stop-color="#10b981" stop-opacity="0.9" />
                   </linearGradient>
 
                   <linearGradient id="pulseGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#0873b9" stop-opacity="0" />
+                    <stop offset="0%" stop-color="var(--color-primary, #0873b9)" stop-opacity="0" />
                     <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.9" />
                     <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
                   </linearGradient>
                 </defs>
 
                 <!-- Radar Concentric Range Rings Centered around Addis Ababa (258, 207) -->
-                <circle cx="258" cy="207" r="60" stroke="#0873b9" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="3 4" />
-                <circle cx="258" cy="207" r="120" stroke="#0873b9" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="4 6" />
-                <circle cx="258" cy="207" r="185" stroke="#0873b9" stroke-opacity="0.15" stroke-width="1" />
-                <circle cx="258" cy="207" r="235" stroke="#0873b9" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="2 5" />
+                <circle cx="258" cy="207" r="60" stroke="var(--color-primary, #0873b9)" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="3 4" />
+                <circle cx="258" cy="207" r="120" stroke="var(--color-primary, #0873b9)" stroke-opacity="0.2" stroke-width="1" stroke-dasharray="4 6" />
+                <circle cx="258" cy="207" r="185" stroke="var(--color-primary, #0873b9)" stroke-opacity="0.15" stroke-width="1" />
+                <circle cx="258" cy="207" r="235" stroke="var(--color-primary, #0873b9)" stroke-opacity="0.08" stroke-width="1" stroke-dasharray="2 5" />
 
                 <!-- Animated Expanding Radar Waves -->
                 <circle cx="258" cy="207" r="30" stroke="#38bdf8" stroke-opacity="0.6" class="radar-ring" fill="url(#radarGlow)" />
-                <circle cx="258" cy="207" r="30" stroke="#0873b9" stroke-opacity="0.5" class="radar-ring-2" fill="none" />
+                <circle cx="258" cy="207" r="30" stroke="var(--color-primary, #0873b9)" stroke-opacity="0.5" class="radar-ring-2" fill="none" />
                 <circle cx="258" cy="207" r="30" stroke="#10b981" stroke-opacity="0.4" class="radar-ring-3" fill="none" />
 
                 <!-- Crosshair Grid Axes -->
-                <line x1="40" y1="207" x2="480" y2="207" stroke="#0873b9" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
-                <line x1="258" y1="30" x2="258" y2="400" stroke="#0873b9" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
+                <line x1="40" y1="207" x2="480" y2="207" stroke="var(--color-primary, #0873b9)" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
+                <line x1="258" y1="30" x2="258" y2="400" stroke="var(--color-primary, #0873b9)" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 8" />
 
                 <!-- Health Network Curved Telemetry Arcs Connecting Ethiopian Regions -->
                 <!-- Center (258,207) to North (231,108) -->
@@ -228,9 +228,9 @@ const regionalHubs = [
                 <path d="M 258 207 L 132 234" stroke="url(#pathGradient)" stroke-width="2" class="data-flow-line" opacity="0.8" />
 
                 <!-- Regional Interconnection Arcs -->
-                <path d="M 231 108 Q 320 130 374 202" stroke="#0873b9" stroke-opacity="0.4" stroke-width="1.5" class="data-flow-line-reverse" fill="none" />
+                <path d="M 231 108 Q 320 130 374 202" stroke="var(--color-primary, #0873b9)" stroke-opacity="0.4" stroke-width="1.5" class="data-flow-line-reverse" fill="none" />
                 <path d="M 374 202 Q 330 290 242 315" stroke="#10b981" stroke-opacity="0.35" stroke-width="1.5" class="data-flow-line" fill="none" />
-                <path d="M 242 315 Q 170 300 132 234" stroke="#0873b9" stroke-opacity="0.4" stroke-width="1.5" class="data-flow-line-reverse" fill="none" />
+                <path d="M 242 315 Q 170 300 132 234" stroke="var(--color-primary, #0873b9)" stroke-opacity="0.4" stroke-width="1.5" class="data-flow-line-reverse" fill="none" />
                 <path d="M 132 234 Q 160 150 231 108" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="1.5" class="data-flow-line" fill="none" />
 
                 <!-- Live EKG / Heartbeat Telemetry Line across bottom -->
@@ -257,18 +257,18 @@ const regionalHubs = [
                 <span
                   class="absolute -inset-1 rounded-full opacity-60"
                   :class="[
-                    hub.isPrimary ? 'bg-[#0873b9] animate-ping' : 'bg-emerald-500 group-hover:animate-ping'
+                    hub.isPrimary ? 'bg-[var(--color-primary)] animate-ping' : 'bg-emerald-500 group-hover:animate-ping'
                   ]"
                 />
 
                 <!-- Real Map Pin Icon -->
                 <div 
                   class="relative flex items-center justify-center drop-shadow-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110"
-                  :class="hub.isPrimary ? 'text-[#065a92]' : 'text-emerald-700'"
+                  :class="hub.isPrimary ? 'text-[var(--color-secondary)]' : 'text-emerald-700'"
                 >
                   <MapPin 
                     :class="[
-                      hub.isPrimary ? 'h-5 w-5 sm:h-7 sm:w-7 md:h-8 md:w-8 fill-[#0873b9]' : 'h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 fill-emerald-500'
+                      hub.isPrimary ? 'h-5 w-5 sm:h-7 sm:w-7 md:h-8 md:w-8 fill-[var(--color-primary)]' : 'h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 fill-emerald-500'
                     ]" 
                     stroke-width="1.5" 
                   />
@@ -286,13 +286,13 @@ const regionalHubs = [
                   
                   <div class="relative z-10 flex items-center gap-2 border-b border-slate-100 dark:border-white/5 pb-1.5 mb-1.5">
                     <span class="relative flex h-2 w-2 shrink-0">
-                      <span class="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" :class="hub.isPrimary ? 'bg-[#0873b9]' : 'bg-emerald-400'"></span>
-                      <span class="relative inline-flex h-2 w-2 rounded-full" :class="hub.isPrimary ? 'bg-[#0873b9]' : 'bg-emerald-500'"></span>
+                      <span class="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" :class="hub.isPrimary ? 'bg-[var(--color-primary)]' : 'bg-emerald-400'"></span>
+                      <span class="relative inline-flex h-2 w-2 rounded-full" :class="hub.isPrimary ? 'bg-[var(--color-primary)]' : 'bg-emerald-500'"></span>
                     </span>
                     <p class="text-[10px] sm:text-[11px] font-bold text-slate-800 dark:text-white">{{ hub.name }}</p>
                   </div>
                   <div class="relative z-10 text-left">
-                    <p class="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-[#0873b9] dark:text-[#0873b9]">{{ hub.region }}</p>
+                    <p class="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-[var(--color-primary)] dark:text-[var(--color-primary)]">{{ hub.region }}</p>
                     <span class="mt-0.5 block text-[9.5px] sm:text-[10.5px] text-slate-600 dark:text-slate-300 font-medium whitespace-nowrap">{{ hub.stat }}</span>
                   </div>
                 </div>
@@ -301,10 +301,10 @@ const regionalHubs = [
 
             <!-- Bottom Right: Solidarity Pill Badge -->
             <div
-              class="animate-float absolute bottom-0 sm:bottom-4 right-0 sm:right-3 z-20 hidden xs:flex items-center gap-1.5 sm:gap-2 rounded-full border border-blue-200/70 dark:border-blue-500/20 bg-blue-50/90 dark:bg-[#083554]/90 px-2 sm:px-3 py-1 sm:py-1.5 shadow-sm backdrop-blur-md scale-90 sm:scale-100 origin-bottom-right"
+              class="animate-float absolute bottom-0 sm:bottom-4 right-0 sm:right-3 z-20 hidden xs:flex items-center gap-1.5 sm:gap-2 rounded-full border border-[var(--color-primary)]/25 bg-[rgba(var(--color-primary-rgb),0.08)] px-2 sm:px-3 py-1 sm:py-1.5 shadow-sm backdrop-blur-md scale-90 sm:scale-100 origin-bottom-right"
             >
-              <HeartHandshake class="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#0873b9] dark:text-[#0873b9]" />
-              <span class="text-[10px] sm:text-[11px] font-bold text-[#0873b9] dark:text-[#0873b9]">100% Community Solidarity</span>
+              <HeartHandshake class="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--color-primary)] dark:text-[var(--color-primary)]" />
+              <span class="text-[10px] sm:text-[11px] font-bold text-[var(--color-primary)] dark:text-[var(--color-primary)]">100% Community Solidarity</span>
             </div>
 
           </div>
@@ -319,7 +319,7 @@ const regionalHubs = [
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="86.5" cy="86.5" r="85" stroke="#0873b9" stroke-opacity="0.15" stroke-width="3"/>
+      <circle cx="86.5" cy="86.5" r="85" stroke="var(--color-primary, #0873b9)" stroke-opacity="0.15" stroke-width="3"/>
     </svg>
   </section>
 </template>

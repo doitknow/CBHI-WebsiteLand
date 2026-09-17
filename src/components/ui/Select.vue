@@ -73,7 +73,7 @@ onUnmounted(() => {
       :aria-expanded="isOpen"
       :class="
         cn(
-          'flex h-9 items-center justify-between gap-1.5 rounded border border-[#d1d1d1] bg-white px-2.5 text-sm font-medium text-[#787878] transition-colors focus:outline-none focus:ring-1 focus:ring-[#0873b9]',
+          'flex h-9 items-center justify-between gap-1.5 rounded border border-[#d1d1d1] bg-white px-2.5 text-sm font-medium text-[#787878] transition-colors focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)]',
           props.class,
         )
       "
@@ -98,9 +98,9 @@ onUnmounted(() => {
         :key="option.value"
         :class="
           cn(
-            'flex cursor-pointer select-none items-center justify-between rounded-sm px-2 py-1.5 font-medium transition-colors hover:bg-slate-100 hover:text-[#0873b9]',
+            'flex cursor-pointer select-none items-center justify-between rounded-sm px-2 py-1.5 font-medium transition-colors hover:bg-slate-100 hover:text-[var(--color-primary)]',
             modelValue === option.value
-              ? 'bg-slate-50 font-bold text-[#0873b9]'
+              ? 'bg-slate-50 font-bold text-[var(--color-primary)]'
               : 'text-[#555]',
           )
         "
@@ -109,7 +109,7 @@ onUnmounted(() => {
         <span>{{ option.label }}</span>
         <Check
           v-if="modelValue === option.value"
-          class="h-3.5 w-3.5 text-[#0873b9]"
+          class="h-3.5 w-3.5 text-[var(--color-primary)]"
         />
       </div>
     </div>

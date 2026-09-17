@@ -7,7 +7,7 @@ import { UserCheck, Stethoscope, HeartPulse } from "lucide-vue-next";
 import ScrollReveal from "../../../../components/ui/ScrollReveal.vue";
 import type { CoverageBenefitItem } from "../../../../services/cmsService";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const props = withDefaults(
   defineProps<{
@@ -49,6 +49,9 @@ const fallbackImages = ["/primary in web.png", "/hospitalization.png", "/materna
 const fallbackIcons = [UserCheck, Stethoscope, HeartPulse];
 
 const renderedBenefits = computed(() => {
+  if (locale.value !== 'en') {
+    return defaultBenefits;
+  }
   if (props.dynamicBenefits && props.dynamicBenefits.length > 0) {
     return props.dynamicBenefits.map((item, idx) => ({
       title: item.title,

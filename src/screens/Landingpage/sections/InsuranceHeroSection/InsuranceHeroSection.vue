@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-vue-next";
 import { useI18n } from "vue-i18n";
 import Button from "../../../../components/ui/Button.vue";
@@ -10,11 +10,32 @@ import slide1 from "../../../../assets/slider/slide 1.png";
 import slide2 from "../../../../assets/slider/slide 2.png";
 import slide3 from "../../../../assets/slider/slide 3.png";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const props = defineProps<{
   dynamicSettings?: Record<string, string>;
 }>();
+
+const heroTitleEthiopian = computed(() => {
+  if (locale.value === 'en') {
+    return props.dynamicSettings?.['hero.title_ethiopian'] || t('hero.title_ethiopian');
+  }
+  return t('hero.title_ethiopian');
+});
+
+const heroTitleHealthInsurance = computed(() => {
+  if (locale.value === 'en') {
+    return props.dynamicSettings?.['hero.title_health_insurance'] || t('hero.title_health_insurance');
+  }
+  return t('hero.title_health_insurance');
+});
+
+const heroSubtitle = computed(() => {
+  if (locale.value === 'en') {
+    return props.dynamicSettings?.['hero.subtitle'] || t('hero.subtitle');
+  }
+  return t('hero.subtitle');
+});
 
 const slideImages = [slide2, slide3];
 const currentSlide = ref(0);
@@ -203,16 +224,16 @@ const partnerCards = [
           id="insurance-hero-title"
           class="mt-1 text-[38px] xs:text-[46px] sm:text-[62px] lg:text-[82px] font-bold leading-[1.05] tracking-[0]"
         >
-          <span class="inline-block text-[#161616] dark:text-white animate-hero-reveal anim-delay-1 mr-2 sm:mr-3 lg:mr-5">{{ props.dynamicSettings?.['hero.title_ethiopian'] || t('hero.title_ethiopian') }}</span>
+          <span class="inline-block text-[#161616] dark:text-white animate-hero-reveal anim-delay-1 mr-2 sm:mr-3 lg:mr-5">{{ heroTitleEthiopian }}</span>
           <span class="inline-block bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] bg-clip-text text-transparent animate-hero-reveal anim-delay-3">
-            {{ props.dynamicSettings?.['hero.title_health_insurance'] || t('hero.title_health_insurance') }}
+            {{ heroTitleHealthInsurance }}
           </span>
         </h1>
 
         <p
           class="animate-slide-up-fade anim-delay-5 mt-4 sm:mt-6 max-w-[420px] text-[14px] sm:text-[15.5px] font-medium leading-[1.65] text-[#71717a] dark:text-slate-300 lg:mt-[36px]"
         >
-          {{ props.dynamicSettings?.['hero.subtitle'] || t('hero.subtitle') }}
+          {{ heroSubtitle }}
         </p>
 
         <div class="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 lg:mt-[38px] animate-slide-up-fade anim-delay-6">

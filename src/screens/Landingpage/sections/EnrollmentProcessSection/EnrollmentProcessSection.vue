@@ -9,7 +9,7 @@ const props = defineProps<{
   dynamicSteps?: EnrollmentStepItem[];
 }>();
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const defaultStepIcons = [
   `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +55,7 @@ const staticSteps = [
 ];
 
 const renderedSteps = computed(() => {
-  if (props.dynamicSteps && props.dynamicSteps.length > 0) {
+  if (locale.value === 'en' && props.dynamicSteps && props.dynamicSteps.length > 0) {
     return props.dynamicSteps.map((step, i) => ({
       number: step.stepNumber < 10 ? `0${step.stepNumber}` : `${step.stepNumber}`,
       iconSvg: defaultStepIcons[i % defaultStepIcons.length],

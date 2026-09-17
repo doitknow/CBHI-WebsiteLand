@@ -48,8 +48,8 @@ export async function request<T = any>(
       headers,
     });
 
-    // If 401 Unauthorized, clear stale token
-    if (response.status === 401 && !endpoint.includes("/api/auth/login")) {
+    // If 401 Unauthorized or 403 Forbidden on admin endpoints, clear stale token
+    if ((response.status === 401 || response.status === 403) && !endpoint.includes("/api/auth/login")) {
       localStorage.removeItem("cbhi_auth_token");
       localStorage.removeItem("cbhi_auth_user");
       if (window.location.pathname.startsWith("/admin") && window.location.pathname !== "/admin/login") {
@@ -70,6 +70,8 @@ export async function request<T = any>(
     if (!response.ok) {
       const errMsg =
         json?.message ||
+        (response.status === 403 ? "Access Forbidden. Your admin session may have expired or lacks permission. Please log in again." : null) ||
+        (response.status === 401 ? "Unauthorized. Please log in to your admin account." : null) ||
         json?.error ||
         (typeof json === "string" ? json : null) ||
         (text && text.length < 200 && !text.includes("<html") ? text : null) ||

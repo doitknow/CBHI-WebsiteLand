@@ -7,7 +7,7 @@ import ScrollReveal from "../../../../components/ui/ScrollReveal.vue";
 import { ref, computed, watch, onMounted, onUnmounted } from "vue";
 import type { ImpactMetricItem } from "../../../../services/cmsService";
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const props = withDefaults(
   defineProps<{
@@ -180,7 +180,7 @@ onUnmounted(() => {
             <p
               class="mt-1 text-center [font-family:'Inter',Helvetica] text-[9px] xs:text-[10px] sm:text-[12px] font-bold tracking-widest text-[#64748b] uppercase leading-tight px-1"
             >
-              {{ metric.isCustom ? metric.label : t(metric.translationKeyLabel) }}
+              {{ (metric.isCustom && locale === 'en') ? metric.label : t(metric.translationKeyLabel) }}
             </p>
           </CardContent>
         </Card>

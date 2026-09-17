@@ -1,4 +1,13 @@
 {
+  "top_bar": {
+    "support": "Deeggarsa 24/7",
+    "cms_login": "Seensa CMS",
+    "admin_mode": "Haala Bulchaa",
+    "call_hotline": "Toora Bilbilaa 24/7: 8888"
+  },
+  "partners": {
+    "title": "Michoota Amanamoo fi Walitti Hidhamiinsa Faayinaansii"
+  },
   "nav": {
     "home": "Qajeelaa",
     "philosophy": "Filoosofii",
@@ -18,6 +27,134 @@
     "members_count": "Miseensota 2M+",
     "and_growing": "fi guddachaa jira"
   },
+  "executive_hero": {
+    "official_portal": "Ministeera Fayyaa Federaalaa • Marsariitii Seera Qabeessa CBHI",
+    "title_prefix": "Tajaajila Fayyaa Waliigalaa Maatii ",
+    "title_highlight": "Itoophiyaa Hundaaf",
+    "subtitle": "Inshuraansiin Fayyaa Hawaasaa bu'uura godhate tajaajila yaala dhukkubsattoota deddeebi'anii, ciisanii fi haadholii gidduugaleessota fayyaa mootummaa fi michootaa 3,500+ ol ta'an keessatti guutummaa biyyaatti mirkaneessa.",
+    "pills": {
+      "outpatient_inpatient": "100% Yaala Deddeebii fi Ciisichaa",
+      "fayda_linked": "Eenyummaa Dijitaalaa Faayidaa Waliin Kan Qindaa'e",
+      "instant_payments": "Kaffaltii Battalaa Telebirr fi Baankii"
+    },
+    "enroll_online": "Toora Saaphanaa / Aanaa Irratti Galmaa'aa",
+    "explore_benefits": "Faayidaalee Qoradhaa",
+    "hotline_label": "Toora Bilbilaa 24/7:",
+    "smart_card": {
+      "country": "Riippabiliika Dimookiraatawaa Federaalawaa Itoophiyaa",
+      "card_name": "Kaardii Ismaartii Dijitaalaa CBHI",
+      "active_status": "UWWISA HOJII IRRA JIRU",
+      "renewal_status": "HAROOMSAMUU BARBAADA",
+      "beneficiary_holder": "Abbaa Kaardii",
+      "fayda_linked_badge": "FAAYIDAA WALIIN KAN WALQABATE",
+      "sample_name": "ABBABA KABBADA HAYILUU",
+      "woreda_kebele_label": "Aanaa / Ganda",
+      "woreda_kebele_value": "Boolee, Aanaa 03",
+      "household_size_label": "Baay'ina Maatii",
+      "household_size_value": "Hirkattota 5",
+      "card_number_label": "Lakkoofsa Kaardii",
+      "valid_thru_label": "Hamma Yeroo",
+      "scan_facility": "Dhaabbata Fayyaa Kamiyyuu Keessatti Skaan Godhaa"
+    },
+    "calculator": {
+      "title": "Shallaggii Buusii Waggaa Maatii",
+      "subsidized_tier": "Sadarkaa Deeggarsa Qabu",
+      "members_label": "Miseensota Maatii:",
+      "residence_area": "Iddoo Jireenyaa",
+      "urban": "Magaalaa",
+      "rural": "Baadiyyaa",
+      "estimated_contribution": "Gumaacha Waggaa Tilmaamame:",
+      "per_year_prefix": "/ waggaa guutuu miseensota ",
+      "members_suffix": " hundaaf"
+    }
+  },
+  "citizen_services": {
+    "badge": "Dhaqqabama Qajeelaa Lammiilee",
+    "title": "Wiirtuu Tajaajila Saffisaa Lammiilee",
+    "subtitle": "Meeshaalee tajaajila ofii battalaa maatiiwwan Itoophiyaatiif uwwisa mirkaneessuu, buufataaleen fayyaa argachuu fi buusii waggaa kaffaluuf.",
+    "tabs": {
+      "eligibility": "Ulaagaa Mirkaneessi",
+      "facilities": "Dhaabbata Fayyaa Barbaadi",
+      "payment": "Karaalee Kaffaltii",
+      "emergency": "Balaafi Mirgoota"
+    },
+    "eligibility_tab": {
+      "title": "Haala Uwwisa Maatii Keessanii Mirkaneeffadhaa",
+      "subtitle": "Uwwisa hojiirra jiru ilaaluuf lakkoofsa Eenyummaa Biyyaalessaa Faayidaa dijiitii 16 ykn lakkoofsa kaardii miseensummaa CBHI Gandaa galchaa.",
+      "placeholder": "fkn. FAYDA-9841-2093 ykn ET-CBHI-883",
+      "button": "Haala Barbaadi",
+      "result_title": "Bu'aa Mirkaneessa Uwwisaa",
+      "result_status": "Hojiirra Jira - Guutummaatti Deeggarsa Qaba",
+      "sample_name": "Taaddasaa Mangistuu",
+      "sample_woreda": "Kutaa Magaalaa Yekaa, Aanaa 04",
+      "registered_at": "Iddoo Galmee: ",
+      "result_desc": "✓ Kilinikoota mootummaa fi hospitaalota riifaralaa waliigaltee qaban hunda keessatti tajaajila tolaatiif ulaagaa kan guutan."
+    },
+    "facilities_tab": {
+      "title": "Dhaabbilee Mootummaa fi Riifaralaa Waliigaltee Qaban",
+      "subtitle": "Itoophiyaa keessatti dhaabbileen 3,500+ ol kaardii CBHI ni simatu.",
+      "search_placeholder": "Hospitaala ykn magaalaa barbaadi..."
+    },
+    "payment_tab": {
+      "title": "Kaffaltii Dijitaalaa Salphaa",
+      "subtitle": "Hiriira dheeraa osoo hin dhaabbatin buusii maatii keessanii kaffalaa.",
+      "telebirr_title": "SuperApp Telebirr",
+      "telebirr_desc": "Telebirr bani > Tajaajiloota > Kaffaltii Mootummaa > CBHI > Koodii Aanaa Galchaa.",
+      "cbe_title": "Baankii Daldala Itoophiyaa",
+      "cbe_desc": "CBE Birr ykn damee baankiitiin qajeeltoo herrega waloo CBHI naannoo keessaniitti galii godhaa.",
+      "siinqee_title": "Baankii Siinqee fi Sidaamaa",
+      "siinqee_desc": "Dameewwan naannoo hundaa irratti teessoo tajaajilaa addaa qabu."
+    },
+    "emergency_tab": {
+      "hotline_title": "Toora Bilbilaa Mirga Fayyaa Biyyaalessaa 24/7",
+      "hotline_desc": "Buufanni fayyaa waliigaltee qabu tajaajila yoo didee ykn kaffaltii seeraan alaa yoo gaafate battaluma sanatti toora bilbila tolaa keenyatti bilbilaa:",
+      "hotline_number": "8888 irratti bilbilaa (Tola)",
+      "entitlements_title": "Mirgoota Lammiilee Seera CBHI Jalatti:",
+      "entitlement_1": "Qorannoo yaala deddeebiifi qorannoolee laaboraatoorii bu'uuraatiif kaffaltii zeeroo.",
+      "entitlement_2": "Ciisicha hospitaalaa guutuu, baqaqsanii hodhuu fi kaffaltii siree yaala cimaa.",
+      "entitlement_3": "Qorichootni bu'uuraa kallattiin hospitaala ykn faarmaasii Kanamatiin kennamu."
+    }
+  },
+  "community_stories": {
+    "badge": "Sagalee Hawaasaa",
+    "title": "Seenaa Dhugaa Eegumsa Yaalaa",
+    "subtitle": "Inshuraansiin Fayyaa Hawaasaa maatiiwwan Itoophiyaa miliyoonaan lakkaa'aman idaa yaala fayyaa ulfaataa irraa akkamitti akka eegu.",
+    "difference_title": "Garaagarummaa CBHI Maatiiwwan Itoophiyaatiif Fidu",
+    "without_cbhi_title": "CBHI Malee (Kaffaltii Ofii)",
+    "without_cbhi_1": "Maatiiwwan kaffaltii hin eegamne sodaachuun yaala fayyaa boodatti dhiisu.",
+    "without_cbhi_2": "Ciisichi hospitaalaa tasaa yeroo baay'ee lafaafi loon gurguruuf dirqisiisa.",
+    "without_cbhi_3": "Dhukkuboonni cimaan marsaa idaa walirraa hin cinnee fi yaala dhabuutti geessu.",
+    "with_cbhi_title": "Eegumsa Biyyaalessaa CBHI Waliin",
+    "with_cbhi_1": "Buufataalee fayyaa gandaatti kaffaltii tokko malee dafanii qoratamuufi yaalamuu.",
+    "with_cbhi_2": "Baqaqsanii hodhuu fi yaala hospitaalaa olaanaa hundaa gumaacha walootiin kaffalama.",
+    "with_cbhi_3": "Qusannaan maatiifi tasgabbiin sammuu tokkummaa hawaasaatiin mirkanaa'a.",
+    "stories": [
+      {
+        "name": "Almaz Tafarraa fi Maatii Ishee",
+        "location": "Aanaa Amboo, Oromiyaa",
+        "householdSize": "Maatii Namoota 6",
+        "quote": "Mucaan koo quxusuun baqaqsanii hodhuu tasaa yeroo barbaadetti, kaffaltiin hospitaalaa lafa qonnaa keenya akka gurgurru nu dirqisiisa ture. CBHI waliin kaffaltiin hundi 100% tola uwwifame.",
+        "savedAmount": "Qarshii 48,000 Baraarame",
+        "tag": "Baqaqsanii Hodhuu Tasaa"
+      },
+      {
+        "name": "Muluugeetaa Asaffaa",
+        "location": "Dasee, Amaaraa",
+        "householdSize": "Kunsuunsa Maanguddootaa",
+        "quote": "Qoricha sukkaaraa fi dhiibbaa dhiigaatiif baasiin ji'a ji'aan faarmaasiif baasu natti ulfaatee ture. CBHI ji'a ji'aan faarmaasii Kanamatti kabajaan akka fudhadhu na dandeessise.",
+        "savedAmount": "Qarshii 1,200 / Ji'atti",
+        "tag": "Yaala Dhukkuba Yeroo Dheeraa"
+      },
+      {
+        "name": "Faaxumaa Kadiir",
+        "location": "Hawaasaa, Sidaamaa",
+        "householdSize": "Kunsuunsa Haadholii",
+        "quote": "Lakkuwwan koo hospitaalatti nagaan deessee hordoffii daa'immanii gochuun yaaddoo malee ture. Ogeeyyiin fayyaa kabaja olaanaadhaan nu keessummeessan.",
+        "savedAmount": "Qarshii 25,000 Baraarame",
+        "tag": "Fayyaa Haadholii"
+      }
+    ]
+  },
   "health_rights": {
     "heading_health": "Fayyaa",
     "heading_is_everyone_right": "Mirga ",
@@ -30,103 +167,126 @@
       },
       "solidarity": {
         "title": "Tokkummaa",
-        "description": "Hawaasni dhiibbaa maallaqaa dhukkubaan dhufu irraa wal eeguuf waliin dhaabbachuu."
+        "description": "Hawaasni dhibee irraa kan ka'e balaa maallaqaa irraa wal eeguuf waloon dhaabbachuu."
+      }
+    },
+    "solidarity_badge": "100% Tokkummaa Hawaasaa",
+    "hubs": {
+      "addis": {
+        "region": "Wiirtuu Biyyaalessaa Gidduugaleessaa",
+        "stat": "100% Dijitaalaan Kan Qindaa'e"
+      },
+      "north": {
+        "region": "Netwoorkii Naannoo Amaaraa fi Tigraay",
+        "stat": "Kellaa Fayyaa Aanaa 650+"
+      },
+      "east": {
+        "region": "Dirre Dawaa fi Naannoo Sumaalee",
+        "stat": "Dhaabbilee Fayyaa 420+"
+      },
+      "south": {
+        "region": "Netwoorkii Oromiyaa fi Sidaamaa",
+        "stat": "Kilinikoota Bu'uuraa 850+"
+      },
+      "west": {
+        "region": "Benishaangul fi Gambeellaa",
+        "stat": "Kutaa Yaalaa 310+"
       }
     }
   },
   "coverage": {
-    "badge": "Bu'aawwan Hunda Galeessa",
-    "heading_coverage": "Uwwisa Caalaatti ",
-    "heading_goes_further": "Kennu",
-    "description": "Buufata fayyaa bu'uuraa irraa eegalee hanga baqaqsanii hodhuu addaatti, CBHI wantoota baay'ee barbaachisoo ta'an hunda ni uwwisa.",
+    "badge": "Bu'aawwan Guutuu",
+    "heading_coverage": "Uwwisa ",
+    "heading_goes_further": "Fagoo Deemu",
+    "description": "Giddugala fayyaa bu'uuraa irraa kaasee hanga baqaqsanii hodhuu addaatti, CBHI waan baay'ee barbaachisu hunda uwwisa.",
     "benefits": {
       "primary": {
-        "title": "Kunuunsa Bu'uuraa",
-        "description": "Kiliinika michuu ta'e kamiyyuu keessatti qorannoo, hordoffii fi yaala bu'uuraa bilisaa."
+        "title": "Kunsuunsa Bu'uuraa",
+        "description": "Kilinika michuu kamiyyuu keessatti marii tolaa, qorannoo fi yaala bu'uuraa."
       },
       "hospitalization": {
-        "title": "Ciisanii Yaalamuu",
-        "description": "Baqaqsanii hodhuu, kutaa kunuunsa cimaa fi tajaajila yaala boodaa dabalatee uwwisa guutuudhaan ciisanii yaalamuu."
+        "title": "Hospitaala Ciisuu",
+        "description": "Baqaqsanii hodhuu, ICU fi tajaajila yaala boodaa barbaachisoo dabalatee uwwisa ciisichaa guutuu."
       },
       "maternal": {
-        "title": "Kunuunsa Haadhaa fi Daaimaa",
-        "description": "Kunuunsi ulfaa, da'umsaa, daa'immanii fi da'umsa boodaa maatii hundaaf guutuutti uwwifameera."
+        "title": "Haadholii fi Daa'imman",
+        "description": "Kunsuunsa da'umsa duraa, yeroo da'umsaa, daa'immaniifi da'umsa boodaa maatii hundaaf guutummaatti uwwifame."
       }
     }
   },
   "enrollment": {
     "heading_how": "Akkamitti ",
-    "heading_enrollment": "Galmaa'uun ",
-    "heading_works": "Danda'ama",
-    "subtitle": "CBHI tti makamuun salphaadha. Waajjira Aanaa keessanitti tarkaanfiiwwan sadan kana hordofuun guyyuma sana uwwisa argadhaa.",
+    "heading_enrollment": "Galmeen ",
+    "heading_works": "Hojjeta",
+    "subtitle": "CBHItti makamuun salphaadha. Waajjira Aanaa keessanitti tarkaanfiiwwan sadan kana hordofaa guyyuma sana uwwisa argadhaa.",
     "steps": {
       "step1": {
         "title": "Eenyummaa Mirkaneessuu",
-        "description": "Waraqaa eenyummaa Fayda keessaniin Aanaa keessanitti galmaa'aa. Sirni keenya mirkaneessaaf yeruma sana walitti hidhama.",
-        "badge": "Waraqaa eenyummaa Fayda ykn biyyaalessaa fidhaa"
+        "description": "Waraqaa eenyummaa Faayidaa keessaniin Aanaa naannoo keessanitti galmaa'aa. Sirni keenya battalatti mirkaneessaaf walqabata.",
+        "badge": "Faayidaa ykn waraqaa eenyummaa fidaa"
       },
       "step2": {
         "title": "Gumaacha Waggaa",
-        "description": "Baay'ina maatii keessanii irratti hundaa'uun kaffaltii waggaa xiqqaa kaffalaa. Filannoowwan kaffaltii mijatoo ta'an jiru.",
-        "badge": "Maatii hundaaf gatii madaalawaa"
+        "description": "Baay'ina maatii keessan irratti hundaa'uun kaffaltii waggaa xiqqaa kaffalaa. Filannoowwan kaffaltii mijatoo jiru.",
+        "badge": "Gatii madaalamaa maatii hundaaf"
       },
       "step3": {
-        "title": "Uwwisa Argachuu",
-        "description": "Kaardii CBHI dijitaalaa ykn qaamaatiin dhaabbata fayyaa michuu ta'e kamiyyuu keessatti yeruma sana tajaajila fayyaa argadhaa.",
+        "title": "Uwwisa Argadhaa",
+        "description": "Kaardii CBHI dijitaalaa ykn waraqaatiin dhaabbata michuu kamiyyuu keessatti battalatti yaala fayyaa argadhaa.",
         "badge": "Uwwisni guyyuma sana eegala"
       }
     },
     "start_enrollment": "Galmee Eegali"
   },
   "impact": {
-    "heading_national": "Dhiibbaa fi ",
-    "heading_and": "Babal'ina ",
-    "heading_scale": "Biyyaalessaa",
-    "subtitle": "Rippabiliika Dimookiraatawaa Federaalawaa Itiyoophiyaa keessatti ceumsa tajaajila fayyaa hunda galeessa ta'e kan fidu bu'aawwan qabatamaa.",
+    "heading_national": "Dhiibbaa Biyyaalessaa",
+    "heading_and": " fi ",
+    "heading_scale": "Bal'ina",
+    "subtitle": "Bu'aawwan lakkaa'aman jijjiirama tajaajila fayyaa waliigalaa Riippabiliika Dimookiraatawaa Federaalawaa Itoophiyaa keessatti oofan.",
     "metrics": {
       "citizens": {
-        "label": "LAMMILEE UWWIFAMAN",
+        "label": "LAMMIWWAN UWWIFAMAN",
         "subtext": "Naannoolee hunda keessatti"
       },
       "woredas": {
-        "label": "AANAALEE DHAQQABAMAN",
+        "label": "AANOLEEN DHAQQABAMAN",
         "subtext": "Qindoomina biyyaalessaa"
       },
       "facilities": {
         "label": "DHAABBATA MICHUU",
-        "subtext": "Hospitaalota fi kiliinikoota"
+        "subtext": "Hospitaalota fi kilinikoota"
       }
     },
     "fayda": {
-      "title": "Fayda Waliin Qindaa'e",
+      "title": "Faayidaa Waliin Qindaa'e",
       "subtitle": "Mirkaneessa Eenyummaa Dijitaalaa Biyyaalessaa"
     },
     "insa": {
-      "title": "INSA dhaan Mirkanaa'e",
-      "subtitle": "Ulaagaalee Nageenyaa Sadarkaa Mootummaa"
+      "title": "Mirkaneessa INSA Qaba",
+      "subtitle": "Ulaagaa Nageenyaa Sadarkaa Mootummaa"
     }
   },
   "footer": {
-    "heading_get_in": "Get in ",
-    "heading_touch": "Touch",
-    "brand_subtitle": "COMMUNITY BASED HEALTH INSURANCE",
-    "brand_reimagined": "Reimagined For a ",
-    "brand_digital": "Digital Ethiopia.",
-    "org_title": "Organization",
+    "heading_get_in": "Nu ",
+    "heading_touch": "Qunnamaa",
+    "brand_subtitle": "INSHURAANSII FAYYAA HAWAASAA",
+    "brand_reimagined": "Itoophiyaa Dijitaalaatiif ",
+    "brand_digital": "Haaromeera.",
+    "org_title": "Dhaabbata",
     "links": {
-      "about": "About Us",
-      "moh": "Ministry Of Health",
-      "reports": "Reports",
-      "enroll": "Enroll Now"
+      "about": "Waa'ee Keenya",
+      "moh": "Ministeera Fayyaa",
+      "reports": "Gabaasota",
+      "enroll": "Amma Galmaa'i"
     },
-    "contact_title": "Contact",
-    "address": "Addis Ababa, Ethiopia",
+    "contact_title": "Qunnamtii",
+    "address": "Finfinnee, Itoophiyaa",
     "email": "info{'@'}edhn.dh.moh.gov.et",
-    "follow_title": "Follow Us",
-    "fayda_badge": "Fayda ID Integrated",
-    "inasa_badge": "INASA Verified",
-    "copyright": "© 2024 CBHI Ethiopia. All rights reserved.",
-    "powered_by": "Powered by",
+    "follow_title": "Nu Hordofaa",
+    "fayda_badge": "Eenyummaa Faayidaa Waliin Qindaa'e",
+    "inasa_badge": "INASA'n Mirkanaa'e",
+    "copyright": "© 2024 CBHI Itiyoophiyaa. Mirgi hundi seeraan kan eegame.",
+    "powered_by": "Kan Hojjetame",
     "medco": "MEDCO",
     "medco_tech": "Medco Technology Solutions"
   }

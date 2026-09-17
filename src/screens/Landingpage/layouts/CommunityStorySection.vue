@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 import { Heart, Quote, Check, X, Users, MapPin, Sparkles } from "lucide-vue-next";
 
-const stories = [
+const { t, tm } = useI18n();
+
+const defaultStories = [
   {
     name: "Almaz Tefera & Family",
     location: "Ambo Woreda, Oromia",
@@ -28,28 +31,36 @@ const stories = [
     tag: "Maternal Health"
   }
 ];
+
+const renderedStories = computed(() => {
+  try {
+    const list = tm('community_stories.stories') as any[];
+    if (Array.isArray(list) && list.length > 0) {
+      return list;
+    }
+  } catch {
+    // fallback
+  }
+  return defaultStories;
+});
 </script>
 
 <template>
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-12">
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto space-y-3">
-      <!-- <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-wider border border-emerald-200 dark:border-emerald-800">
-        <Heart class="w-3.5 h-3.5 fill-emerald-500 text-emerald-500" />
-        <span>Community Voices</span>
-      </div> -->
       <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-        Real Stories of Healthcare Protection
+        {{ t('community_stories.title') }}
       </h2>
       <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
-        How Community-Based Health Insurance protects millions of Ethiopian households against catastrophic out-of-pocket medical debts.
+        {{ t('community_stories.subtitle') }}
       </p>
     </div>
 
     <!-- Stories Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div
-        v-for="story in stories"
+        v-for="story in renderedStories"
         :key="story.name"
         class="relative rounded-3xl p-6 bg-white dark:bg-[#03243d] border border-slate-100 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
       >
@@ -79,7 +90,7 @@ const stories = [
     <!-- Before vs. With CBHI Impact Matrix -->
     <div class="rounded-3xl p-6 sm:p-8 bg-slate-50 dark:bg-[#02182b] border border-slate-200 dark:border-white/10">
       <h3 class="text-lg font-bold text-center text-slate-900 dark:text-white mb-6">
-        The Difference CBHI Makes for Ethiopian Families
+        {{ t('community_stories.difference_title') }}
       </h3>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -87,20 +98,20 @@ const stories = [
         <div class="p-5 rounded-2xl bg-white dark:bg-[#03243d] border border-rose-200 dark:border-rose-900/40 space-y-3">
           <div class="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-bold text-sm">
             <X class="w-5 h-5 rounded-full bg-rose-100 dark:bg-rose-950 p-0.5" />
-            <span>Without CBHI (Out of Pocket)</span>
+            <span>{{ t('community_stories.without_cbhi_title') }}</span>
           </div>
           <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
             <li class="flex items-start gap-2">
               <span class="text-rose-500 font-bold">•</span>
-              <span>Families delay medical care due to fear of unpredictable expenses.</span>
+              <span>{{ t('community_stories.without_cbhi_1') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-rose-500 font-bold">•</span>
-              <span>Emergency hospitalizations often cause distress asset and livestock sales.</span>
+              <span>{{ t('community_stories.without_cbhi_2') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-rose-500 font-bold">•</span>
-              <span>Chronic diseases lead to ongoing debt cycles and missed treatments.</span>
+              <span>{{ t('community_stories.without_cbhi_3') }}</span>
             </li>
           </ul>
         </div>
@@ -109,20 +120,20 @@ const stories = [
         <div class="p-5 rounded-2xl bg-white dark:bg-[#03243d] border border-emerald-200 dark:border-emerald-900/40 space-y-3">
           <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold text-sm">
             <Check class="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950 p-0.5" />
-            <span>With CBHI National Protection</span>
+            <span>{{ t('community_stories.with_cbhi_title') }}</span>
           </div>
           <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
             <li class="flex items-start gap-2">
               <span class="text-emerald-500 font-bold">•</span>
-              <span>Early diagnosis and checkups at local Kebele clinics at zero point-of-care cost.</span>
+              <span>{{ t('community_stories.with_cbhi_1') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-emerald-500 font-bold">•</span>
-              <span>Full catastrophic surgery and referral hospitalization covered by the pool.</span>
+              <span>{{ t('community_stories.with_cbhi_2') }}</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-emerald-500 font-bold">•</span>
-              <span>Household savings and peace of mind secured through community solidarity.</span>
+              <span>{{ t('community_stories.with_cbhi_3') }}</span>
             </li>
           </ul>
         </div>

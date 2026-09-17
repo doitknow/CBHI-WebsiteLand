@@ -38,8 +38,8 @@ const regionalHubs = [
   {
     id: "addis",
     name: "Addis Ababa",
-    region: "Central National Hub",
-    stat: "100% Digitally Integrated",
+    regionKey: "health_rights.hubs.addis.region",
+    statKey: "health_rights.hubs.addis.stat",
     top: "46%",
     left: "47%",
     isPrimary: true,
@@ -47,8 +47,8 @@ const regionalHubs = [
   {
     id: "north",
     name: "Northern Zone",
-    region: "Amhara & Tigray Network",
-    stat: "650+ Woreda Health Posts",
+    regionKey: "health_rights.hubs.north.region",
+    statKey: "health_rights.hubs.north.stat",
     top: "24%",
     left: "42%",
     isPrimary: false,
@@ -56,8 +56,8 @@ const regionalHubs = [
   {
     id: "east",
     name: "Eastern Zone",
-    region: "Dire Dawa & Somali Region",
-    stat: "420+ Health Facilities",
+    regionKey: "health_rights.hubs.east.region",
+    statKey: "health_rights.hubs.east.stat",
     top: "44%",
     left: "70%",
     isPrimary: false,
@@ -65,8 +65,8 @@ const regionalHubs = [
   {
     id: "south",
     name: "Southern Zone",
-    region: "Oromia & Sidama Network",
-    stat: "850+ Primary Clinics",
+    regionKey: "health_rights.hubs.south.region",
+    statKey: "health_rights.hubs.south.stat",
     top: "68%",
     left: "46%",
     isPrimary: false,
@@ -74,8 +74,8 @@ const regionalHubs = [
   {
     id: "west",
     name: "Western Zone",
-    region: "Benishangul & Gambela",
-    stat: "310+ Healthcare Units",
+    regionKey: "health_rights.hubs.west.region",
+    statKey: "health_rights.hubs.west.stat",
     top: "50%",
     left: "24%",
     isPrimary: false,
@@ -292,8 +292,8 @@ const regionalHubs = [
                     <p class="text-[10px] sm:text-[11px] font-bold text-slate-800 dark:text-white">{{ hub.name }}</p>
                   </div>
                   <div class="relative z-10 text-left">
-                    <p class="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-[var(--color-primary)] dark:text-[var(--color-primary)]">{{ hub.region }}</p>
-                    <span class="mt-0.5 block text-[9.5px] sm:text-[10.5px] text-slate-600 dark:text-slate-300 font-medium whitespace-nowrap">{{ hub.stat }}</span>
+                    <p class="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-[var(--color-primary)] dark:text-[var(--color-primary)]">{{ t(hub.regionKey) }}</p>
+                    <span class="mt-0.5 block text-[9.5px] sm:text-[10.5px] text-slate-600 dark:text-slate-300 font-medium whitespace-nowrap">{{ t(hub.statKey) }}</span>
                   </div>
                 </div>
               </div>
@@ -304,7 +304,7 @@ const regionalHubs = [
               class="animate-float absolute bottom-0 sm:bottom-4 right-0 sm:right-3 z-20 hidden xs:flex items-center gap-1.5 sm:gap-2 rounded-full border border-[var(--color-primary)]/25 bg-[rgba(var(--color-primary-rgb),0.08)] px-2 sm:px-3 py-1 sm:py-1.5 shadow-sm backdrop-blur-md scale-90 sm:scale-100 origin-bottom-right"
             >
               <HeartHandshake class="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--color-primary)] dark:text-[var(--color-primary)]" />
-              <span class="text-[10px] sm:text-[11px] font-bold text-[var(--color-primary)] dark:text-[var(--color-primary)]">100% Community Solidarity</span>
+              <span class="text-[10px] sm:text-[11px] font-bold text-[var(--color-primary)] dark:text-[var(--color-primary)]">{{ t('health_rights.solidarity_badge') }}</span>
             </div>
 
           </div>

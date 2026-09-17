@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, computed } from "vue";
 import { Phone, Clock, ShieldCheck } from "lucide-vue-next";
+import { useI18n } from "vue-i18n";
 import CoverageBenefitsSection from "./sections/CoverageBenefitsSection/CoverageBenefitsSection.vue";
 import EnrollmentProcessSection from "./sections/EnrollmentProcessSection/EnrollmentProcessSection.vue";
 import HealthRightsOverviewSection from "./sections/HealthRightsOverviewSection/HealthRightsOverviewSection.vue";
@@ -20,6 +21,8 @@ import CommunityStorySection from "./layouts/CommunityStorySection.vue";
 import stPeterLogo from "../../assets/partners logo/St.PeterLogo.png";
 import tikurAnbessaLogo from "../../assets/partners logo/tikure-anbsa.png";
 import yekatitLogo from "../../assets/partners logo/yekatit-hospital.png";
+
+const { t, locale } = useI18n();
 
 const dynamicContent = ref<PublicContentData | null>(null);
 const showCmsLogin = ref(false);
@@ -102,7 +105,7 @@ const partnerLogos = [
           <span
             class="whitespace-nowrap [font-family:'Inter',Helvetica] text-[11px] xs:text-[12px] sm:text-[14px] font-medium leading-normal text-white"
           >
-            | {{ dynamicContent?.settings?.['contact.support_hours'] || '24/7 Support' }}
+            | {{ (locale === 'en' && dynamicContent?.settings?.['contact.support_hours']) ? dynamicContent.settings['contact.support_hours'] : t('top_bar.support') }}
           </span>
         </div>
 
@@ -123,7 +126,7 @@ const partnerLogos = [
             title="Admin CMS Login"
           >
             <ShieldCheck class="w-3.5 h-3.5 text-emerald-300" />
-            <span>CMS Login</span>
+            <span>{{ t('top_bar.cms_login') }}</span>
           </router-link>
         </transition>
       </div>
@@ -156,7 +159,7 @@ const partnerLogos = [
         >
           <!-- Label -->
           <p class="mb-6 sm:mb-8 md:mb-10 text-center [font-family:'Inter',Helvetica] text-[10px] sm:text-[12px] font-bold uppercase tracking-[2px] sm:tracking-[4px] text-slate-500 dark:text-slate-400 px-4">
-            Trusted Partners &amp; Financial Integrations
+            {{ t('partners.title') }}
           </p>
 
           <!--
@@ -257,13 +260,13 @@ const partnerLogos = [
         id="cms-login-floating-pill"
         class="fixed bottom-6 right-6 z-50 flex items-center gap-2 p-1.5 pl-3 rounded-full bg-slate-900/90 text-white shadow-2xl backdrop-blur-md border border-white/20"
       >
-        <span class="text-xs font-semibold text-slate-300">Admin Mode</span>
+        <span class="text-xs font-semibold text-slate-300">{{ t('top_bar.admin_mode') }}</span>
         <router-link
           to="/admin/login"
           class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--color-primary)] hover:opacity-90 text-white text-xs font-bold transition-all shadow-md"
         >
           <ShieldCheck class="w-3.5 h-3.5" />
-          <span>CMS Login</span>
+          <span>{{ t('top_bar.cms_login') }}</span>
         </router-link>
         <button
           type="button"

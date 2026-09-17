@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
+import { useI18n } from "vue-i18n";
 import {
   ShieldCheck,
   ArrowRight,
@@ -12,6 +13,8 @@ import {
   QrCode,
   Building2
 } from "lucide-vue-next";
+
+const { t } = useI18n();
 
 defineProps<{
   dynamicSettings?: Record<string, string>;
@@ -42,33 +45,33 @@ const isCardActive = ref(true);
         <!-- National Authority Badge -->
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md text-xs font-semibold tracking-wide text-emerald-300">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span>Federal Ministry of Health • Official CBHI Portal</span>
+          <span>{{ t('executive_hero.official_portal') }}</span>
         </div>
 
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
-          Universal Healthcare for Every
+          {{ t('executive_hero.title_prefix') }}
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-sky-300 to-blue-400">
-            Ethiopian Household
+            {{ t('executive_hero.title_highlight') }}
           </span>
         </h1>
 
         <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-          Community-Based Health Insurance guarantees comprehensive inpatient, outpatient, and maternal medical care across 3,500+ public and partner health centers nationwide.
+          {{ t('executive_hero.subtitle') }}
         </p>
 
         <!-- Feature pills -->
         <div class="flex flex-wrap gap-3 pt-2">
           <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-slate-200">
             <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>100% Outpatient & Inpatient</span>
+            <span>{{ t('executive_hero.pills.outpatient_inpatient') }}</span>
           </div>
           <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-slate-200">
             <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>Fayda Digital ID Linked</span>
+            <span>{{ t('executive_hero.pills.fayda_linked') }}</span>
           </div>
           <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-slate-200">
             <CheckCircle2 class="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>Instant Telebirr & Bank Payments</span>
+            <span>{{ t('executive_hero.pills.instant_payments') }}</span>
           </div>
         </div>
 
@@ -78,18 +81,18 @@ const isCardActive = ref(true);
             href="#section-process"
             class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[var(--color-primary)] hover:opacity-95 text-white font-bold text-sm shadow-xl shadow-[var(--color-primary)]/30 transition-all hover:-translate-y-0.5"
           >
-            <span>Enroll Online / Woreda</span>
+            <span>{{ t('executive_hero.enroll_online') }}</span>
             <ArrowRight class="w-4 h-4" />
           </a>
           <a
             href="#section-benefits"
             class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm border border-white/20 transition-all"
           >
-            <span>Explore Benefits</span>
+            <span>{{ t('executive_hero.explore_benefits') }}</span>
           </a>
           <div class="flex items-center gap-2 text-xs text-slate-400 pl-2">
             <PhoneCall class="w-4 h-4 text-amber-400" />
-            <span>24/7 Hotline: <strong class="text-white">8888</strong></span>
+            <span>{{ t('executive_hero.hotline_label') }} <strong class="text-white">8888</strong></span>
           </div>
         </div>
       </div>
@@ -109,8 +112,8 @@ const isCardActive = ref(true);
                   <CreditCard class="w-5 h-5 text-emerald-400" />
                 </div>
                 <div>
-                  <h2 class="text-xs font-black tracking-widest text-slate-300 uppercase">Federal Republic of Ethiopia</h2>
-                  <p class="text-sm font-bold text-white tracking-wide">CBHI Digital Smart Card</p>
+                  <h2 class="text-xs font-black tracking-widest text-slate-300 uppercase">{{ t('executive_hero.smart_card.country') }}</h2>
+                  <p class="text-sm font-bold text-white tracking-wide">{{ t('executive_hero.smart_card.card_name') }}</p>
                 </div>
               </div>
 
@@ -123,35 +126,35 @@ const isCardActive = ref(true);
                 title="Click to toggle status simulation"
               >
                 <span class="w-1.5 h-1.5 rounded-full" :class="isCardActive ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'"></span>
-                <span>{{ isCardActive ? 'ACTIVE COVERAGE' : 'RENEWAL DUE' }}</span>
+                <span>{{ isCardActive ? t('executive_hero.smart_card.active_status') : t('executive_hero.smart_card.renewal_status') }}</span>
               </button>
             </div>
 
             <!-- Card Body -->
             <div class="py-5 space-y-3 relative z-10">
               <div class="flex justify-between items-center text-xs text-slate-400">
-                <span>Beneficiary Holder</span>
-                <span class="text-emerald-400 font-mono text-[11px]">FAYDA ID LINKED</span>
+                <span>{{ t('executive_hero.smart_card.beneficiary_holder') }}</span>
+                <span class="text-emerald-400 font-mono text-[11px]">{{ t('executive_hero.smart_card.fayda_linked_badge') }}</span>
               </div>
               <p class="text-lg sm:text-xl font-bold text-white tracking-wider font-mono">
-                ABEBE KEBEDE HAILE
+                {{ t('executive_hero.smart_card.sample_name') }}
               </p>
 
               <div class="grid grid-cols-2 gap-4 pt-2 text-xs">
                 <div>
-                  <span class="text-slate-400 block text-[10px] uppercase">Woreda / Kebele</span>
-                  <span class="text-slate-200 font-semibold">Bole, Woreda 03</span>
+                  <span class="text-slate-400 block text-[10px] uppercase">{{ t('executive_hero.smart_card.woreda_kebele_label') }}</span>
+                  <span class="text-slate-200 font-semibold">{{ t('executive_hero.smart_card.woreda_kebele_value') }}</span>
                 </div>
                 <div>
-                  <span class="text-slate-400 block text-[10px] uppercase">Household Size</span>
-                  <span class="text-slate-200 font-semibold">5 Dependents</span>
+                  <span class="text-slate-400 block text-[10px] uppercase">{{ t('executive_hero.smart_card.household_size_label') }}</span>
+                  <span class="text-slate-200 font-semibold">{{ t('executive_hero.smart_card.household_size_value') }}</span>
                 </div>
                 <div>
-                  <span class="text-slate-400 block text-[10px] uppercase">Card Number</span>
+                  <span class="text-slate-400 block text-[10px] uppercase">{{ t('executive_hero.smart_card.card_number_label') }}</span>
                   <span class="font-mono text-slate-200 font-semibold tracking-wider">ET-9842-8714-CBHI</span>
                 </div>
                 <div>
-                  <span class="text-slate-400 block text-[10px] uppercase">Valid Thru</span>
+                  <span class="text-slate-400 block text-[10px] uppercase">{{ t('executive_hero.smart_card.valid_thru_label') }}</span>
                   <span class="text-slate-200 font-semibold">Dec 2026</span>
                 </div>
               </div>
@@ -161,7 +164,7 @@ const isCardActive = ref(true);
             <div class="flex items-center justify-between pt-4 border-t border-white/10 relative z-10 text-[11px] text-slate-400">
               <div class="flex items-center gap-2">
                 <QrCode class="w-5 h-5 text-slate-300" />
-                <span>Scan at any Health Facility</span>
+                <span>{{ t('executive_hero.smart_card.scan_facility') }}</span>
               </div>
               <span class="text-[10px] font-mono text-slate-500">EHIS v3.4</span>
             </div>
@@ -173,16 +176,16 @@ const isCardActive = ref(true);
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
               <Sparkles class="w-4 h-4 text-emerald-400" />
-              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">Household Annual Premium Estimator</h3>
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-200">{{ t('executive_hero.calculator.title') }}</h3>
             </div>
-            <span class="text-[11px] text-slate-400">Subsidized Tier</span>
+            <span class="text-[11px] text-slate-400">{{ t('executive_hero.calculator.subsidized_tier') }}</span>
           </div>
 
           <div class="grid grid-cols-2 gap-3 pt-1">
             <!-- Family Size Slider -->
             <div>
               <label class="text-[11px] text-slate-300 block mb-1">
-                Household Members: <strong class="text-emerald-400">{{ familyMembers }}</strong>
+                {{ t('executive_hero.calculator.members_label') }} <strong class="text-emerald-400">{{ familyMembers }}</strong>
               </label>
               <input
                 type="range"
@@ -195,7 +198,7 @@ const isCardActive = ref(true);
 
             <!-- Area Selector -->
             <div>
-              <label class="text-[11px] text-slate-300 block mb-1">Residence Area</label>
+              <label class="text-[11px] text-slate-300 block mb-1">{{ t('executive_hero.calculator.residence_area') }}</label>
               <div class="flex gap-1.5">
                 <button
                   type="button"
@@ -203,7 +206,7 @@ const isCardActive = ref(true);
                   :class="woredaType === 'urban' ? 'bg-[var(--color-primary)] text-white' : 'bg-white/10 text-slate-300'"
                   class="flex-1 py-1 text-[11px] font-semibold rounded-md transition-all"
                 >
-                  Urban
+                  {{ t('executive_hero.calculator.urban') }}
                 </button>
                 <button
                   type="button"
@@ -211,7 +214,7 @@ const isCardActive = ref(true);
                   :class="woredaType === 'rural' ? 'bg-[var(--color-primary)] text-white' : 'bg-white/10 text-slate-300'"
                   class="flex-1 py-1 text-[11px] font-semibold rounded-md transition-all"
                 >
-                  Rural
+                  {{ t('executive_hero.calculator.rural') }}
                 </button>
               </div>
             </div>
@@ -219,10 +222,10 @@ const isCardActive = ref(true);
 
           <!-- Calculated Output -->
           <div class="flex items-center justify-between pt-2 border-t border-white/10 text-xs">
-            <span class="text-slate-300">Estimated Annual Contribution:</span>
+            <span class="text-slate-300">{{ t('executive_hero.calculator.estimated_contribution') }}</span>
             <div class="text-right">
               <span class="text-base font-extrabold text-emerald-400 font-mono">{{ calculatedContribution }} ETB</span>
-              <span class="text-[10px] text-slate-400 block">/ entire year for all {{ familyMembers }} members</span>
+              <span class="text-[10px] text-slate-400 block">{{ t('executive_hero.calculator.per_year_prefix') }}{{ familyMembers }}{{ t('executive_hero.calculator.members_suffix') }}</span>
             </div>
           </div>
         </div>

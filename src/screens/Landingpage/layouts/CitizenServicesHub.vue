@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useI18n } from "vue-i18n";
 import {
   Search,
   Building2,
@@ -15,6 +16,8 @@ import {
   Sparkles
 } from "lucide-vue-next";
 
+const { t } = useI18n();
+
 const activeTab = ref<"eligibility" | "facilities" | "payment" | "emergency">("eligibility");
 
 // Mock interactive eligibility query state
@@ -26,9 +29,9 @@ const handleCheckEligibility = () => {
   // Demo interactive simulator
   lookupResult.value = {
     found: true,
-    name: "Tadesse Mengistu",
-    woreda: "Yeka Subcity, Woreda 04",
-    status: "Active - Fully Subsidized"
+    name: t('citizen_services.eligibility_tab.sample_name'),
+    woreda: t('citizen_services.eligibility_tab.sample_woreda'),
+    status: t('citizen_services.eligibility_tab.result_status')
   };
 };
 
@@ -49,13 +52,13 @@ const partnerFacilities = [
     <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-bold uppercase tracking-wider border border-blue-200 dark:border-blue-800">
         <Sparkles class="w-3.5 h-3.5" />
-        <span>Citizen Direct Access</span>
+        <span>{{ t('citizen_services.badge') }}</span>
       </div>
       <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-        Citizen Quick Services Hub
+        {{ t('citizen_services.title') }}
       </h2>
       <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300">
-        Instant self-service tools for Ethiopian households to verify coverage, locate health centers, and pay annual premiums.
+        {{ t('citizen_services.subtitle') }}
       </p>
     </div>
 
@@ -70,7 +73,7 @@ const partnerFacilities = [
           class="flex items-center justify-center gap-2 py-4 px-3 text-xs sm:text-sm transition-all text-center"
         >
           <CheckCircle2 class="w-4 h-4 shrink-0" />
-          <span>Verify Eligibility</span>
+          <span>{{ t('citizen_services.tabs.eligibility') }}</span>
         </button>
 
         <button
@@ -80,7 +83,7 @@ const partnerFacilities = [
           class="flex items-center justify-center gap-2 py-4 px-3 text-xs sm:text-sm transition-all text-center"
         >
           <Building2 class="w-4 h-4 shrink-0" />
-          <span>Find Health Facility</span>
+          <span>{{ t('citizen_services.tabs.facilities') }}</span>
         </button>
 
         <button
@@ -90,7 +93,7 @@ const partnerFacilities = [
           class="flex items-center justify-center gap-2 py-4 px-3 text-xs sm:text-sm transition-all text-center"
         >
           <CreditCard class="w-4 h-4 shrink-0" />
-          <span>Payment Channels</span>
+          <span>{{ t('citizen_services.tabs.payment') }}</span>
         </button>
 
         <button
@@ -100,7 +103,7 @@ const partnerFacilities = [
           class="flex items-center justify-center gap-2 py-4 px-3 text-xs sm:text-sm transition-all text-center"
         >
           <ShieldAlert class="w-4 h-4 shrink-0" />
-          <span>Emergency & Rights</span>
+          <span>{{ t('citizen_services.tabs.emergency') }}</span>
         </button>
       </div>
 
@@ -109,9 +112,9 @@ const partnerFacilities = [
         <!-- Tab 1: Eligibility Check -->
         <div v-if="activeTab === 'eligibility'" class="max-w-2xl mx-auto space-y-6">
           <div class="space-y-2 text-center sm:text-left">
-            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Verify Your Household Coverage Status</h3>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">{{ t('citizen_services.eligibility_tab.title') }}</h3>
             <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              Enter your 16-digit Fayda National ID number or Kebele CBHI membership card number to check active coverage.
+              {{ t('citizen_services.eligibility_tab.subtitle') }}
             </p>
           </div>
 
@@ -119,7 +122,7 @@ const partnerFacilities = [
             <input
               type="text"
               v-model="idInput"
-              placeholder="e.g. FAYDA-9841-2093 or ET-CBHI-883"
+              :placeholder="t('citizen_services.eligibility_tab.placeholder')"
               class="flex-1 px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] font-mono"
             />
             <button
@@ -127,20 +130,20 @@ const partnerFacilities = [
               class="px-6 py-3 rounded-xl bg-[var(--color-primary)] text-white font-bold text-sm shadow-md hover:opacity-95 transition-all flex items-center justify-center gap-2"
             >
               <Search class="w-4 h-4" />
-              <span>Lookup Status</span>
+              <span>{{ t('citizen_services.eligibility_tab.button') }}</span>
             </button>
           </form>
 
           <!-- Result card -->
           <div v-if="lookupResult" class="p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 space-y-2">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-bold text-emerald-800 dark:text-emerald-300">Coverage Verification Result</span>
+              <span class="text-xs font-bold text-emerald-800 dark:text-emerald-300">{{ t('citizen_services.eligibility_tab.result_title') }}</span>
               <span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-600 text-white">{{ lookupResult.status }}</span>
             </div>
             <p class="text-sm font-bold text-slate-800 dark:text-slate-100">{{ lookupResult.name }}</p>
-            <p class="text-xs text-slate-600 dark:text-slate-300">Registered at: {{ lookupResult.woreda }}</p>
+            <p class="text-xs text-slate-600 dark:text-slate-300">{{ t('citizen_services.eligibility_tab.registered_at') }}{{ lookupResult.woreda }}</p>
             <p class="text-[11px] text-emerald-700 dark:text-emerald-400 font-medium">
-              ✓ Eligible for free services at all public clinics and contracted tertiary referral hospitals.
+              {{ t('citizen_services.eligibility_tab.result_desc') }}
             </p>
           </div>
         </div>
@@ -149,15 +152,15 @@ const partnerFacilities = [
         <div v-if="activeTab === 'facilities'" class="space-y-6">
           <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Contracted Public & Referral Facilities</h3>
-              <p class="text-xs text-slate-500 dark:text-slate-400">Over 3,500 facilities accept CBHI cards across Ethiopia.</p>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">{{ t('citizen_services.facilities_tab.title') }}</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">{{ t('citizen_services.facilities_tab.subtitle') }}</p>
             </div>
             <div class="relative w-full sm:w-72">
               <Search class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <input
                 type="text"
                 v-model="facilitySearch"
-                placeholder="Search hospital or city..."
+                :placeholder="t('citizen_services.facilities_tab.search_placeholder')"
                 class="w-full pl-9 pr-3 py-2 rounded-lg border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-slate-900 text-xs text-slate-900 dark:text-white"
               />
             </div>
@@ -187,27 +190,27 @@ const partnerFacilities = [
         <!-- Tab 3: Payment Channels -->
         <div v-if="activeTab === 'payment'" class="max-w-3xl mx-auto space-y-6">
           <div class="text-center space-y-2">
-            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Seamless Digital Payment Integrations</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400">Pay your annual household premium without standing in long queues.</p>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">{{ t('citizen_services.payment_tab.title') }}</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">{{ t('citizen_services.payment_tab.subtitle') }}</p>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 space-y-3 text-center">
               <div class="w-10 h-10 mx-auto rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500 font-bold">1</div>
-              <h4 class="text-sm font-bold text-slate-800 dark:text-white">Telebirr SuperApp</h4>
-              <p class="text-xs text-slate-500 dark:text-slate-400">Open Telebirr > Services > Government Payments > CBHI > Enter Woreda Code.</p>
+              <h4 class="text-sm font-bold text-slate-800 dark:text-white">{{ t('citizen_services.payment_tab.telebirr_title') }}</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400">{{ t('citizen_services.payment_tab.telebirr_desc') }}</p>
             </div>
 
             <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 space-y-3 text-center">
               <div class="w-10 h-10 mx-auto rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 font-bold">2</div>
-              <h4 class="text-sm font-bold text-slate-800 dark:text-white">Commercial Bank of Ethiopia</h4>
-              <p class="text-xs text-slate-500 dark:text-slate-400">CBE Birr or direct bank branch deposit to your regional CBHI pooled account.</p>
+              <h4 class="text-sm font-bold text-slate-800 dark:text-white">{{ t('citizen_services.payment_tab.cbe_title') }}</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400">{{ t('citizen_services.payment_tab.cbe_desc') }}</p>
             </div>
 
             <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 space-y-3 text-center">
               <div class="w-10 h-10 mx-auto rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500 font-bold">3</div>
-              <h4 class="text-sm font-bold text-slate-800 dark:text-white">Siinqee & Sidama Banks</h4>
-              <p class="text-xs text-slate-500 dark:text-slate-400">Dedicated teller desks across all regional branch locations.</p>
+              <h4 class="text-sm font-bold text-slate-800 dark:text-white">{{ t('citizen_services.payment_tab.siinqee_title') }}</h4>
+              <p class="text-xs text-slate-500 dark:text-slate-400">{{ t('citizen_services.payment_tab.siinqee_desc') }}</p>
             </div>
           </div>
         </div>
@@ -219,28 +222,28 @@ const partnerFacilities = [
               <PhoneCall class="w-6 h-6" />
             </div>
             <div class="space-y-1">
-              <h4 class="text-sm font-bold text-rose-900 dark:text-rose-200">24/7 National Health Rights Hotline</h4>
+              <h4 class="text-sm font-bold text-rose-900 dark:text-rose-200">{{ t('citizen_services.emergency_tab.hotline_title') }}</h4>
               <p class="text-xs text-rose-700 dark:text-rose-300">
-                If a contracted health center refuses services or demands unauthorized co-payments, call our free toll-free citizen rights desk immediately:
+                {{ t('citizen_services.emergency_tab.hotline_desc') }}
               </p>
-              <p class="text-lg font-black text-rose-600 dark:text-rose-400 font-mono">Dial 8888 (Toll Free)</p>
+              <p class="text-lg font-black text-rose-600 dark:text-rose-400 font-mono">{{ t('citizen_services.emergency_tab.hotline_number') }}</p>
             </div>
           </div>
 
           <div class="space-y-3">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Citizen Entitlements Under CBHI Law:</h4>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">{{ t('citizen_services.emergency_tab.entitlements_title') }}</h4>
             <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
               <li class="flex items-center gap-2">
                 <CheckCircle2 class="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Zero fees for outpatient consultations and essential diagnostic laboratory tests.</span>
+                <span>{{ t('citizen_services.emergency_tab.entitlement_1') }}</span>
               </li>
               <li class="flex items-center gap-2">
                 <CheckCircle2 class="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Full inpatient accommodation, surgical care, and intensive care bed fees.</span>
+                <span>{{ t('citizen_services.emergency_tab.entitlement_2') }}</span>
               </li>
               <li class="flex items-center gap-2">
                 <CheckCircle2 class="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Essential medication dispensed directly through hospital or Kenema pharmacies.</span>
+                <span>{{ t('citizen_services.emergency_tab.entitlement_3') }}</span>
               </li>
             </ul>
           </div>

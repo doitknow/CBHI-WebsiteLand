@@ -1,4 +1,13 @@
 {
+  "top_bar": {
+    "support": "24/7 ደገፍ",
+    "cms_login": "መእተዊ CMS",
+    "admin_mode": "ኣድሚን ሞድ",
+    "call_hotline": "24/7 መስመር ስልኪ: 8888"
+  },
+  "partners": {
+    "title": "እሙናት መሻርኽትን ናይ ፋይናንስ ምትእስሳራትን"
+  },
   "nav": {
     "home": "መበገሲ",
     "philosophy": "ፍልስፍና",
@@ -18,6 +27,134 @@
     "members_count": "2M+ ኣባላት",
     "and_growing": "እናዓበየ ይኸይድ ኣሎ"
   },
+  "executive_hero": {
+    "official_portal": "ፌደራል ሚኒስቴር ጥዕና • ወግዓዊ ፖርታል CBHI",
+    "title_prefix": "ኩለመዳያዊ ክንክን ጥዕና ንነፍሲ ወከፍ ",
+    "title_highlight": "ስድራቤት ኢትዮጵያ",
+    "subtitle": "ማሕበረሰብ-ኣቀፍ ውሕስነት ጥዕና ኣብ መላእ ሃገር ኣብ ልዕሊ 3,500 ዝኾኑ ናይ መንግስትን መሻርኽትን ማእከላት ጥዕና ምሉእ ናይ ደገ፡ ናይ ውሽጢ ዓራት ሕክምናን ናይ ኣዴታትን ውሕስነት ይህብ።",
+    "pills": {
+      "outpatient_inpatient": "100% ናይ ደገን ውሽጢ ዓራትን",
+      "fayda_linked": "ምስ ዲጂታል መታወቂያ ፋይዳ ዝተኣሳሰረ",
+      "instant_payments": "ቅልጡፍ ክፍሊት ቴሌብርን ባንክን"
+    },
+    "enroll_online": "ብኦንላይን / ኣብ ወረዳ ተመዝገቡ",
+    "explore_benefits": "ረብሓታት ርኣዩ",
+    "hotline_label": "24/7 መስመር ስልኪ:",
+    "smart_card": {
+      "country": "ፈደራላዊት ዴሞክራሲያዊት ሪፓብሊክ ኢትዮጵያ",
+      "card_name": "ዲጂታል ስማርት ካርድ CBHI",
+      "active_status": "ንጡፍ ሽፋን",
+      "renewal_status": "ሕዳሴ ዘድልዮ",
+      "beneficiary_holder": "ዋና ካርድ",
+      "fayda_linked_badge": "ምስ ፋይዳ ዝተኣሳሰረ",
+      "sample_name": "ኣበበ ከበደ ሃይለ",
+      "woreda_kebele_label": "ወረዳ / ቀበሌ",
+      "woreda_kebele_value": "ቦሌ፣ ወረዳ 03",
+      "household_size_label": "ብዝሒ ስድራቤት",
+      "household_size_value": "5 ጽጉማት",
+      "card_number_label": "ቁጽሪ ካርድ",
+      "valid_thru_label": "ዘብቅዓሉ ግዜ",
+      "scan_facility": "ኣብ ዝኾነ ትካል ጥዕና ስካን ግበሩ"
+    },
+    "calculator": {
+      "title": "ዓመታዊ ክፍሊት ስድራቤት መገመቲ",
+      "subsidized_tier": "ደገፍ ዝተገብረሉ ደረጃ",
+      "members_label": "ኣባላት ስድራቤት:",
+      "residence_area": "ቦታ መንበሪ",
+      "urban": "ከተማ",
+      "rural": "ገጠር",
+      "estimated_contribution": "ዝተገመተ ዓመታዊ ክፍሊት:",
+      "per_year_prefix": "/ ምሉእ ዓመት ንኹሎም ",
+      "members_suffix": " ኣባላት"
+    }
+  },
+  "citizen_services": {
+    "badge": "ቀጥታዊ ተበጻሕነት ዜጋታት",
+    "title": "ማእከል ቅልጡፍ ግልጋሎት ዜጋታት",
+    "subtitle": "ንኢትዮጵያውያን ስድራቤታት ሽፋኖም ንምርግጋጽ፣ ማእከላት ጥዕና ንምርካብን ዓመታዊ ክፍሊት ንምኽፋልን ዘገልግሉ ቅልጡፋት ናይ ገዛእ ርእሲ ግልጋሎት መሳርሕታት።",
+    "tabs": {
+      "eligibility": "ብቕዓት ኣረጋግጽ",
+      "facilities": "ትካል ጥዕና ርኸብ",
+      "payment": "ናይ ክፍሊት ኣማራጺታት",
+      "emergency": "ህጹጽ ሓደጋን መሰላትን"
+    },
+    "eligibility_tab": {
+      "title": "ኩነታት ሽፋን ስድራቤትኩም ኣረጋግጹ",
+      "subtitle": "ንጡፍ ሽፋን ንምፍታሽ ናይ 16 ኣሃዝ ብሔራዊ መታወቂያ ፋይዳ ቁጽሪ ወይ ናይ ቀበሌ CBHI ኣባልነት ካርድ ቁጽሪ ኣእትዉ።",
+      "placeholder": "ንኣብነት፡ FAYDA-9841-2093 ወይ ET-CBHI-883",
+      "button": "ኩነታት ድለ",
+      "result_title": "ውጽኢት መረጋገጺ ሽፋን",
+      "result_status": "ንጡፍ - ምሉእ ብምሉእ ዝተደገፈ",
+      "sample_name": "ታደሰ መንግስቱ",
+      "sample_woreda": "ክፍለ ከተማ የካ፣ ወረዳ 04",
+      "registered_at": "ዝተመዝገበሉ ቦታ፡ ",
+      "result_desc": "✓ ኣብ ኩሎም ናይ ህዝቢ ክሊኒካትን ውዕል ኣብ ዘለዎም ናይ ሪፈራል ሆስፒታላትን ብነጻ ንዝወሃቡ ኣገልግሎታት ብቑዕ እዩ።"
+    },
+    "facilities_tab": {
+      "title": "ውዕል ዘለዎም ናይ ህዝብን ሪፈራልን ትካላት",
+      "subtitle": "ኣብ መላእ ኢትዮጵያ ልዕሊ 3,500 ትካላት ካርድ CBHI ይቕበሉ።",
+      "search_placeholder": "ሆስፒታል ወይ ከተማ ድለዩ..."
+    },
+    "payment_tab": {
+      "title": "ቀሊል ዲጂታል ናይ ክፍሊት ምትእስሳር",
+      "subtitle": "ኣብ ነዊሕ መስርዕ ከይተጸበኹም ዓመታዊ ክፍሊት ስድራቤትኩም ክፈሉ።",
+      "telebirr_title": "ቴሌብር ሱፐርኣፕ",
+      "telebirr_desc": "ቴሌብር ክፈቱ > ግልጋሎታት > መንግስታዊ ክፍሊታት > CBHI > ኮድ ወረዳ ኣእትዉ።",
+      "cbe_title": "ንግዲ ባንክ ኢትዮጵያ",
+      "cbe_desc": "CBE Birr ወይ ቀጥታ ብጨንፈር ባንኪ ናብ ናይ ክልልኩም CBHI ሓባራዊ ሕሳብ ኣእትዉ።",
+      "siinqee_title": "ባንክታት ሲንቄን ሲዳማን",
+      "siinqee_desc": "ኣብ ኩሎም ናይ ክልል ጨናፍር ፍሉይ ናይ ቴለር መአንገዲ ኣለዎም።"
+    },
+    "emergency_tab": {
+      "hotline_title": "24/7 ብሔራዊ ናይ ጥዕና መሰላት መስመር ስልኪ",
+      "hotline_desc": "ውዕል ዘለዎ ማእከል ጥዕና ግልጋሎት እንተነፊጉ ወይ ዘይተፈቕደ ክፍሊት እንተሓቲቱ ብቕጽበት ናብቲ ናጻ ናይ ስልኪ መስመርና ደውሉ፡",
+      "hotline_number": "8888 ደውሉ (ናጻ)",
+      "entitlements_title": "ብሕጊ CBHI መሰረት መሰላት ዜጋታት፡",
+      "entitlement_1": "ንናይ ደገ ሕክምናታትን መሰረታዊ ናይ ላቦራቶሪ መርመራታትን ዜሮ ክፍሊት።",
+      "entitlement_2": "ምሉእ ናይ ዓራት ሆስፒታል፣ መጥባሕትን ናይ ጽኑዕ ክንክን ክፍሊታትን።",
+      "entitlement_3": "መሰረታዊ መድሓኒታት ብቐጥታ ብሆስፒታል ወይ ፋርማሲ ኬነማ ይወሃቡ።"
+    }
+  },
+  "community_stories": {
+    "badge": "ድምጺ ማሕበረሰብ",
+    "title": "ናይ ክንክን ጥዕና ዕቝባ ናይ ሓቂ ታሪኻት",
+    "subtitle": "ማሕበረሰብ-ኣቀፍ ውሕስነት ጥዕና ንሚልዮናት ኢትዮጵያውያን ስድራቤታት ካብ ከቢድ ናይ ሕክምና ዕዳታት ብኸመይ ከም ዝከላኸለሎም።",
+    "difference_title": "CBHI ንስድራቤታት ኢትዮጵያ ዘምጽኦ ለውጢ",
+    "without_cbhi_title": "ብዘይ CBHI (ካብ ጁባ ዝወጽእ)",
+    "without_cbhi_1": "ስድራቤታት ንዘይተጸበይዎ ወጻኢታት ብምፍራህ ናይ ሕክምና ግልጋሎት የደንጉዩ።",
+    "without_cbhi_2": "ህጹጽ ናይ ሆስፒታል ሕክምናታት መብዛሕትኡ ግዜ ንብረትን ማልን ንምሻጥ የገድዱ።",
+    "without_cbhi_3": "ተደጋጋሚን ስዱድን ሕማማት ናብ ቀጻሊ ናይ ዕዳ ዑደት ይመርሑ።",
+    "with_cbhi_title": "ብሃገራዊ ዕቝባ CBHI",
+    "with_cbhi_1": "ኣብ ከባቢ ቀበሌ ክሊኒካት ብዘይ ምንም ክፍሊት ቀዲምካ ምምርማርን ምሕካምን።",
+    "with_cbhi_2": "ዓበይቲ መጥባሕትታትን ናይ ሪፈራል ሆስፒታል ሕክምናታትን ምሉእ ብምሉእ ብማሕበረሰብ ይሽፈኑ።",
+    "with_cbhi_3": "ናይ ስድራቤት ዕቋርን ናይ ኣእምሮ ሰላምን ብሓድነት ማሕበረሰብ ይሕሎ።",
+    "stories": [
+      {
+        "name": "ኣልማዝ ተፈራን ስድራቤቶምን",
+        "location": "ወረዳ ኣምቦ፣ ኦሮሚያ",
+        "householdSize": "ናይ 6 ሰብ ስድራቤት",
+        "quote": "ንእሽቶ ቆልዓይ ህጹጽ ናይ መጥባሕቲ ሕክምና ኣብ ዘድለዮ እዋን፣ ናይ ሆስፒታል ወጻኢ መሬትና ንኽንሸይጥ ምገደደና ነይሩ። ብCBHI ኣቢሉ ኩሉ ነገር ብ100% ብዘይተወሳኺ ወጻኢ ተሸፊኑልና።",
+        "savedAmount": "48,000 ብር ተዓቒቡ",
+        "tag": "ህጹጽ መጥባሕቲ"
+      },
+      {
+        "name": "ሙሉጌታ ኣሰፋ",
+        "location": "ደሴ፣ ኣምሓራ",
+        "householdSize": "ናይ ዓበይቲ ክንክን",
+        "quote": "ንናይ ሽኮርን ጸቕጢ ደምን መድሓኒታት ወርሓዊ ናይ ፋርማሲ ወጻኢታት ኣዝዩ ከቢድ ነይሩ። CBHI ኣብ ወርሒ ኣብ ኬነማ ፋርማሲ ብኽብሪ ክሕከም ኣኽኢሉኒ።",
+        "savedAmount": "1,200 ብር / ወርሒ",
+        "tag": "ናይ ነዊሕ እዋን ክንክን"
+      },
+      {
+        "name": "ፋጡማ ከዲር",
+        "location": "ሃዋሳ፣ ሲዳማ",
+        "householdSize": "ናይ ኣዴታት ክንክን",
+        "quote": "ንመንታ ደቀይ ውሑስ ናይ ሆስፒታል ሕርሲን ናይ ዕሸላት መርመራን ካብ ጭንቀት ናጻ ነይሩ። ኣላየይቲ ሕሙማትን ሓካይምን ብዓቢ ክብሪ ኣተኣናጊዶምና።",
+        "savedAmount": "25,000 ብር ተዓቒቡ",
+        "tag": "ጥዕና ኣዴታት"
+      }
+    ]
+  },
   "health_rights": {
     "heading_health": "ጥዕና",
     "heading_is_everyone_right": "ናይ ኩሉ ሰብ ",
@@ -32,102 +169,125 @@
         "title": "ሓድነት",
         "description": "ማሕበረሰባት ንሓድሕዶም ካብ ሕማም ዝመጽእ ናይ ገንዘብ ጸገም ንምክልኻል ብሓባር ደው ምባል።"
       }
+    },
+    "solidarity_badge": "100% ናይ ማሕበረሰብ ሓድነት",
+    "hubs": {
+      "addis": {
+        "region": "ማእከላይ ሃገራዊ ማእከል",
+        "stat": "100% ብዲጂታል ዝተኣሳሰረ"
+      },
+      "north": {
+        "region": "መረብ ኣምሓራን ትግራይን",
+        "stat": "650+ ናይ ወረዳ ኬላታት ጥዕና"
+      },
+      "east": {
+        "region": "ድሬዳዋን ክልል ሶማሌን",
+        "stat": "420+ ትካላት ጥዕና"
+      },
+      "south": {
+        "region": "መረብ ኦሮሚያን ሲዳማን",
+        "stat": "850+ ናይ መጀመርታ ደረጃ ክሊኒካት"
+      },
+      "west": {
+        "region": "ቤኒሻንጉልን ጋምቤላን",
+        "stat": "310+ ኣሃዱታት ጥዕና"
+      }
     }
   },
   "coverage": {
     "badge": "ኩለመዳያዊ ረብሓታት",
     "heading_coverage": "ዝበለጸ ",
     "heading_goes_further": "ዝህብ ሽፋን",
-    "description": "ካብ መሰረታዊ ትካላት ጥዕና ክሳብ ፍሉይ መጥባሕቲ፡ CBHI ነቲ ኣዝዩ ኣገዳሲ ዝኾነ ኩሉ ይሽፍን።",
+    "description": "ካብ መሰረታዊ ማእከላት ጥዕና ክሳብ ፍሉይ መጥባሕቲ፡ CBHI ኣዝዩ ኣገዳሲ ንዝኾነ ኩሉ ይሽፍን።",
     "benefits": {
       "primary": {
         "title": "መሰረታዊ ክንክን ጥዕና",
-        "description": "ኣብ ዝኾነ መሻርኽቲ ክሊኒክ ነጻ ምርመራን መሰረታዊ ሕክምናን።"
+        "description": "ኣብ ዝኾነ መሻርኽቲ ክሊኒክ ብነጻ ምኽሪ፣ መርመራን መሰረታዊ ሕክምናታትን።"
       },
       "hospitalization": {
-        "title": "ምእታው ሆስፒታል",
-        "description": "መጥባሕቲ፡ ክፍሊ ጽኑዕ ሕሙማንን መሰረታዊ ድሕረ-ሕክምና ኣገልግሎታትን ሓዊሱ ምሉእ ሽፋን ሆስፒታል።"
+        "title": "ኣብ ሆስፒታል ምድቃስ",
+        "description": "መጥባሕቲ፣ ክፍሊ ጽኑዕ ክንክን (ICU)ን ኣገደስቲ ናይ ድሕሪ ሕክምና ኣገልግሎታትን ሓዊሱ ምሉእ ናይ ሆስፒታል ሽፋን።"
       },
       "maternal": {
-        "title": "ክንክን ኣደን ህጻንን",
-        "description": "ቅድመ-ወሊድ፡ ወሊድ፡ ሕክምና ህጻናትን ድሕረ-ወሊድን ንኹሉ ስድራቤት ብምሉእ ዝተሸፈነ እዩ።"
+        "title": "ክንክን ኣዴታትን ህጻናትን",
+        "description": "ናይ ቅድመ-ሕርሲ፣ ሕርሲ፣ ናይ ህጻናትን ድሕሪ ሕርሲን ክንክን ንነፍሲ ወከፍ ስድራቤት ምሉእ ብምሉእ ዝተሸፈነ እዩ።"
       }
     }
   },
   "enrollment": {
-    "heading_how": "ከመይ ",
-    "heading_enrollment": "ጌርካ ትምዝገብ ",
-    "heading_works": "መስርሕ",
-    "subtitle": "ኣብ CBHI ምጽንባር ቀሊል እዩ። ኣብ ቀረባኹም ዝርከብ ቤት ጽሕፈት ወረዳ እዞም ሰለስተ ደረጃታት ብምስዓብ ኣብቲ መዓልቲ ሽፋን ርኸቡ።",
+    "heading_how": "ከመይ ጌርካ ",
+    "heading_enrollment": "ምምዝጋብ ",
+    "heading_works": "ይከኣል",
+    "subtitle": "ኣብ CBHI ምስታፍ ቀሊል እዩ። ኣብ ከባቢኹም ኣብ ዝርከብ ቤት ጽሕፈት ወረዳ ነዚኦም ሰለስተ ስጉምትታት ብምኽታል በታ መዓልቲ እቲኣ ሽፋን ርኸቡ።",
     "steps": {
       "step1": {
         "title": "መንነት ምርግጋጽ",
-        "description": "ብፋይዳ መንነት ወረቐትኩም ኣብ ናይ ቀረባኹም ወረዳ ተመዝገቡ። ስርዓትና ንምርግጋጽ ብኡንብኡ ይራኸብ።",
-        "badge": "ናይ ፋይዳ ወይ ሃገራዊ መንነት ወረቐትኩም ሒዝኩም ምጹ"
+        "description": "ኣብ ከባቢኹም ዝርከብ ወረዳ ብመታወቂያ ፋይዳኹም ተመዝገቡ። ስርዓትና ንመረጋገጺ ብቐጥታ ይራኸብ።",
+        "badge": "ናይ ፋይዳ ወይ ሃገራዊ መታወቂያ ምምጻእ"
       },
       "step2": {
         "title": "ዓመታዊ ክፍሊት",
-        "description": "ኣብ ብዝሒ ስድራቤትኩም ተሞርኩስኩም ንእሽቶ ዓመታዊ ክፍሊት ክፈሉ። ምቹእ ናይ ክፍሊት ኣማራጺታት ኣሎ።",
-        "badge": "ንኹሉ ስድራቤት ዝምጥን ዋጋታት"
+        "description": "ብመሰረት መጠን ስድራቤትኩም ንእሽቶ ዓመታዊ ክፍሊት ክፈሉ። ቀለልቲ ናይ ክፍሊት ኣማራጺታት ኣለዉ።",
+        "badge": "ንነፍሲ ወከፍ ስድራቤት ዝመጣጠን ዋጋ"
       },
       "step3": {
         "title": "ሽፋን ምርካብ",
-        "description": "ብዲጂታላዊ ወይ ኣካላዊ ናይ CBHI ካርድኹም ኣቢልኩም ኣብ ዝኾነ መሻርኽቲ ትካል ጥዕና ብኡንብኡ ኣገልግሎት ጥዕና ርኸቡ።",
-        "badge": "ሽፋን ኣብቲ መዓልቲ ይጅምር"
+        "description": "ብዲጂታል ወይ ብካርድኹም ኣብ ዝኾነ መሻርኽቲ ትካል ብቕጽበት ናይ ጥዕና ክንክን ርኸቡ።",
+        "badge": "ሽፋን በታ መዓልቲ ይጅምር"
       }
     },
     "start_enrollment": "ምዝገባ ጀምር"
   },
   "impact": {
-    "heading_national": "ሃገራዊ ጽልዋን",
-    "heading_and": " ",
+    "heading_national": "ሃገራዊ ጽልዋ",
+    "heading_and": " ን ",
     "heading_scale": "ስፍሓትን",
-    "subtitle": "ኣብ ፌዴራላዊት ዲሞክራስያዊት ሪፐብሊክ ኢትዮጵያ ኩለመዳያዊ ሽግግር ኣገልግሎት ጥዕና ዘምጽእ ጭቡጥ ውጽኢታት።",
+    "subtitle": "ኣብ ፈደራላዊት ዴሞክራሲያዊት ሪፓብሊክ ኢትዮጵያ ኩለመዳያዊ ናይ ክንክን ጥዕና ለውጢ ዘረጋግጹ ውጽኢታት።",
     "metrics": {
       "citizens": {
-        "label": "ሽፋን ዝረኸቡ ዜጋታት",
-        "subtext": "ኣብ ኩሉ ክልላት"
+        "label": "ዝተሸፈኑ ዜጋታት",
+        "subtext": "ኣብ ኩሎም ክልላት"
       },
       "woredas": {
-        "label": "ዝበጻሕናዮም ወረዳታት",
-        "subtext": "ሃገራዊ ውህደት"
+        "label": "ዝተበጽሑ ወረዳታት",
+        "subtext": "ሃገራዊ ምትእስሳር"
       },
       "facilities": {
-        "label": "መሻርኽቲ ትካላት",
+        "label": "መሻርኽቲ ትካላት ጥዕና",
         "subtext": "ሆስፒታላትን ክሊኒካትን"
       }
     },
     "fayda": {
-      "title": "ምስ ፋይዳ ዝተዋሃሃደ",
-      "subtitle": "ሃገራዊ ናይ ዲጂታል መንነት ምርግጋጽ"
+      "title": "ምስ ፋይዳ ዝተኣሳሰረ",
+      "subtitle": "ሃገራዊ ዲጂታል መታወቂያ መረጋገጺ"
     },
     "insa": {
-      "title": "ብኢንሳ ዝተረጋገጸ",
-      "subtitle": "ናይ መንግስቲ ደረጃ ድሕነት"
+      "title": "ብኢንሳ (INSA) ዝተረጋገጸ",
+      "subtitle": "ናይ መንግስቲ ደረጃ ናይ ድሕንነት መለክዒታት"
     }
   },
   "footer": {
-    "heading_get_in": "Get in ",
-    "heading_touch": "Touch",
-    "brand_subtitle": "COMMUNITY BASED HEALTH INSURANCE",
-    "brand_reimagined": "Reimagined For a ",
-    "brand_digital": "Digital Ethiopia.",
-    "org_title": "Organization",
+    "heading_get_in": "ርኸቡና",
+    "heading_touch": "",
+    "brand_subtitle": "ማሕበረሰብ-ኣቀፍ ውሕስነት ጥዕና",
+    "brand_reimagined": "ንዲጂታል ",
+    "brand_digital": "ኢትዮጵያ ዝተሓደሰ።",
+    "org_title": "ትካል",
     "links": {
-      "about": "About Us",
-      "moh": "Ministry Of Health",
-      "reports": "Reports",
-      "enroll": "Enroll Now"
+      "about": "ብዛዕባና",
+      "moh": "ሚኒስቴር ጥዕና",
+      "reports": "ጸብጻባት",
+      "enroll": "ሕጂ ተመዝገቡ"
     },
-    "contact_title": "Contact",
-    "address": "Addis Ababa, Ethiopia",
+    "contact_title": "ኣድራሻ",
+    "address": "ኣዲስ ኣበባ፡ ኢትዮጵያ",
     "email": "info{'@'}edhn.dh.moh.gov.et",
-    "follow_title": "Follow Us",
-    "fayda_badge": "Fayda ID Integrated",
-    "inasa_badge": "INASA Verified",
-    "copyright": "© 2024 CBHI Ethiopia. All rights reserved.",
-    "powered_by": "Powered by",
-    "medco": "MEDCO",
-    "medco_tech": "Medco Technology Solutions"
+    "follow_title": "ስዓቡና",
+    "fayda_badge": "መታወቂያ ፋይዳ ዝተወሃሃደ",
+    "inasa_badge": "ብኢንሳ ዝተረጋገጸ",
+    "copyright": "© 2024 CBHI ኢትዮጵያ። ኩሉ መሰል ብሕጊ ዝተሓለወ እዩ።",
+    "powered_by": "ዘዳለዎ",
+    "medco": "ሜድኮ",
+    "medco_tech": "ሜድኮ ቴክኖሎጂ ሶሉሽንስ"
   }
 }

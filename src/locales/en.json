@@ -1,4 +1,13 @@
 {
+  "top_bar": {
+    "support": "24/7 Support",
+    "cms_login": "CMS Login",
+    "admin_mode": "Admin Mode",
+    "call_hotline": "24/7 Hotline: 8888"
+  },
+  "partners": {
+    "title": "Trusted Partners & Financial Integrations"
+  },
   "nav": {
     "home": "Home",
     "philosophy": "Philosophy",
@@ -18,6 +27,134 @@
     "members_count": "2M+ Members",
     "and_growing": "and growing"
   },
+  "executive_hero": {
+    "official_portal": "Federal Ministry of Health • Official CBHI Portal",
+    "title_prefix": "Universal Healthcare for Every ",
+    "title_highlight": "Ethiopian Household",
+    "subtitle": "Community-Based Health Insurance guarantees comprehensive inpatient, outpatient, and maternal medical care across 3,500+ public and partner health centers nationwide.",
+    "pills": {
+      "outpatient_inpatient": "100% Outpatient & Inpatient",
+      "fayda_linked": "Fayda Digital ID Linked",
+      "instant_payments": "Instant Telebirr & Bank Payments"
+    },
+    "enroll_online": "Enroll Online / Woreda",
+    "explore_benefits": "Explore Benefits",
+    "hotline_label": "24/7 Hotline:",
+    "smart_card": {
+      "country": "Federal Republic of Ethiopia",
+      "card_name": "CBHI Digital Smart Card",
+      "active_status": "ACTIVE COVERAGE",
+      "renewal_status": "RENEWAL DUE",
+      "beneficiary_holder": "Beneficiary Holder",
+      "fayda_linked_badge": "FAYDA ID LINKED",
+      "sample_name": "ABEBE KEBEDE HAILE",
+      "woreda_kebele_label": "Woreda / Kebele",
+      "woreda_kebele_value": "Bole, Woreda 03",
+      "household_size_label": "Household Size",
+      "household_size_value": "5 Dependents",
+      "card_number_label": "Card Number",
+      "valid_thru_label": "Valid Thru",
+      "scan_facility": "Scan at any Health Facility"
+    },
+    "calculator": {
+      "title": "Household Annual Premium Estimator",
+      "subsidized_tier": "Subsidized Tier",
+      "members_label": "Household Members:",
+      "residence_area": "Residence Area",
+      "urban": "Urban",
+      "rural": "Rural",
+      "estimated_contribution": "Estimated Annual Contribution:",
+      "per_year_prefix": "/ entire year for all ",
+      "members_suffix": " members"
+    }
+  },
+  "citizen_services": {
+    "badge": "Citizen Direct Access",
+    "title": "Citizen Quick Services Hub",
+    "subtitle": "Instant self-service tools for Ethiopian households to verify coverage, locate health centers, and pay annual premiums.",
+    "tabs": {
+      "eligibility": "Verify Eligibility",
+      "facilities": "Find Health Facility",
+      "payment": "Payment Channels",
+      "emergency": "Emergency & Rights"
+    },
+    "eligibility_tab": {
+      "title": "Verify Your Household Coverage Status",
+      "subtitle": "Enter your 16-digit Fayda National ID number or Kebele CBHI membership card number to check active coverage.",
+      "placeholder": "e.g. FAYDA-9841-2093 or ET-CBHI-883",
+      "button": "Lookup Status",
+      "result_title": "Coverage Verification Result",
+      "result_status": "Active - Fully Subsidized",
+      "sample_name": "Tadesse Mengistu",
+      "sample_woreda": "Yeka Subcity, Woreda 04",
+      "registered_at": "Registered at: ",
+      "result_desc": "✓ Eligible for free services at all public clinics and contracted tertiary referral hospitals."
+    },
+    "facilities_tab": {
+      "title": "Contracted Public & Referral Facilities",
+      "subtitle": "Over 3,500 facilities accept CBHI cards across Ethiopia.",
+      "search_placeholder": "Search hospital or city..."
+    },
+    "payment_tab": {
+      "title": "Seamless Digital Payment Integrations",
+      "subtitle": "Pay your annual household premium without standing in long queues.",
+      "telebirr_title": "Telebirr SuperApp",
+      "telebirr_desc": "Open Telebirr > Services > Government Payments > CBHI > Enter Woreda Code.",
+      "cbe_title": "Commercial Bank of Ethiopia",
+      "cbe_desc": "CBE Birr or direct bank branch deposit to your regional CBHI pooled account.",
+      "siinqee_title": "Siinqee & Sidama Banks",
+      "siinqee_desc": "Dedicated teller desks across all regional branch locations."
+    },
+    "emergency_tab": {
+      "hotline_title": "24/7 National Health Rights Hotline",
+      "hotline_desc": "If a contracted health center refuses services or demands unauthorized co-payments, call our free toll-free citizen rights desk immediately:",
+      "hotline_number": "Dial 8888 (Toll Free)",
+      "entitlements_title": "Citizen Entitlements Under CBHI Law:",
+      "entitlement_1": "Zero fees for outpatient consultations and essential diagnostic laboratory tests.",
+      "entitlement_2": "Full inpatient accommodation, surgical care, and intensive care bed fees.",
+      "entitlement_3": "Essential medication dispensed directly through hospital or Kenema pharmacies."
+    }
+  },
+  "community_stories": {
+    "badge": "Community Voices",
+    "title": "Real Stories of Healthcare Protection",
+    "subtitle": "How Community-Based Health Insurance protects millions of Ethiopian households against catastrophic out-of-pocket medical debts.",
+    "difference_title": "The Difference CBHI Makes for Ethiopian Families",
+    "without_cbhi_title": "Without CBHI (Out of Pocket)",
+    "without_cbhi_1": "Families delay medical care due to fear of unpredictable expenses.",
+    "without_cbhi_2": "Emergency hospitalizations often cause distress asset and livestock sales.",
+    "without_cbhi_3": "Chronic diseases lead to ongoing debt cycles and missed treatments.",
+    "with_cbhi_title": "With CBHI National Protection",
+    "with_cbhi_1": "Early diagnosis and checkups at local Kebele clinics at zero point-of-care cost.",
+    "with_cbhi_2": "Full catastrophic surgery and referral hospitalization covered by the pool.",
+    "with_cbhi_3": "Household savings and peace of mind secured through community solidarity.",
+    "stories": [
+      {
+        "name": "Almaz Tefera & Family",
+        "location": "Ambo Woreda, Oromia",
+        "householdSize": "Family of 6",
+        "quote": "When my youngest child required emergency appendectomy surgery, the hospital bill would have forced us to sell our farmland. With CBHI, everything was covered 100% with zero out-of-pocket costs.",
+        "savedAmount": "48,000 ETB Saved",
+        "tag": "Emergency Surgery"
+      },
+      {
+        "name": "Mulugeta Assefa",
+        "location": "Dessie, Amhara",
+        "householdSize": "Elderly Care",
+        "quote": "For diabetic management and hypertension medicines, monthly pharmacy expenses were unbearable. CBHI allows me to refill prescriptions every month at Kenema Pharmacy with dignity.",
+        "savedAmount": "1,200 ETB / Month",
+        "tag": "Chronic Care"
+      },
+      {
+        "name": "Fatuma Kedir",
+        "location": "Hawassa, Sidama",
+        "householdSize": "Maternal Care",
+        "quote": "Safe hospital delivery and neonatal checkups for my twins were completely stress-free. The midwives and doctors treated us with royal care.",
+        "savedAmount": "25,000 ETB Saved",
+        "tag": "Maternal Health"
+      }
+    ]
+  },
   "health_rights": {
     "heading_health": "Health",
     "heading_is_everyone_right": "Is Everyone's ",
@@ -31,6 +168,29 @@
       "solidarity": {
         "title": "Solidarity",
         "description": "Communities coming together to protect each other from the financial shocks of illness."
+      }
+    },
+    "solidarity_badge": "100% Community Solidarity",
+    "hubs": {
+      "addis": {
+        "region": "Central National Hub",
+        "stat": "100% Digitally Integrated"
+      },
+      "north": {
+        "region": "Amhara & Tigray Network",
+        "stat": "650+ Woreda Health Posts"
+      },
+      "east": {
+        "region": "Dire Dawa & Somali Region",
+        "stat": "420+ Health Facilities"
+      },
+      "south": {
+        "region": "Oromia & Sidama Network",
+        "stat": "850+ Primary Clinics"
+      },
+      "west": {
+        "region": "Benishangul & Gambela",
+        "stat": "310+ Healthcare Units"
       }
     }
   },

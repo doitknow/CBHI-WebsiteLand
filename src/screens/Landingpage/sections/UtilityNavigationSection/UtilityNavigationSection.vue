@@ -82,7 +82,9 @@ function handleNavClick(item: { translationKey: string; sectionId: string }) {
 const availableLocales = [
   { code: 'en', name: 'English' },
   { code: 'am', name: 'Amharic (አማርኛ)' },
-  { code: 'om', name: 'Oromifa (Afaan Oromoo)' }
+  { code: 'om', name: 'Oromifa (Afaan Oromoo)' },
+  { code: 'ti', name: 'Tigrinya (ትግርኛ)' },
+  { code: 'so', name: 'Somali (Soomaali)' }
 ];
 
 const isLanguageMenuOpen = ref(false);
@@ -91,6 +93,7 @@ function changeLanguage(code: string) {
   if (locale.value === code) return;
   locale.value = code;
   localStorage.setItem('language', code);
+  document.documentElement.lang = code;
   isLanguageMenuOpen.value = false;
 }
 
@@ -161,20 +164,20 @@ function getLocaleName(code: string) {
           <button
             type="button"
             @click="isLanguageMenuOpen = !isLanguageMenuOpen"
-            class="flex h-9 w-[138px] shrink-0 items-center gap-1.5 rounded-lg border border-[#d1d1d1] dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-[13.5px] font-medium text-[#787878] dark:text-slate-200 transition-colors duration-200 hover:border-[var(--color-primary)]/60 dark:hover:border-[var(--color-primary)]/60 hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary)] focus:outline-none"
+            class="flex h-9 min-w-[155px] max-w-[185px] shrink-0 items-center gap-1.5 rounded-lg border border-[#d1d1d1] dark:border-slate-700 bg-white dark:bg-slate-800 px-3 text-[13px] font-medium text-[#787878] dark:text-slate-200 transition-colors duration-200 hover:border-[var(--color-primary)]/60 dark:hover:border-[var(--color-primary)]/60 hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary)] focus:outline-none"
           >
             <Globe class="h-[15px] w-[15px] shrink-0" />
             <span class="flex-1 text-left whitespace-nowrap overflow-hidden text-ellipsis">{{ getLocaleName(locale) }}</span>
             <ChevronDown class="h-3 w-3 shrink-0 opacity-50" />
           </button>
           
-          <div v-if="isLanguageMenuOpen" class="absolute top-full mt-2 w-full rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 py-1 shadow-lg z-50">
+          <div v-if="isLanguageMenuOpen" class="absolute right-0 top-full mt-2 min-w-[200px] rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 py-1 shadow-xl z-50">
             <button
               v-for="l in availableLocales"
               :key="l.code"
               @click="changeLanguage(l.code)"
-              class="w-full px-3 py-2 text-left text-[13.5px] hover:bg-slate-50 dark:hover:bg-slate-700 text-[#787878] dark:text-slate-200"
-              :class="{ 'font-semibold text-[var(--color-primary)] dark:text-[var(--color-primary)]': locale === l.code }"
+              class="w-full px-3.5 py-2 text-left text-[13px] hover:bg-slate-50 dark:hover:bg-slate-700 text-[#787878] dark:text-slate-200 transition-colors"
+              :class="{ 'font-semibold text-[var(--color-primary)] dark:text-[var(--color-primary)] bg-slate-50/70 dark:bg-slate-700/50': locale === l.code }"
             >
               {{ l.name }}
             </button>

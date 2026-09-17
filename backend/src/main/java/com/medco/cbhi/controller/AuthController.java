@@ -25,7 +25,8 @@ public class AuthController {
             AuthResponse response = authService.login(request);
             return ResponseEntity.ok(ApiResponse.ok("Login successful", response));
         } catch (Exception ex) {
-            return ResponseEntity.status(401).body(ApiResponse.error("Invalid username or password"));
+            ex.printStackTrace();
+            return ResponseEntity.status(401).body(ApiResponse.error("Invalid username or password: " + ex.getMessage()));
         }
     }
 
